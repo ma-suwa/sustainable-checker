@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[27298,["/sustainable-checker/_next/static/chunks/2npt53qc3t5oe.js"],"ViewportBoundary"]
+3:I[27298,["/sustainable-checker/_next/static/chunks/2npt53qc3t5oe.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"SustainableChecker — サステナビリティ・サイト自動診断"}],["$","meta","1",{"name":"description","content":"コーポレートサイトのURLを入力すると、ESG/サステナビリティ開示ページの良い点・悪い点を自動診断します（Phase1: A/B/E）。"}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-hMMSC3o6MXrla81myKtH"}
