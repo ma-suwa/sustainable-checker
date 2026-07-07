@@ -1,0 +1,289 @@
+:root {
+  --bg: #f6f8f6;
+  --card: #ffffff;
+  --border: #e2e8e2;
+  --text: #1a2b22;
+  --muted: #5c6b63;
+  --accent: #1f8a5b;
+  --accent-weak: #e6f4ec;
+  --good: #1f8a5b;
+  --partial: #d9971e;
+  --none: #c14444;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121714;
+    --card: #1a221d;
+    --border: #2b352e;
+    --text: #e6ede8;
+    --muted: #9db0a5;
+    --accent: #3fb87d;
+    --accent-weak: #1e2c24;
+    --good: #3fb87d;
+    --partial: #e0ac48;
+    --none: #e07070;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic",
+    "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+}
+
+.header p {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.form input {
+  flex: 1 1 320px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  background: #fdecec;
+  color: #b03030;
+  border: 1px solid #f3c0c0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.score-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.score-big {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.score-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.meta-line {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.meta-line a {
+  color: var(--accent);
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.4rem 0;
+}
+
+.bar-label {
+  flex: 0 0 210px;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  flex: 1;
+  height: 12px;
+  background: var(--accent-weak);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px;
+}
+
+.bar-num {
+  flex: 0 0 66px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.item {
+  border-top: 1px solid var(--border);
+  padding: 0.85rem 0;
+}
+
+.item:first-child {
+  border-top: none;
+}
+
+.item-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.badge.good {
+  background: var(--good);
+}
+.badge.partial {
+  background: var(--partial);
+}
+.badge.none {
+  background: var(--none);
+}
+.badge.flag {
+  background: var(--muted);
+}
+
+.item-title {
+  font-weight: 600;
+}
+
+.item-points {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.gb {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+}
+
+.gb.good li {
+  color: var(--good);
+}
+.gb.bad li {
+  color: var(--none);
+}
+
+.evidence {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+.evidence a {
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.cat-title {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notes {
+  font-size: 0.83rem;
+  color: var(--muted);
+}
+
+.notes li {
+  margin: 0.2rem 0;
+}
+
+.shot {
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 0.75rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: -2px;
+  margin-right: 0.4rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

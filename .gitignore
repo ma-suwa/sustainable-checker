@@ -1,0 +1,8 @@
+/node_modules
+/.next
+/out
+.api-bak
+.env.local
+*.log
+*.tsbuildinfo
+.DS_Store
