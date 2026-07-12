@@ -1,90 +1,59 @@
-"use client";
+import Link from "next/link";
+import { categories } from "@/lib/content/criteria";
+import { irCategories } from "@/lib/ir/criteria";
+import { uxCategories } from "@/lib/usability/criteria";
 
-import { useState } from "react";
-import type { DiagnosisResult } from "@/lib/types";
-import { ScoreCard } from "@/components/ScoreCard";
-import { sampleResult } from "@/lib/sampleResult";
-
-// Static GitHub Pages build has no backend; run in demo mode with a bundled sample.
-const DEMO = process.env.NEXT_PUBLIC_DEMO === "1";
-
-export default function Home() {
-  const [url, setUrl] = useState(DEMO ? "https://www.kewpie.com/" : "");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<DiagnosisResult | null>(null);
-
-  async function runDiagnosis(e: React.FormEvent) {
-    e.preventDefault();
-    if (loading) return;
-    if (DEMO) {
-      // No backend on GitHub Pages: show the bundled sample result.
-      setError(null);
-      setResult(sampleResult);
-      return;
-    }
-    if (!url.trim()) return;
-    setLoading(true);
-    setError(null);
-    setResult(null);
-    try {
-      const res = await fetch("/api/diagnose", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: url.trim() }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data?.error ?? "診断に失敗しました。");
-      } else {
-        setResult(data as DiagnosisResult);
-      }
-    } catch {
-      setError("ネットワークエラーが発生しました。");
-    } finally {
-      setLoading(false);
-    }
-  }
-
+export default function Hub() {
   return (
-    <main className="container">
-      <div className="header">
-        <h1>🌱 SustainableChecker</h1>
-        <p>
-          コーポレートサイトのURLを入力すると、サステナビリティ／ESG開示ページの良い点・悪い点を自動診断します。
-          （Phase1: A. 使いやすさ / B. ESG共通・戦略 / E. ガバナンス = 70点満点）
+    <>
+      <div className="page-head">
+        <span className="eyebrow">企業サイト評価ガイド</span>
+        <h1>企業サイトは、何をもって「良い」とされるのか。</h1>
+        <p className="lead">
+          企業のコーポレートサイトを評価する3つの領域——「サステナビリティ／ESG開示」「IR（投資家向け情報）」「ユーザビリティ（使いやすさ）」——について、
+          評価機関が用いる評価軸を、良い例・悪い例・出典とともに体系的に解説します。
         </p>
       </div>
 
-      {DEMO && (
-        <div className="error" style={{ background: "var(--accent-weak)", color: "var(--text)", borderColor: "var(--accent)" }}>
-          🔎 これは静的デモ版です（GitHub Pages）。バックエンドが無いため任意URLのライブ診断はできません。
-          「サンプルを表示」を押すと実測クロール由来のサンプル結果を表示します。
-          任意URLで診断するにはローカルで <code>npm run dev</code> を実行してください。
-        </div>
-      )}
+      <div className="grid">
+        <Link href="/sustainability/" className="link-card">
+          <h3>🌱 サステナビリティ開示ガイド</h3>
+          <p>
+            使いやすさ・ESG戦略・環境・社会・ガバナンス・独自性の
+            {categories.length}カテゴリで、サステナビリティ開示サイトの評価基準を解説。
+          </p>
+          <div className="card-meta">
+            <span>三層ルーブリック（ゴメス／トライベック／JSBI）</span>
+          </div>
+        </Link>
 
-      <form className="form" onSubmit={runDiagnosis}>
-        <input
-          type="text"
-          placeholder="https://www.example.co.jp"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          disabled={loading || DEMO}
-        />
-        <button type="submit" disabled={loading}>
-          {loading && <span className="spinner" />}
-          {DEMO ? "サンプルを表示" : loading ? "診断中…" : "診断する"}
-        </button>
-      </form>
+        <Link href="/ir/" className="link-card">
+          <h3>📈 IRサイト評価ガイド</h3>
+          <p>
+            使いやすさ・財務決算・企業経営・積極性の{irCategories.length}カテゴリで、
+            IRサイトの評価軸を解説。主要評価機関の比較も。
+          </p>
+          <div className="card-meta">
+            <span>ゴメス配点準拠（30/25/25/20）＋日興・大和</span>
+          </div>
+        </Link>
 
-      {loading && (
-        <p className="loading-note">
-          サイトをクロールしてClaudeで採点しています。ページ数により30秒〜1分ほどかかります。
-        </p>
-      )}
-      {error && <div className="error">{error}</div>}
-      {result && <ScoreCard result={result} />}
-    </main>
+        <Link href="/usability/" className="link-card">
+          <h3>🖱 ユーザビリティ評価ガイド</h3>
+          <p>
+            トップ明快性・ナビ・検索性・アクセシビリティ・パフォーマンスなど{uxCategories.length}カテゴリで、
+            サイトの使いやすさの評価軸を解説。
+          </p>
+          <div className="card-meta">
+            <span>トライベック5軸＋ニールセン10原則＋WCAG/CWV</span>
+          </div>
+        </Link>
+      </div>
+
+      <p className="lead" style={{ marginTop: "1.5rem", fontSize: "0.88rem" }}>
+        いずれも「情報の網羅性」「探しやすさ・使いやすさ」を共通軸としつつ、
+        対象読者と評価観点が異なります。関心のある領域から選んでください。
+      </p>
+    </>
   );
 }

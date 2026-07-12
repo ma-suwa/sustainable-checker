@@ -1,62 +1,98 @@
-# SustainableChecker
+# 開示サイト評価ガイド（SustainableChecker）
 
-コーポレートサイトのURLを入力すると、サステナビリティ／ESG開示ページの**良い点・悪い点**を自動診断するツール（自分用プロトタイプ）。
+企業のコーポレートサイトを評価する3領域——**サステナビリティ／ESG開示**・**IR（投資家向け情報）**・**ユーザビリティ（使いやすさ）**——について、評価機関が用いる評価軸を、良い例／悪い例／出典とともにカテゴリ別に解説する**情報サイト**。
 
-三層ルーブリック（ゴメスの配点構造を骨格に、トライベックの体験フロー、JSBIの独自性加点を重ねたもの）のうち、**Phase1 = A（使いやすさ30点）/ B（ESG共通・戦略25点）/ E（ガバナンス15点）＝70点満点**を実装。
+> 沿革：v0.1はURL入力の自動診断ツール → v0.2で「評価基準の解説サイト」へ方向転換（診断エンジン廃止・完全静的化） → v0.3でトップをハブ化しIR編を追加 → v0.4でユーザビリティ編を追加（3領域）。
 
-## 仕組み
+## 2つの領域
 
-```
-URL入力 → ①Playwrightでクロール（入口検出＋クリック深度＋本文抽出＋スクショ）
-        → ②決定的シグナル判定（検索窓/パンくず/報告書リンク/日英/外部評価/スキルマトリックス）
-        → ③Claudeがルーブリック採点（0 / 50% / 満点 ＋良い点/悪い点/根拠URL）
-        → ④集計してスコアカード表示
-```
+### 🌱 サステナビリティ開示ガイド（`/sustainability/`）
+三層ルーブリック（ゴメスの配点構造＋トライベックの体験フロー＋JSBIの独自性加点）を骨格に、6カテゴリ・全項目を解説。
 
-- ルーブリックは `lib/rubric/` に設定データとして外部化（年次改定・SSBJ義務化に差し替えで追従）。
-- 機械判定できる A1(到達性)/A3(検索)/A4(パンくず) はコードで決定的に採点。それ以外は Claude が採点。
+| カテゴリ | 内容 | 重み |
+|---|---|---|
+| A | サイトの使いやすさ・情報設計 | 30 |
+| B | ESG共通・戦略性 | 25 |
+| C | 環境 E | 15 |
+| D | 社会 S | 15 |
+| E | ガバナンス G | 15 |
+| F | 加点：独自性・伝達力 | +10 |
+
+### 📈 IRサイト評価ガイド（`/ir/`）
+唯一配点を公開するゴメスの重み（30/25/25/20）を基軸に、日興の掲載有無チェックと大和IRスコアボードの品質観点を統合した4カテゴリ・20項目を解説。主要評価機関の比較も収録。
+
+| カテゴリ | 内容 | 配点 |
+|---|---|---|
+| 1 | 使いやすさ・情報設計 | 30 |
+| 2 | 財務・決算情報の充実度 | 25 |
+| 3 | 企業・経営情報の充実度 | 25 |
+| 4 | 積極性・先進性 | 20 |
+
+### 🖱 ユーザビリティ評価ガイド（`/usability/`）
+トライベック5軸・ニールセン10原則・WCAG 2.2・Core Web Vitals を統合した7カテゴリ・19項目。ナビゲーション（配点25）を最重要とする。主要評価機関の比較も収録。
+
+| カテゴリ | 内容 | 配点 |
+|---|---|---|
+| 1 | トップページの明快性・ファーストビュー | 15 |
+| 2 | ナビゲーション設計（最重要） | 25 |
+| 3 | ファインダビリティ・検索性 | 15 |
+| 4 | コンテンツのわかりやすさ | 10 |
+| 5 | アクセシビリティ | 15 |
+| 6 | モバイル対応・パフォーマンス | 10 |
+| 7 | ヘルプ・安全性・フォーム | 10 |
+
+## ページ構成
+
+- `/` ハブ（3領域の入口）
+- `/sustainability/` … landing／`categories/[id]`／`criteria/[id]`／`glossary`／`about`
+- `/ir/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`glossary`／`about`
+- `/usability/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`glossary`／`about`
 
 ## セットアップ
 
 ```bash
 npm install
-npx playwright install chromium
-cp .env.local.example .env.local   # ANTHROPIC_API_KEY を設定
-npm run dev                        # http://localhost:3000
+npm run dev          # http://localhost:3000
 ```
 
-### 環境変数（.env.local）
+APIキーや環境変数は不要（完全静的）。
 
-| 変数 | 既定 | 説明 |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | （必須） | Claude API キー |
-| `DIAGNOSE_MODEL` | `claude-sonnet-5` | 採点モデル。高精度は `claude-opus-4-8` |
-| `CRAWL_MAX_PAGES` | `10` | クロールするサステナ配下ページ数の上限（コスト/時間の制御） |
-| `CRAWL_TIMEOUT_MS` | `20000` | 1ページの遷移タイムアウト |
+## ビルド（静的エクスポート）
 
-## 使い方
+```bash
+npm run build        # → out/ に静的HTMLを生成（約70ページ）
+NEXT_PUBLIC_BASE_PATH="/<repo>" npm run build:static  # GitHub Pages配信時
+```
 
-1. トップの入力欄にコーポレートサイトのURL（例 `https://www.kewpie.com/`）を入れて「診断する」。
-2. サステナ入口・クリック深度・カテゴリ別スコア・項目別の良い点/悪い点/根拠URL・ファーストビューのスクショが表示されます。
+## コンテンツの編集
 
-## 既知の制約（Phase1）
+すべて設定データとして外部化：
 
-- **入口未検出**はスコア0ではなく「未検出」フラグで区別表示。
-- PDF/Excel（統合報告書・第三者検証）は**リンク存在まで**判定（中身は非評価）。
-- LLM採点には揺れがある（temperature=0で抑制）。配点の一部は推定。
-- C（環境）/D（社会）/F（独自性加点）は未実装（`lib/rubric/index.ts` に無効化スタブあり）。
+```
+lib/content/    サステナビリティ編（types / criteria(A〜F) / glossary / framework / labels）
+lib/ir/         IR編（types / criteria(1〜4) / institutions / glossary / framework / labels）
+lib/usability/  ユーザビリティ編（types / criteria(1〜7) / institutions / glossary / framework / labels）
+```
+
+年次改定（ゴメス／日興／大和の項目改訂、SSBJ義務化など）はこのデータを差し替えて追従する。
+
+## 注意・免責
+
+- **サステナ編**：C／D／F の各項目と背景・出典は SSBJ・TCFD・GHGプロトコル等に基づくドラフト（「要確認」表示）を含む。ゴメス達成率など確実な数値以外は目安。
+- **IR編**：配点はゴメスが公開する唯一のカテゴリ重み（30/25/25/20）に準拠した推定・整合設計。日興・大和はカテゴリ別配分を非公開。ランキングは各年一時点の評価であり、最新の各機関プレスリリース（いずれも12月発表）で確認すること。
+- **ユーザビリティ編**：トライベックの軸別ウェイトは非公表のため、配点はトライベック5軸とゴメス「使いやすさ30%」からの推定・整合設計。Core Web Vitals・一部アクセシビリティは静的読み込みだけでは完全診断できず、専用ツール（PageSpeed Insights・axe等）や実機テストの併用が必要。
 
 ## ディレクトリ
 
 ```
-app/                UI・APIルート
-  page.tsx          URL入力フォーム＋結果表示
-  api/diagnose/     診断オーケストレーション
-lib/
-  crawler/          Playwrightクロール・入口検出・本文抽出
-  signals/          決定的シグナル検出
-  rubric/           ルーブリック定義（設定データ）
-  evaluator/        Claude採点（tool_use / JSON schema）
-  score/            集計
-components/          ScoreCard / CategoryBar / ItemRow / GoodBadList
+app/
+  page.tsx              ハブ（3領域の入口）
+  sustainability/       サステナビリティ編（landing/categories/criteria/glossary/about）
+  ir/                   IR編（landing/categories/criteria/institutions/glossary/about）
+  usability/            ユーザビリティ編（landing/categories/criteria/institutions/glossary/about）
+  layout.tsx            共通レイアウト（ヘッダー／フッター）
+components/              SiteHeader / Breadcrumb / ExampleBox
+lib/content/            サステナビリティ編コンテンツ
+lib/ir/                 IR編コンテンツ
+lib/usability/          ユーザビリティ編コンテンツ
 ```
