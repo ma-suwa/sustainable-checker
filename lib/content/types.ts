@@ -1,13 +1,17 @@
-// 評価基準の情報サイト向けコンテンツモデル。
-// 旧 lib/rubric/ を継承しつつ、解説記事として読める拡張フィールドを追加している。
-// データは設定として外部化し、年次改定（ゴメス項目改訂・SSBJ義務化）に差し替えで追従できる。
+// 評価基準の情報サイト向けコンテンツモデル（サステナビリティ／ESG開示編）。
+// 解説記事として通読できるよう、実例（企業名・URL・確認日）と出典リンクを持つ。
+// データは設定として外部化し、年次改定（ゴメス項目改訂・SSBJ適用拡大）に差し替えで追従できる。
+
+import type { Benchmark, Example } from "@/lib/shared/types";
+
+export type { Benchmark, Example };
 
 export type CategoryId = "A" | "B" | "C" | "D" | "E" | "F";
 
-// 自動判定の可否を示すメタ情報（バッジ表示に流用）。
-//  - "mechanical": ツールで機械的に判定しやすい（検索窓の有無など）
+// 評価するときの見方を示すメタ情報（バッジ表示に流用）。
+//  - "mechanical": 有無を機械的に確認しやすい（検索窓の有無など）
 //  - "llm":        中身の質の判断が必要で、目視・読解が要る
-//  - "hybrid":     機械判定＋目視の併用が向く
+//  - "hybrid":     機械確認＋目視の併用が向く
 export type JudgeType = "mechanical" | "llm" | "hybrid";
 
 export interface CriteriaItem {
@@ -21,15 +25,15 @@ export interface CriteriaItem {
   background?: string;
   // 評価するときの具体的な見方チェックリスト。
   checkpoints?: string[];
-  // 良い例／悪い例（複数可）。
-  goodExamples: string[];
-  badExamples: string[];
-  // ベンチマーク（ゴメス達成率など）。「上位◯%が採用」等の目安。
-  benchmark?: string;
-  // benchmark が確実な出典（ゴメス既存データ）か。false/未指定は要確認のドラフト。
-  benchmarkConfirmed?: boolean;
-  // 出典（フレームワーク名・調査名など）。
+  // 良い例／悪い例。実企業名・URL・確認日を伴う（一般論のアンチパターンは company なしで書く）。
+  goodExamples: Example[];
+  badExamples: Example[];
+  // ベンチマーク（ゴメス実施率など）。
+  benchmark?: Benchmark;
+  // 出典（lib/sources.ts のキー配列）。
   sources?: string[];
+  // さらに深く読むための一次情報（lib/sources.ts のキー配列）。
+  furtherReading?: string[];
   // 関連用語（glossary の slug）。
   relatedTerms?: string[];
   // 新規執筆のドラフト（要レビュー）フラグ。

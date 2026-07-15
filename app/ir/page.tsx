@@ -44,6 +44,13 @@ export default function IrHome() {
               {c.title}
             </h3>
             <p>{c.short}</p>
+            <ul className="item-peek">
+              {c.items.map((it) => (
+                <li key={it.id}>
+                  {it.id} {it.title}
+                </li>
+              ))}
+            </ul>
             <div className="card-meta">
               <span>配点 {c.points}</span>
               <span>{c.items.length}項目</span>
@@ -56,6 +63,10 @@ export default function IrHome() {
         <Link href="/ir/institutions/" className="link-card">
           <h3>🏛 評価機関の比較</h3>
           <p>日興・ゴメス・大和・日本IR協議会・英IR Societyの評価軸・対象・配点を横断比較。</p>
+        </Link>
+        <Link href="/ir/sources/" className="link-card">
+          <h3>🔗 出典・参考資料</h3>
+          <p>各機関のランキング・制度・フレームワークの一次情報リンク集。</p>
         </Link>
         <Link href="/ir/glossary/" className="link-card">
           <h3>📚 用語集</h3>

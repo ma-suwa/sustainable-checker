@@ -2,9 +2,17 @@
 // 配点はゴメス/BBSec（3機関で唯一公開されているカテゴリ重み 30/25/25/20）に準拠。
 // 日興アイ・アールの掲載有無チェック、大和IRスコアボードの品質観点を統合している。
 
+import type { Benchmark, Example } from "@/lib/shared/types";
+
+export type { Benchmark, Example };
+
 export type IrCategoryId = "1" | "2" | "3" | "4";
 
-// 自動診断での判定手段（Claude二層診断：URLでの客観チェック／スクショの定性評価）。
+// 評価するときの見方。
+//  - "url":       ページの有無・リンク先など客観的に確認できる
+//  - "screen":    実際に見て回らないと判断できない（質・レイアウト）
+//  - "url-screen": 併用
+//  - "technical": 外部ツールでの計測が要る（速度・構造化データ等）
 export type IrJudgeMethod = "url" | "screen" | "url-screen" | "technical";
 
 export interface IrCriteriaItem {
@@ -12,10 +20,14 @@ export interface IrCriteriaItem {
   title: string;
   points: number;
   criteria: string; // 評価観点
-  goodExample: string;
-  badExample: string;
   judgeMethod: IrJudgeMethod;
   background?: string; // なぜ重要か・背景
+  checkpoints?: string[]; // 評価するときの見方
+  goodExamples: Example[];
+  badExamples: Example[];
+  benchmark?: Benchmark;
+  sources?: string[]; // lib/sources.ts のキー
+  furtherReading?: string[]; // lib/sources.ts のキー
   relatedTerms?: string[]; // glossary slug
 }
 
@@ -42,6 +54,8 @@ export interface Institution {
   latest: string; // 最新実施
   detail: string; // 概要（本文）
   note?: string; // 補足
+  url?: string; // 公式ページ
+  source?: string; // lib/sources.ts のキー（一次資料）
 }
 
 export interface IrGlossaryTerm {

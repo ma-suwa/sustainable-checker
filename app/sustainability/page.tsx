@@ -43,6 +43,13 @@ export default function SustainabilityHome() {
               {c.title}
             </h3>
             <p>{c.short}</p>
+            <ul className="item-peek">
+              {c.items.map((it) => (
+                <li key={it.id}>
+                  {it.id} {it.title}
+                </li>
+              ))}
+            </ul>
             <div className="card-meta">
               <span>重み {c.points}</span>
               <span>{c.items.length}項目</span>
@@ -55,6 +62,10 @@ export default function SustainabilityHome() {
         <Link href="/sustainability/glossary/" className="link-card">
           <h3>📚 用語集</h3>
           <p>TCFD・マテリアリティ・スキルマトリックスなど、開示でよく使う用語を解説。</p>
+        </Link>
+        <Link href="/sustainability/sources/" className="link-card">
+          <h3>🔗 出典・参考資料</h3>
+          <p>評価機関・フレームワーク・制度の一次情報リンク集。数値の裏づけをたどれます。</p>
         </Link>
         <Link href="/sustainability/about/" className="link-card">
           <h3>🧭 評価の枠組み</h3>

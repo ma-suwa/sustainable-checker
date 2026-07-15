@@ -2,10 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { irAllItems, getIrItem } from "@/lib/ir/criteria";
-import { getIrTerm } from "@/lib/ir/glossary";
+import { toIrArticle } from "@/lib/ir/article";
 import { irJudgeLabel } from "@/lib/ir/labels";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { ExampleBox } from "@/components/ExampleBox";
+import { CriterionArticle } from "@/components/CriterionArticle";
 
 export function generateStaticParams() {
   return irAllItems().map((it) => ({ id: it.id }));
@@ -22,6 +22,7 @@ export async function generateMetadata({
   return { title: `${item.id} ${item.title}（IR）`, description: item.criteria };
 }
 
+// 項目単体のパーマリンク。本文はカテゴリの通し読みページと同じ CriterionArticle を使う。
 export default async function IrCriteriaPage({
   params,
 }: {
@@ -31,17 +32,16 @@ export default async function IrCriteriaPage({
   const item = getIrItem(id);
   if (!item) notFound();
 
-  const related = (item.relatedTerms ?? [])
-    .map((slug) => getIrTerm(slug))
-    .filter((t): t is NonNullable<typeof t> => Boolean(t));
-
   return (
     <>
       <Breadcrumb
         items={[
           { label: "ホーム", href: "/" },
           { label: "IRサイト評価", href: "/ir/" },
-          { label: `${item.categoryId}. ${item.categoryTitle}`, href: `/ir/categories/${item.categoryId}/` },
+          {
+            label: `${item.categoryId}. ${item.categoryTitle}`,
+            href: `/ir/categories/${item.categoryId}/`,
+          },
           { label: `${item.id} ${item.title}` },
         ]}
       />
@@ -51,37 +51,18 @@ export default async function IrCriteriaPage({
           IR カテゴリ{item.categoryId} ／ {item.id}・配点 {item.points}点
         </span>
         <h1>{item.title}</h1>
-        <p className="lead">{item.criteria}</p>
         <div className="tag-row">
-          <span className="badge judge">判定手段：{irJudgeLabel(item.judgeMethod)}</span>
+          <span className="badge judge">{irJudgeLabel(item.judgeMethod)}</span>
         </div>
       </div>
 
-      {item.background && (
-        <section className="section">
-          <h2>なぜ重要か</h2>
-          <p style={{ margin: 0 }}>{item.background}</p>
-        </section>
-      )}
+      <CriterionArticle item={toIrArticle(item)} standalone />
 
-      <section className="section">
-        <h2>良い例・悪い例</h2>
-        <ExampleBox variant="good" items={[item.goodExample]} />
-        <ExampleBox variant="bad" items={[item.badExample]} />
-      </section>
-
-      {related.length > 0 && (
-        <section className="section">
-          <h2>関連用語</h2>
-          <div className="tag-row">
-            {related.map((t) => (
-              <Link key={t.slug} href={`/ir/glossary/#${t.slug}`} className="tag">
-                {t.term}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+      <p className="criterion-permalink">
+        <Link href={`/ir/categories/${item.categoryId}/`}>
+          ← {item.categoryId}. {item.categoryTitle} を最初から通して読む
+        </Link>
+      </p>
 
       <IrCriteriaPager currentId={item.id} />
     </>

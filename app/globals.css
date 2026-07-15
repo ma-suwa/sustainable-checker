@@ -551,3 +551,379 @@ a {
 .cmp-table a {
   text-decoration: none;
 }
+
+/* ============================================================
+   Longform：カテゴリを1本の記事として通し読みさせるレイアウト
+   ============================================================ */
+
+/* 目次を横に置くぶん、通し読みページだけ本文枠を広げる。 */
+main.container:has(.longform) {
+  max-width: 1180px;
+}
+
+.longform {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.longform-body {
+  min-width: 0;
+  max-width: 46rem; /* 長文の1行が長くなりすぎないように */
+}
+
+/* ---- 追従目次 ---- */
+.toc {
+  position: sticky;
+  top: 5rem;
+  font-size: 0.85rem;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+}
+
+.toc-head {
+  margin: 0 0 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.toc-item a {
+  display: flex;
+  gap: 0.45rem;
+  align-items: baseline;
+  padding: 0.32rem 0;
+  text-decoration: none;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.toc-item a:hover {
+  color: var(--text);
+}
+
+.toc-item.active a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.toc-id {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.toc-label {
+  flex: 1 1 auto;
+}
+
+.toc-points {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  opacity: 0.65;
+}
+
+.toc-mobile {
+  display: none;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.toc-mobile summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.toc-mobile .toc-list {
+  margin-top: 0.5rem;
+}
+
+/* ---- 1項目＝1記事 ---- */
+.criterion {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  margin-top: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.criterion:first-of-type {
+  border-top: none;
+  margin-top: 1rem;
+}
+
+.criterion-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.criterion-head .anchor {
+  position: absolute;
+  left: -1.1rem;
+  text-decoration: none;
+  color: var(--border);
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.criterion-head:hover .anchor {
+  opacity: 1;
+}
+
+.criterion-id {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 1.6rem;
+  padding: 0 0.4rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.criterion-title {
+  flex: 1 1 auto;
+  font-weight: 700;
+}
+
+.criterion-badges {
+  display: inline-flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.criterion-lead {
+  margin: 0 0 1.25rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  font-weight: 600;
+}
+
+.criterion-block {
+  margin: 1.4rem 0;
+}
+
+.criterion-sub {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.criterion-body {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.benchmark-line .badge.draft {
+  margin-left: 0.5rem;
+}
+
+.criterion-permalink {
+  margin: 1.5rem 0 0;
+  font-size: 0.82rem;
+}
+
+.criterion-permalink a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.criterion-permalink a:hover {
+  color: var(--accent);
+}
+
+/* ---- 実例カード（社名・URL・確認日つき） ---- */
+.example .ex-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.92rem;
+}
+
+.example .ex-list > li {
+  padding: 0.5rem 0;
+  border-top: 1px dashed var(--border);
+  line-height: 1.75;
+}
+
+.example .ex-list > li:first-child {
+  border-top: none;
+  padding-top: 0.15rem;
+}
+
+.ex-company {
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.ex-company a {
+  text-decoration: none;
+}
+
+.ex-note {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.ex-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.15rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.ex-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.ex-meta a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.ex-checked::before {
+  content: "・";
+}
+
+.ext {
+  font-size: 0.7em;
+  margin-left: 0.2em;
+  opacity: 0.7;
+}
+
+/* ---- 出典ブロック ---- */
+.source-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 0.8rem 1rem;
+}
+
+.source-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+.source-block .source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.source-block .source-list > li {
+  padding: 0.45rem 0;
+  border-top: 1px dashed var(--border);
+}
+
+.source-block .source-list > li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.source-block .source-list a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.source-block .source-list a:hover {
+  text-decoration: underline;
+}
+
+.source-org {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.source-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---- カテゴリ内の項目一覧（ランディングのカード内） ---- */
+.item-peek {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.item-peek li {
+  padding: 0.12rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-peek li::before {
+  content: "— ";
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .longform {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .toc {
+    display: none;
+  }
+
+  .toc-mobile {
+    display: block;
+  }
+
+  .criterion-head {
+    font-size: 1.15rem;
+  }
+
+  .criterion-head .anchor {
+    display: none;
+  }
+}

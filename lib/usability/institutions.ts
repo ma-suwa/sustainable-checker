@@ -17,6 +17,8 @@ export const uxInstitutions: UxInstitution[] = [
     detail:
       "ユーザビリティアナリスト3名1組によるクロス評価（ヒューリスティック評価法）。主観・偏見を排すため3名以上で評価し判定基準を統一。全115項目を4段階で採点し、5軸に傾斜配分をかけて100点満点で算出（単純平均ではない）。2026年の平均は79.76点、1位はJ:COM（98.10点・3年連続）、2位 大日本印刷、3位 中外製薬。純粋な『使いやすさ』診断には最も参照価値が高い。",
     note: "本ルーブリックのカテゴリ構成（特にナビ最重要）はトライベック5軸に準拠。",
+    url: "https://brand.tribeck.jp/usability/",
+    source: "tribeck",
   },
   {
     slug: "nikkei-bp",
@@ -32,6 +34,7 @@ export const uxInstitutions: UxInstitution[] = [
     detail:
       "年2回（春夏・秋冬）実施する生活者アンケートによる定点観測。使いやすさに相当するのは6指標のうち『サイト・ユーザビリティ』。ブランド力・態度変容を含む総合指標であり、純粋な機能的使いやすさの診断ではない点に注意。総合1位はGoogle（ユーザビリティ／ロイヤルティで500サイト中1位）、一般企業編1位はローソン。",
     note: "ブランド・態度変容を含むため、純粋なUX診断では補助的に扱う。",
+    url: "https://consult.nikkeibp.co.jp/branding/solutions/web-brand/",
   },
   {
     slug: "nikko-ir-ux",
@@ -47,6 +50,8 @@ export const uxInstitutions: UxInstitution[] = [
     detail:
       "客観的な掲載有無を調査して視点ごとに偏差値化する悉皆調査。デザイン・レイアウト・文体等の主観は明示的に評価対象外。使いやすさの具体項目例：『ページトップに戻る/メニューボタンの常時表示』『レスポンシブ対応（83.6%）』『クッキー同意ポップアップ（39.5%）』。IR・情報開示に主眼があるが使いやすさ視点を含む。",
     note: "掲載有無チェックの網羅ソース。デザイン主観は対象外の点に留意。",
+    url: "https://www.nikkoir.co.jp/rank/rank.html",
+    source: "nikko-ir",
   },
   {
     slug: "gomez-ux",
@@ -62,6 +67,8 @@ export const uxInstitutions: UxInstitution[] = [
     detail:
       "各機関で唯一『使いやすさ』の配点比率（30%）と小項目を公表している。小項目はメニューとナビゲーション／デザインとアクセシビリティ／情報検索機能／PDFの使いやすさ／表示速度／テクニカルSEO。アナリストが実際に操作し、パフォーマンスは専用計測ツールで測定。",
     note: "本ルーブリックの配点設計の基礎（使いやすさ30%）。",
+    url: "https://www.gomez.co.jp/ranking/",
+    source: "gomez-ir",
   },
 ];
 

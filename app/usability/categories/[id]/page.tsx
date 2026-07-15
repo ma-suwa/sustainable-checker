@@ -2,8 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { uxCategories, getUxCategory } from "@/lib/usability/criteria";
-import { uxJudgeLabel } from "@/lib/usability/labels";
+import { toUxArticle } from "@/lib/usability/article";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { CriterionArticle } from "@/components/CriterionArticle";
+import { Toc } from "@/components/Toc";
 
 export function generateStaticParams() {
   return uxCategories.map((c) => ({ id: c.id }));
@@ -20,6 +22,7 @@ export async function generateMetadata({
   return { title: `${cat.id}. ${cat.title}（ユーザビリティ）`, description: cat.short };
 }
 
+// カテゴリ配下の全項目を1本の記事として展開する。
 export default async function UxCategoryPage({
   params,
 }: {
@@ -28,6 +31,12 @@ export default async function UxCategoryPage({
   const { id } = await params;
   const cat = getUxCategory(id);
   if (!cat) notFound();
+
+  const entries = cat.items.map((it) => ({
+    id: it.id,
+    label: it.title,
+    points: it.points,
+  }));
 
   return (
     <>
@@ -40,28 +49,22 @@ export default async function UxCategoryPage({
       />
 
       <div className="page-head">
-        <span className="eyebrow">UX 評価カテゴリ {cat.id}・配点 {cat.points}</span>
+        <span className="eyebrow">
+          UX 評価カテゴリ {cat.id}・配点 {cat.points}・{cat.items.length}項目
+        </span>
         <h1>{cat.title}</h1>
         <p className="lead">{cat.description}</p>
       </div>
 
-      <div className="criteria-list">
-        {cat.items.map((item) => (
-          <Link key={item.id} href={`/usability/criteria/${item.id}/`} className="criteria-row">
-            <div className="row-head">
-              <span className="row-id">{item.id}</span>
-              <span className="row-title">{item.title}</span>
-              <span className="badge points" style={{ marginLeft: "auto" }}>
-                {item.points}点
-              </span>
-              <span className="badge judge">{uxJudgeLabel(item.judgeMethod)}</span>
-            </div>
-            <p className="row-crit">{item.criteria}</p>
-          </Link>
-        ))}
+      <div className="longform">
+        <Toc entries={entries} />
+        <div className="longform-body">
+          {cat.items.map((item) => (
+            <CriterionArticle key={item.id} item={toUxArticle(item)} />
+          ))}
+          <UxCategoryPager currentId={cat.id} />
+        </div>
       </div>
-
-      <UxCategoryPager currentId={cat.id} />
     </>
   );
 }

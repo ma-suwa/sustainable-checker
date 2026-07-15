@@ -72,6 +72,16 @@ export default function InstitutionsPage() {
                 {i.note}
               </p>
             )}
+            {i.url && (
+              <p style={{ margin: "0.75rem 0 0", fontSize: "0.85rem" }}>
+                <a href={i.url} target="_blank" rel="noopener noreferrer">
+                  公式サイトで最新の調査結果を見る
+                  <span className="ext" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </p>
+            )}
           </section>
         ))}
       </div>

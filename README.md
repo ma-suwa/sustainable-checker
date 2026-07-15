@@ -2,7 +2,14 @@
 
 企業のコーポレートサイトを評価する3領域——**サステナビリティ／ESG開示**・**IR（投資家向け情報）**・**ユーザビリティ（使いやすさ）**——について、評価機関が用いる評価軸を、良い例／悪い例／出典とともにカテゴリ別に解説する**情報サイト**。
 
-> 沿革：v0.1はURL入力の自動診断ツール → v0.2で「評価基準の解説サイト」へ方向転換（診断エンジン廃止・完全静的化） → v0.3でトップをハブ化しIR編を追加 → v0.4でユーザビリティ編を追加（3領域）。
+> 沿革：v0.1はURL入力の自動診断ツール → v0.2で「評価基準の解説サイト」へ方向転換（診断エンジン廃止・完全静的化） → v0.3でトップをハブ化しIR編を追加 → v0.4でユーザビリティ編を追加（3領域） → v0.5で各項目に実企業の良い例（社名・URL・確認日つき）と一次情報リンクを付与し、カテゴリページを「配下の全項目を追従目次つきで通読できるロングフォーム記事」に再構成。
+
+## v0.5 の変更点（実例・出典リンク・ロングフォーム化）
+
+- **実例の拡充**：各評価項目の「良い例」を実企業名＋該当ページURL＋確認日で記載（例：味の素・伊藤忠商事・日本ペイントHD・コニカミノルタ・ソフトバンク・J:COM・大日本印刷など、各評価機関の最新ランキング上位企業）。**良い例は実際にページを開いて確認した事実のみ**を載せ、**悪い例は名指しを避け「よくあるアンチパターン」として匿名で**記述する方針（サイトは随時改修されるため、欠落の名指しは不正確になりやすい）。
+- **出典レジストリ `lib/sources.ts`**：評価機関・フレームワーク・制度の公式URLを1か所に集約（ゴメスIR/ESG・日興・大和・トライベック・Nielsen Norman Group・WCAG 2.2・Core Web Vitals・SSBJ・ISSB・TCFD・GHGプロトコル・GRI・SBTi・CDP・価値協創ガイダンス・CGコード・金融庁DWG ほか）。各項目からはキー参照し、URL陳腐化に1か所で追従する。全URLは 2026-07-15 時点で HTTP 200 を確認済み。
+- **ロングフォーム化**：`categories/[id]` が配下の全項目を縦に全展開し、sticky な追従目次（現在地ハイライト）を備える。`criteria/[id]` は同じ本文を表示するパーマリンクとして存続（既存の共有リンクを壊さない）。
+- **出典一覧ページ**：各領域に `sources/` を新設し、その領域で参照した一次情報のリンク集を提供。
 
 ## 2つの領域
 
@@ -44,9 +51,9 @@
 ## ページ構成
 
 - `/` ハブ（3領域の入口）
-- `/sustainability/` … landing／`categories/[id]`／`criteria/[id]`／`glossary`／`about`
-- `/ir/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`glossary`／`about`
-- `/usability/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`glossary`／`about`
+- `/sustainability/` … landing／`categories/[id]`（ロングフォーム）／`criteria/[id]`（パーマリンク）／`sources`／`glossary`／`about`
+- `/ir/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`sources`／`glossary`／`about`
+- `/usability/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`sources`／`glossary`／`about`
 
 ## セットアップ
 

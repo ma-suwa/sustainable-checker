@@ -44,6 +44,13 @@ export default function UsabilityHome() {
               {c.title}
             </h3>
             <p>{c.short}</p>
+            <ul className="item-peek">
+              {c.items.map((it) => (
+                <li key={it.id}>
+                  {it.id} {it.title}
+                </li>
+              ))}
+            </ul>
             <div className="card-meta">
               <span>配点 {c.points}</span>
               <span>{c.items.length}項目</span>
@@ -56,6 +63,10 @@ export default function UsabilityHome() {
         <Link href="/usability/institutions/" className="link-card">
           <h3>🏛 評価機関の比較</h3>
           <p>トライベック・日経BP・日興・ゴメスの評価主体・軸・項目数を横断比較。</p>
+        </Link>
+        <Link href="/usability/sources/" className="link-card">
+          <h3>🔗 出典・参考資料</h3>
+          <p>WCAG・Core Web Vitals・ニールセン原則など、評価軸の一次情報リンク集。</p>
         </Link>
         <Link href="/usability/glossary/" className="link-card">
           <h3>📚 用語集</h3>

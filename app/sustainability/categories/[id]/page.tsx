@@ -2,8 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { categories, getCategory } from "@/lib/content/criteria";
-import { judgeLabel } from "@/lib/content/labels";
+import { toArticle } from "@/lib/content/article";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { CriterionArticle } from "@/components/CriterionArticle";
+import { Toc } from "@/components/Toc";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ id: c.id }));
@@ -23,6 +25,7 @@ export async function generateMetadata({
   };
 }
 
+// カテゴリ配下の全項目を1本の記事として展開する（クリックして潜らずに通し読みできる）。
 export default async function CategoryPage({
   params,
 }: {
@@ -32,43 +35,39 @@ export default async function CategoryPage({
   const cat = getCategory(id);
   if (!cat) notFound();
 
+  const entries = cat.items.map((it) => ({
+    id: it.id,
+    label: it.title,
+    points: it.points,
+  }));
+
   return (
     <>
       <Breadcrumb
         items={[
-          { label: "ホーム", href: "/" }, { label: "サステナビリティ", href: "/sustainability/" },
+          { label: "ホーム", href: "/" },
+          { label: "サステナビリティ", href: "/sustainability/" },
           { label: `${cat.id}. ${cat.title}` },
         ]}
       />
 
       <div className="page-head">
-        <span className="eyebrow">評価カテゴリ {cat.id}・重み {cat.points}</span>
+        <span className="eyebrow">
+          評価カテゴリ {cat.id}・重み {cat.points}・{cat.items.length}項目
+        </span>
         <h1>{cat.title}</h1>
         <p className="lead">{cat.description}</p>
       </div>
 
-      <div className="criteria-list">
-        {cat.items.map((item) => (
-          <Link
-            key={item.id}
-            href={`/sustainability/criteria/${item.id}/`}
-            className="criteria-row"
-          >
-            <div className="row-head">
-              <span className="row-id">{item.id}</span>
-              <span className="row-title">{item.title}</span>
-              <span className="badge points" style={{ marginLeft: "auto" }}>
-                {item.points}点
-              </span>
-              <span className="badge judge">{judgeLabel(item.judgeType)}</span>
-              {item.draft && <span className="badge draft">ドラフト</span>}
-            </div>
-            <p className="row-crit">{item.criteria}</p>
-          </Link>
-        ))}
+      <div className="longform">
+        <Toc entries={entries} />
+        <div className="longform-body">
+          {cat.items.map((item) => (
+            <CriterionArticle key={item.id} item={toArticle(item)} />
+          ))}
+          <CategoryPager currentId={cat.id} />
+        </div>
       </div>
-
-      <CategoryPager currentId={cat.id} />
     </>
   );
 }
