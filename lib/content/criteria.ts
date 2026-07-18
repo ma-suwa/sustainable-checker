@@ -45,6 +45,11 @@ const A: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/activity/",
           text: "コーポレートサイトの第一階層に独立した入口があり、そこからマテリアリティ・環境・社会・ESGデータ索引へ分岐する。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-activity.jpg",
+            caption:
+              "味の素 サステナビリティのトップ。ESG情報インデックスへの導線が目立つ位置に置かれている。",
+          },
         },
         {
           company: "ソフトバンク",
@@ -52,6 +57,11 @@ const A: Category = {
           text: "企業情報の第一階層にサステナビリティを置き、マテリアリティ配下の各テーマへ直接たどれる。",
           checkedOn: CHECKED,
           note: "Gomez ESGサイトランキング2025 総合2位",
+          image: {
+            src: "/screenshots/sites/softbank-sustainability.jpg",
+            caption:
+              "ソフトバンク サステナビリティのトップ。外部評価や主要な取り組みをスライダーで見せている。",
+          },
         },
       ],
       badExamples: [
@@ -91,6 +101,11 @@ const A: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/materiality.html",
           text: "マテリアリティを軸に、環境・社会の各テーマページとESG情報索引・GRI対照表へ分岐する構造になっている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-materiality.jpg",
+            caption:
+              "味の素 マテリアリティのページ。特定プロセス・リスクと機会・目標／KPIへのページ内リンクが冒頭に並ぶ。",
+          },
         },
       ],
       badExamples: [
@@ -130,11 +145,18 @@ const A: Category = {
           text: "ヘッダーに検索機能と English 切替が常設され、下層ページでも同じヘッダーが維持される。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合1位",
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
         { text: "トップにはあるが、下層ページのヘッダーで検索窓が消える。" },
-        { text: "英語ページに検索機能がなく、海外読者が目的の開示にたどり着けない。" },
+        {
+          text: "英語ページに検索機能がなく、海外読者が目的の開示にたどり着けない。",
+        },
       ],
       benchmark: {
         text: "サイト内検索の導入は、ノミネート185社中183社（98.9%）。事実上の必須項目。",
@@ -164,8 +186,12 @@ const A: Category = {
         },
       ],
       badExamples: [
-        { text: "現在地表示がなく、検索から着地した読み手が構造を把握できない。" },
-        { text: "パンくずはあるが最終要素以外もリンクになっておらず、戻れない。" },
+        {
+          text: "現在地表示がなく、検索から着地した読み手が構造を把握できない。",
+        },
+        {
+          text: "パンくずはあるが最終要素以外もリンクになっておらず、戻れない。",
+        },
       ],
       sources: ["gomez-esg"],
       relatedTerms: [],
@@ -191,6 +217,11 @@ const A: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/index/",
           text: "ESG情報インデックスを設け、サステナビリティ各ページと統合報告書・サステナビリティレポート・データブックを相互に行き来できる。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-sustainability.jpg",
+            caption:
+              "味の素 ESG情報インデックス。開示項目が表形式で一覧でき、各テーマの資料に直接飛べる。",
+          },
         },
         {
           company: "伊藤忠商事",
@@ -198,11 +229,20 @@ const A: Category = {
           text: "統合レポートを専用ボックスとしてIRトップに置き、最新版のダウンロード導線を第一画面付近に配置している。",
           checkedOn: CHECKED,
           note: "ゴメスは同社のHTML形式の統合レポート掲載を評価している",
+          image: {
+            src: "/screenshots/sites/itochu-annual-report.jpg",
+            caption:
+              "伊藤忠商事 統合レポート。最新号のCEO／COOメッセージがPDFの容量表示つきで置かれている。",
+          },
         },
       ],
       badExamples: [
-        { text: "統合報告書がIRライブラリの奥にしかなく、サステナビリティ側から辿れない。" },
-        { text: "ESGデータ集が過年度分しかなく、最新年度がどこにあるか分からない。" },
+        {
+          text: "統合報告書がIRライブラリの奥にしかなく、サステナビリティ側から辿れない。",
+        },
+        {
+          text: "ESGデータ集が過年度分しかなく、最新年度がどこにあるか分からない。",
+        },
       ],
       benchmark: {
         text: "IRトップから統合報告書への導線確保は389社中334社（85.9%）。サステナ側からの導線も同水準が期待される。",
@@ -235,8 +275,12 @@ const A: Category = {
         },
       ],
       badExamples: [
-        { text: "方針の記載がなく、実績データのグラフが画像のみで代替テキストもない。" },
-        { text: "コントラストの低い淡色テキストが多用され、拡大表示でレイアウトが崩れる。" },
+        {
+          text: "方針の記載がなく、実績データのグラフが画像のみで代替テキストもない。",
+        },
+        {
+          text: "コントラストの低い淡色テキストが多用され、拡大表示でレイアウトが崩れる。",
+        },
       ],
       benchmark: {
         text: "アクセシビリティポリシーの掲載は185社中86社（46.5%）。半数以上が未掲載で、差別化しやすい。",
@@ -252,7 +296,8 @@ const A: Category = {
       title: "モバイル・表示速度",
       points: 4,
       judgeType: "llm",
-      criteria: "レスポンシブ対応、PDFの使いやすさ、表示速度（Core Web Vitals）。",
+      criteria:
+        "レスポンシブ対応、PDFの使いやすさ、表示速度（Core Web Vitals）。",
       background:
         "閲覧の多くがモバイル。崩れる・重い・PDFが読みにくいサイトは、内容以前に読まれない。表示速度はSEOと離脱率にも直結する。ゴメスIRランキングの2025年講評でも、上位企業の評価点としてページ表示速度とテクニカルSEOの品質が挙げられている。",
       checkpoints: [
@@ -268,10 +313,17 @@ const A: Category = {
           text: "XMLサイトマップの整合性と正常URL率を高水準に保ち、ページ表示速度も良好とゴメスの講評で評価された。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合3位（8.60点）",
+          image: {
+            src: "/screenshots/sites/konicaminolta-investors.jpg",
+            caption:
+              "コニカミノルタ 株主・投資家情報。最新の決算短信・説明会資料が公表日つきで先頭に置かれている。",
+          },
         },
       ],
       badExamples: [
-        { text: "スマートフォンで表が画面幅を超え、横スクロールしないと読めない。" },
+        {
+          text: "スマートフォンで表が画面幅を超え、横スクロールしないと読めない。",
+        },
         { text: "主要な開示が重いPDFのみで、モバイルでは実質的に読めない。" },
       ],
       benchmark: {
@@ -315,10 +367,17 @@ const B: Category = {
           text: "IRトップから経営メッセージ・ステークホルダー対話専用セクションへ導線があり、CFOメッセージも含めて発信している。",
           checkedOn: CHECKED,
           note: "ゴメスは「豊富な情報量とマネジメントによる力強いメッセージ発信の両立」と講評",
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "「持続可能な社会の実現に貢献してまいります」など、社名を差し替えても通る定型文のみ。" },
+        {
+          text: "「持続可能な社会の実現に貢献してまいります」など、社名を差し替えても通る定型文のみ。",
+        },
         { text: "数年前のメッセージが更新されないまま掲載されている。" },
       ],
       sources: ["gomez-esg", "gomez-ir-2025-press"],
@@ -345,11 +404,20 @@ const B: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/materiality.html",
           text: "ASV（Ajinomoto Group Creating Shared Value）という自社固有の枠組みで、理念・マテリアリティ・事業を一続きに説明している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-materiality.jpg",
+            caption:
+              "味の素 マテリアリティのページ。特定プロセス・リスクと機会・目標／KPIへのページ内リンクが冒頭に並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "理念ページとサステナビリティページが別々に存在し、相互に言及がない。" },
-        { text: "価値創造プロセス図はあるが統合報告書のPDF内だけで、Web上では読めない。" },
+        {
+          text: "理念ページとサステナビリティページが別々に存在し、相互に言及がない。",
+        },
+        {
+          text: "価値創造プロセス図はあるが統合報告書のPDF内だけで、Web上では読めない。",
+        },
       ],
       sources: ["meti-value-creation"],
       furtherReading: ["gomez-esg"],
@@ -377,17 +445,31 @@ const B: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/materiality.html",
           text: "マテリアリティを専用ページで説明し、そこから環境・社会の各取り組みページとESGデータへ展開している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-materiality.jpg",
+            caption:
+              "味の素 マテリアリティのページ。特定プロセス・リスクと機会・目標／KPIへのページ内リンクが冒頭に並ぶ。",
+          },
         },
         {
           company: "ソフトバンク",
           url: "https://www.softbank.jp/corp/sustainability/materiality/",
           text: "マテリアリティを独立したセクションとして立て、各重要課題の下に個別の取り組みページをぶら下げる構造にしている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/softbank-materiality.jpg",
+            caption:
+              "ソフトバンク マテリアリティ（重要課題）。トップメッセージからESG関連資料までの導線が一覧で並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "重要課題を6つ並べるだけで、なぜそれが重要かの特定プロセスもKPIもない。" },
-        { text: "マテリアリティ・マトリクスの図はあるが、軸の定義も評価方法も書かれていない。" },
+        {
+          text: "重要課題を6つ並べるだけで、なぜそれが重要かの特定プロセスもKPIもない。",
+        },
+        {
+          text: "マテリアリティ・マトリクスの図はあるが、軸の定義も評価方法も書かれていない。",
+        },
       ],
       sources: ["gri", "meti-value-creation"],
       furtherReading: ["daiwa-ir-2025-pdf", "issb"],
@@ -414,10 +496,17 @@ const B: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/index/",
           text: "ESG情報の索引ページから各指標の実績データに到達でき、報告書側のデータブックと対応づけられている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-sustainability.jpg",
+            caption:
+              "味の素 ESG情報インデックス。開示項目が表形式で一覧でき、各テーマの資料に直接飛べる。",
+          },
         },
       ],
       badExamples: [
-        { text: "「2030年までに50%削減」と掲げるだけで、現在値も基準年も書かれていない。" },
+        {
+          text: "「2030年までに50%削減」と掲げるだけで、現在値も基準年も書かれていない。",
+        },
         { text: "実績データが最新年度のみで、経年の推移が追えない。" },
       ],
       sources: ["gomez-esg", "gri"],
@@ -443,6 +532,11 @@ const B: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/esg/evaluation.html",
           text: "外部からの評価を専用ページにまとめ、国連グローバル・コンパクトや外部イニシアチブへの参加も別ページで開示している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-esg-evaluation.jpg",
+            caption:
+              "味の素 外部からの評価。SRIインデックスへの組み入れ状況が、基準日つきで並ぶ。",
+          },
         },
       ],
       badExamples: [
@@ -474,10 +568,17 @@ const B: Category = {
           text: "ヘッダーに English 切替を常設し、英語版でも同等のIR・サステナビリティ情報を提供している。",
           checkedOn: CHECKED,
           note: "大和インターネットIR表彰2025 最優秀賞（日英5:5の統合評価）",
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "英語ページが存在しない、または会社概要のみで開示情報が読めない。" },
+        {
+          text: "英語ページが存在しない、または会社概要のみで開示情報が読めない。",
+        },
         { text: "英語版のリンク先が日本語PDFに飛ぶ。" },
       ],
       benchmark: {
@@ -522,11 +623,20 @@ const C: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/initiative/environment.html",
           text: "気候変動をTCFD提言に基づく開示として整理し、バリューチェーンにおける温室効果ガス排出削減を独立した項目として扱っている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-environment.jpg",
+            caption:
+              "味の素 環境の取り組みページ。テーマごとの見出しで構成されている。",
+          },
         },
       ],
       badExamples: [
-        { text: "Scope1・2のみを掲載し、Scope3は「算定中」のまま年度が更新されていない。" },
-        { text: "総排出量だけを載せ、基準年・算定範囲・算定方法が書かれていない。" },
+        {
+          text: "Scope1・2のみを掲載し、Scope3は「算定中」のまま年度が更新されていない。",
+        },
+        {
+          text: "総排出量だけを載せ、基準年・算定範囲・算定方法が書かれていない。",
+        },
       ],
       benchmark: {
         text: "Scope3開示の普及率は業種差が大きい（確認中）。SSBJ基準の適用対象企業では開示が前提になる。",
@@ -559,11 +669,20 @@ const C: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/initiative/environment.html",
           text: "「気候変動（TCFD提言に基づく情報開示）」として、4要素の枠組みに沿った独立セクションを設けている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-environment.jpg",
+            caption:
+              "味の素 環境の取り組みページ。テーマごとの見出しで構成されている。",
+          },
         },
       ],
       badExamples: [
-        { text: "「TCFDに賛同」のロゴと一文だけで、4要素の具体的な開示がない。" },
-        { text: "シナリオ分析を実施したとあるが、前提シナリオも影響額も示されていない。" },
+        {
+          text: "「TCFDに賛同」のロゴと一文だけで、4要素の具体的な開示がない。",
+        },
+        {
+          text: "シナリオ分析を実施したとあるが、前提シナリオも影響額も示されていない。",
+        },
       ],
       benchmark: {
         text: "TCFD情報の英語掲載は185社中160社（86.5%）。日本語での開示はプライム市場でほぼ前提となっている。",
@@ -597,10 +716,17 @@ const C: Category = {
           url: "https://www.konicaminolta.jp/about/csr/index.html",
           text: "製品ライフサイクル全体のCO2排出をネットゼロにする「カーボンマイナス」という自社固有の概念を掲げ、達成年限とともに説明している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/konicaminolta-csr.jpg",
+            caption:
+              "コニカミノルタ サステナビリティのトップ。方針・目標と実績・ESGデータへの導線が右側に置かれている。",
+          },
         },
       ],
       badExamples: [
-        { text: "「カーボンニュートラルを目指す」だけで、年限も対象スコープも実績もない。" },
+        {
+          text: "「カーボンニュートラルを目指す」だけで、年限も対象スコープも実績もない。",
+        },
         { text: "長期目標のみで中間目標がなく、現時点の進捗が検証できない。" },
       ],
       benchmark: {
@@ -632,8 +758,12 @@ const C: Category = {
         },
       ],
       badExamples: [
-        { text: "気候変動以外の環境テーマにほとんど触れず、環境＝CO2になっている。" },
-        { text: "水使用量の総量だけを載せ、渇水リスク地域での操業有無に触れていない。" },
+        {
+          text: "気候変動以外の環境テーマにほとんど触れず、環境＝CO2になっている。",
+        },
+        {
+          text: "水使用量の総量だけを載せ、渇水リスク地域での操業有無に触れていない。",
+        },
       ],
       benchmark: {
         text: "確認中（TNFDに沿った開示は始まったばかりで、普及率の一次データが乏しい）。",
@@ -675,11 +805,20 @@ const D: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/initiative/social.html",
           text: "社会の取り組みページで「人権」を独立項目として立て、人財マネジメント・労働安全衛生と並べて開示している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-social.jpg",
+            caption:
+              "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
+          },
         },
       ],
       badExamples: [
-        { text: "人権方針のPDFを1本置いただけで、デューデリジェンスの実施状況がない。" },
-        { text: "通報窓口が従業員限定で、サプライチェーン上の労働者が使えない。" },
+        {
+          text: "人権方針のPDFを1本置いただけで、デューデリジェンスの実施状況がない。",
+        },
+        {
+          text: "通報窓口が従業員限定で、サプライチェーン上の労働者が使えない。",
+        },
       ],
       benchmark: {
         text: "確認中（人権DDの実施率は一次データが乏しく、開示の粒度も企業差が大きい）。",
@@ -711,11 +850,20 @@ const D: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/initiative/social.html",
           text: "「人財マネジメント」を社会テーマの柱に位置づけ、ESG情報索引から関連する実績データへたどれるようにしている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-social.jpg",
+            caption:
+              "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
+          },
         },
       ],
       badExamples: [
-        { text: "研修制度の紹介文だけで、投資額・時間・エンゲージメントの定量指標がない。" },
-        { text: "Webの数値と有価証券報告書の数値が異なり、どちらが最新か分からない。" },
+        {
+          text: "研修制度の紹介文だけで、投資額・時間・エンゲージメントの定量指標がない。",
+        },
+        {
+          text: "Webの数値と有価証券報告書の数値が異なり、どちらが最新か分からない。",
+        },
       ],
       benchmark: {
         text: "確認中（有価証券報告書での開示義務化により、開示水準が急速に変化している）。",
@@ -779,11 +927,20 @@ const D: Category = {
           url: "https://www.ajinomoto.co.jp/company/jp/sustainability/initiative/social.html",
           text: "労働安全衛生を社会テーマの独立項目として扱い、人権・人財マネジメントと並列に置いている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/ajinomoto-social.jpg",
+            caption:
+              "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
+          },
         },
       ],
       badExamples: [
-        { text: "安全衛生への言及がスローガンだけで、災害件数・度数率の実績がない。" },
-        { text: "自社従業員の数値のみで、構内で働く協力会社の災害が範囲外になっている。" },
+        {
+          text: "安全衛生への言及がスローガンだけで、災害件数・度数率の実績がない。",
+        },
+        {
+          text: "自社従業員の数値のみで、構内で働く協力会社の災害が範囲外になっている。",
+        },
       ],
       benchmark: { text: "確認中。", confirmed: false },
       sources: ["gri"],
@@ -812,7 +969,9 @@ const D: Category = {
       ],
       badExamples: [
         { text: "調達方針を掲載しているだけで、監査の実施状況や結果がない。" },
-        { text: "地域貢献がイベント写真の紹介にとどまり、社会的成果が示されていない。" },
+        {
+          text: "地域貢献がイベント写真の紹介にとどまり、社会的成果が示されていない。",
+        },
       ],
       benchmark: { text: "確認中。", confirmed: false },
       sources: ["gri"],
@@ -851,11 +1010,18 @@ const E: Category = {
           text: "「独立社外取締役への質問（一問一答）」を掲載し、社外取締役の視点を読める形にしている。体制図の掲載にとどまらない。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合2位（8.66点）",
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
         { text: "組織体制図のみで、スキルマトリックスがない。" },
-        { text: "スキルマトリックスが日本語のコーポレートガバナンス報告書PDFの中だけにあり、英語でも読めない。" },
+        {
+          text: "スキルマトリックスが日本語のコーポレートガバナンス報告書PDFの中だけにあり、英語でも読めない。",
+        },
       ],
       benchmark: {
         text: "全取締役・監査役のスキルマトリックスの英語発信は上位70.3%（ゴメスESG調査）。",
@@ -870,7 +1036,8 @@ const E: Category = {
       title: "リスク管理・コンプライアンス",
       points: 4,
       judgeType: "llm",
-      criteria: "リスク管理体制とコンプライアンスの取り組みが具体的に示されているか。",
+      criteria:
+        "リスク管理体制とコンプライアンスの取り組みが具体的に示されているか。",
       background:
         "リスクを識別・管理する体制と、コンプライアンスの仕組みは、持続可能性の前提。重要リスクを特定して開示することは、リスクを認識できている証拠であり、隠すよりも信頼を得る。サイバーセキュリティは近年とくに重視される。",
       checkpoints: [
@@ -885,7 +1052,9 @@ const E: Category = {
         },
       ],
       badExamples: [
-        { text: "「リスク管理を徹底しています」の一文のみで、体制も重要リスクも書かれていない。" },
+        {
+          text: "「リスク管理を徹底しています」の一文のみで、体制も重要リスクも書かれていない。",
+        },
         { text: "内部通報制度の存在は書くが、件数も是正実績も示していない。" },
       ],
       benchmark: {
@@ -901,7 +1070,8 @@ const E: Category = {
       title: "各種ポリシー",
       points: 3,
       judgeType: "llm",
-      criteria: "税務・情報セキュリティ・反腐敗等の各種ポリシーが網羅されているか。",
+      criteria:
+        "税務・情報セキュリティ・反腐敗等の各種ポリシーが網羅されているか。",
       background:
         "税の透明性や情報セキュリティ等の個別ポリシーの整備は、ガバナンスの成熟度を示す。投資家・ESG評価機関は、ポリシーの有無をチェックリスト的に確認するため、網羅性そのものがスコアに効く。",
       checkpoints: [
@@ -928,7 +1098,8 @@ const E: Category = {
       title: "株主・投資家との対話開示",
       points: 3,
       judgeType: "llm",
-      criteria: "対話テーマ・関心事項・経営への反映事項が具体的に掲載されているか。",
+      criteria:
+        "対話テーマ・関心事項・経営への反映事項が具体的に掲載されているか。",
       background:
         "投資家との対話（エンゲージメント）の中身と、それを経営に反映した事実まで示すことで、建設的な対話が実際に機能していることが伝わる。この項目は近年もっとも改善が進んだ領域のひとつで、掲載率が1年で倍増している。",
       checkpoints: [
@@ -943,10 +1114,17 @@ const E: Category = {
           url: "https://www.itochu.co.jp/ja/ir/",
           text: "ステークホルダーとの対話専用セクションを設けて運用している（ゴメスの2025年講評でも評価点として挙げられている）。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "「株主・投資家との対話を実施しました」という有無の記述のみ。" },
+        {
+          text: "「株主・投資家との対話を実施しました」という有無の記述のみ。",
+        },
         { text: "対話回数は載せるが、テーマも経営への反映も書かれていない。" },
       ],
       benchmark: {
@@ -991,10 +1169,17 @@ const F: Category = {
           url: "https://www.nipponpaint-holdings.com/ir/",
           text: "個人投資家向けに塗料市場・成長戦略を噛み砕いた専用コンテンツを用意し、一般的なIR情報と自社らしい説明を組み合わせている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "方針と数値の羅列にとどまり、自社が何をしている会社なのか伝わらない。" },
+        {
+          text: "方針と数値の羅列にとどまり、自社が何をしている会社なのか伝わらない。",
+        },
         { text: "美談だけが並び、定量データや目標と結びついていない。" },
       ],
       benchmark: { text: "確認中（加点項目・定性評価）。", confirmed: false },
@@ -1053,11 +1238,20 @@ const F: Category = {
           url: "https://www.itochu.co.jp/ja/ir/investor/index.html",
           text: "「個人投資家の皆様へ」とインベスターズガイドを分けて用意し、読み手の知識量に応じた入口を設けている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-investor.jpg",
+            caption:
+              "伊藤忠商事 個人投資家向けページ。決算資料・統合レポート・経営計画・企業紹介映像が図版つきで並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "読み手を問わず一律の構成で、投資家も求職者も同じ長文を読まされる。" },
-        { text: "問い合わせ先が総務部の代表フォームのみで、サステナビリティに関する窓口がない。" },
+        {
+          text: "読み手を問わず一律の構成で、投資家も求職者も同じ長文を読まされる。",
+        },
+        {
+          text: "問い合わせ先が総務部の代表フォームのみで、サステナビリティに関する窓口がない。",
+        },
       ],
       benchmark: { text: "確認中（加点項目・定性評価）。", confirmed: false },
       sources: ["tribeck", "gomez-esg"],
@@ -1072,15 +1266,24 @@ export function getCategory(id: string): Category | undefined {
   return categories.find((c) => c.id === (id as CategoryId));
 }
 
-export function allItems(): (CriteriaItem & { categoryId: CategoryId; categoryTitle: string })[] {
+export function allItems(): (CriteriaItem & {
+  categoryId: CategoryId;
+  categoryTitle: string;
+})[] {
   return categories.flatMap((c) =>
-    c.items.map((item) => ({ ...item, categoryId: c.id, categoryTitle: c.title }))
+    c.items.map((item) => ({
+      ...item,
+      categoryId: c.id,
+      categoryTitle: c.title,
+    })),
   );
 }
 
 export function getItem(
-  id: string
-): (CriteriaItem & { categoryId: CategoryId; categoryTitle: string }) | undefined {
+  id: string,
+):
+  | (CriteriaItem & { categoryId: CategoryId; categoryTitle: string })
+  | undefined {
   return allItems().find((it) => it.id === id.toUpperCase());
 }
 

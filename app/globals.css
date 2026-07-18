@@ -822,6 +822,30 @@ main.container:has(.longform) {
   content: "・";
 }
 
+/* 良い例に添えるサイトのスクリーンショット */
+.ex-figure {
+  margin: 0.6rem 0 0.2rem;
+}
+
+.ex-figure a {
+  display: block;
+}
+
+.ex-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.ex-figure figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
 .ext {
   font-size: 0.7em;
   margin-left: 0.2em;

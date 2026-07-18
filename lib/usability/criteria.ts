@@ -27,7 +27,8 @@ const C1: UxCategory = {
       title: "事業内容が3秒で伝わるか",
       points: 5,
       judgeMethod: "screen",
-      criteria: "キャッチコピー・メインビジュアルで、何をする会社かがひと目で伝わるか。",
+      criteria:
+        "キャッチコピー・メインビジュアルで、何をする会社かがひと目で伝わるか。",
       background:
         "訪問者はトップページを数秒で判断する。事業を端的に表すコピーと主要導線が一覧できると、離脱を防ぎ回遊につながる。抽象的なブランドメッセージだけを置くと、既に会社を知っている人にしか伝わらない。",
       checkpoints: [
@@ -43,6 +44,11 @@ const C1: UxCategory = {
           text: "ブランドメッセージと並べて、ケーブルテレビ・インターネット・電話・格安スマホ・電気という提供サービスが第一画面に示されている。",
           checkedOn: CHECKED,
           note: "Webユーザビリティランキング2026 1位（3年連続）",
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの直下に主要サービスと「新規／利用中」の目的別導線が並ぶ（確認日 2026-07-15）。",
+          },
         },
         {
           company: "大日本印刷",
@@ -50,11 +56,20 @@ const C1: UxCategory = {
           text: "「未来のあたりまえをつくる。」のコピーの下に、事業紹介・技術／研究開発への導線を第一階層で見せている。",
           checkedOn: CHECKED,
           note: "Webユーザビリティランキング2026 2位",
+          image: {
+            src: "/screenshots/sites/dnp-home.jpg",
+            caption:
+              "大日本印刷 トップのファーストビュー。コピーの下にグローバルナビと目的別セクションが見える（確認日 2026-07-15）。",
+          },
         },
       ],
       badExamples: [
-        { text: "抽象的なイメージ映像とコーポレートスローガンだけで、何をする会社か分からない。" },
-        { text: "業界内でしか通じない自社造語（◯◯ソリューション）だけが並んでいる。" },
+        {
+          text: "抽象的なイメージ映像とコーポレートスローガンだけで、何をする会社か分からない。",
+        },
+        {
+          text: "業界内でしか通じない自社造語（◯◯ソリューション）だけが並んでいる。",
+        },
       ],
       sources: ["tribeck", "tribeck-2026-press"],
       relatedTerms: ["above-the-fold"],
@@ -64,7 +79,8 @@ const C1: UxCategory = {
       title: "主要導線の優先度・一覧性",
       points: 5,
       judgeMethod: "screen",
-      criteria: "主要コンテンツへの導線が優先度付けされ、一覧性高く配置されているか。",
+      criteria:
+        "主要コンテンツへの導線が優先度付けされ、一覧性高く配置されているか。",
       background:
         "上位企業はトップページで主要コンテンツへの導線を優先度付けし一覧性を高める。巨大なスライダーだけでは導線が埋もれ、訪問者は「探す」作業から始めることになる。",
       checkpoints: [
@@ -79,11 +95,20 @@ const C1: UxCategory = {
           url: "https://www.dnp.co.jp/",
           text: "グローバルナビに「DNPがめざす姿／会社案内／事業紹介／技術・研究開発／投資家情報／サステナビリティ／採用／ニュース」を並べ、主要な読み手の入口を第一階層で示している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/dnp-home.jpg",
+            caption:
+              "大日本印刷 トップのファーストビュー。コピーの上にグローバルナビが置かれ、主要な読み手の入口が第一階層に見えている。",
+          },
         },
       ],
       badExamples: [
-        { text: "巨大な画像スライダーだけが第一画面を占め、導線が下に埋没している。" },
-        { text: "同じ大きさのバナーが20個並び、どこから見ればよいか分からない。" },
+        {
+          text: "巨大な画像スライダーだけが第一画面を占め、導線が下に埋没している。",
+        },
+        {
+          text: "同じ大きさのバナーが20個並び、どこから見ればよいか分からない。",
+        },
       ],
       sources: ["tribeck", "nng-heuristics"],
       relatedTerms: ["above-the-fold", "ia"],
@@ -93,7 +118,8 @@ const C1: UxCategory = {
       title: "更新情報の鮮度",
       points: 5,
       judgeMethod: "url-screen",
-      criteria: "ニュース・プレスリリースが新しい日付で掲載され、運用されているか。",
+      criteria:
+        "ニュース・プレスリリースが新しい日付で掲載され、運用されているか。",
       background:
         "更新が止まっているサイトは放置感を与え、信頼を損なう。最新情報が新しい日付で並ぶことが、サイトが運用されている証になる。日付のないお知らせは、新しいのか古いのか読み手に判断させられない。",
       checkpoints: [
@@ -108,12 +134,22 @@ const C1: UxCategory = {
           url: "https://www.jcom.co.jp/",
           text: "確認時点で当日〜前日付（2026年7月14日）のお知らせが掲載されており、日常的に更新されている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
         {
           company: "大日本印刷",
           url: "https://www.dnp.co.jp/",
           text: "確認時点で前々日付（2026年7月13日）のニュースが最新として並んでいる。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/dnp-home.jpg",
+            caption:
+              "大日本印刷 トップのファーストビュー。コピーの上にグローバルナビが置かれ、主要な読み手の入口が第一階層に見えている。",
+          },
         },
       ],
       badExamples: [
@@ -139,7 +175,8 @@ const C2: UxCategory = {
       title: "グローバルナビの共通性・項目数",
       points: 8,
       judgeMethod: "url-screen",
-      criteria: "グローバルナビが全ページ共通・固定位置で、5〜7項目に整理されているか。",
+      criteria:
+        "グローバルナビが全ページ共通・固定位置で、5〜7項目に整理されているか。",
       background:
         "人間の短期記憶の限界（7±2）を踏まえ、主要メニューは5〜7項目に絞るのが定石。全ページで位置・デザインを固定すると学習コストが下がり、どのページからでも同じ操作で移動できる。項目が10を超えると、選ぶ前に読む負担が発生する。",
       checkpoints: [
@@ -155,11 +192,18 @@ const C2: UxCategory = {
           text: "グローバルナビが「サービス／料金一覧／キャンペーン・特典／お申し込み・各種変更／サポート／企業サイト」の6項目に整理され、5〜7項目の定石に収まっている。",
           checkedOn: CHECKED,
           note: "Webユーザビリティランキング2026 1位",
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM のグローバルナビは6項目。左からアイコン付きで並び、項目数が短期記憶の範囲に収まっている（確認日 2026-07-15）。",
+          },
         },
       ],
       badExamples: [
         { text: "グローバルナビが10項目以上あり、選択に迷う。" },
-        { text: "ページごとにメニュー構成が変わり、どこから来たか分からなくなる。" },
+        {
+          text: "ページごとにメニュー構成が変わり、どこから来たか分からなくなる。",
+        },
       ],
       sources: ["tribeck", "nng-heuristics"],
       relatedTerms: ["global-nav", "millers-law"],
@@ -169,7 +213,8 @@ const C2: UxCategory = {
       title: "ラベルの明快性",
       points: 6,
       judgeMethod: "screen",
-      criteria: "ラベルが明快で、専門用語・抽象語・自社造語を避け内容が一目で分かるか。",
+      criteria:
+        "ラベルが明快で、専門用語・抽象語・自社造語を避け内容が一目で分かるか。",
       background:
         "ニールセンの第2原則「システムと実世界の一致」。利用者の言葉でラベル付けすることで、クリック前に行き先が分かる。社内の組織名や造語をそのままラベルにすると、訪問者は中身を推測できずクリックを試行錯誤することになる。",
       checkpoints: [
@@ -184,11 +229,20 @@ const C2: UxCategory = {
           url: "https://www.dnp.co.jp/",
           text: "「会社案内」「事業紹介」「投資家情報」「採用」など、行き先が推測できるラベルで統一されている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/dnp-home.jpg",
+            caption:
+              "大日本印刷 のグローバルナビ。「会社案内」「事業紹介」「投資家情報」「採用」など、クリック前に行き先が分かる言葉でラベル付けされている（確認日 2026-07-15）。",
+          },
         },
       ],
       badExamples: [
-        { text: "「ソリューション」「バリュー」など抽象的な自社造語だけで中身が読めない。" },
-        { text: "同じ情報が「企業情報」と「コーポレート」の両方にあり、どちらが何か分からない。" },
+        {
+          text: "「ソリューション」「バリュー」など抽象的な自社造語だけで中身が読めない。",
+        },
+        {
+          text: "同じ情報が「企業情報」と「コーポレート」の両方にあり、どちらが何か分からない。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["nielsen-heuristics"],
@@ -214,8 +268,12 @@ const C2: UxCategory = {
         },
       ],
       badExamples: [
-        { text: "ページごとにリンクの見た目が異なり、クリックできる要素かどうか判別できない。" },
-        { text: "PDFリンクと通常リンクが同じ見た目で、クリックして初めてPDFだと気づく。" },
+        {
+          text: "ページごとにリンクの見た目が異なり、クリックできる要素かどうか判別できない。",
+        },
+        {
+          text: "PDFリンクと通常リンクが同じ見た目で、クリックして初めてPDFだと気づく。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["mega-menu", "nielsen-heuristics"],
@@ -225,7 +283,8 @@ const C2: UxCategory = {
       title: "パンくず・到達クリック数",
       points: 5,
       judgeMethod: "url-screen",
-      criteria: "パンくずリストで現在地を明示し、目的情報に3クリック以内で到達できるか。",
+      criteria:
+        "パンくずリストで現在地を明示し、目的情報に3クリック以内で到達できるか。",
       background:
         "パンくずはニールセンの第1原則「システム状態の可視性」の代表例。検索エンジンから深い階層に直接着地する利用者が多いため、現在地とサイト構造を示す導線がないと、そのページだけ読んで離脱する。",
       checkpoints: [
@@ -240,8 +299,12 @@ const C2: UxCategory = {
         },
       ],
       badExamples: [
-        { text: "現在地表示がなく、検索から着地した利用者が構造を把握できない。" },
-        { text: "トップページのグローバルナビにパンくずがなく、下層でも一切表示されない。" },
+        {
+          text: "現在地表示がなく、検索から着地した利用者が構造を把握できない。",
+        },
+        {
+          text: "トップページのグローバルナビにパンくずがなく、下層でも一切表示されない。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["breadcrumb", "three-click"],
@@ -278,17 +341,29 @@ const C3: UxCategory = {
           url: "https://www.jcom.co.jp/",
           text: "ページ上部に検索機能を配置し、複数箇所から検索に入れるようにしている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
         {
           company: "大日本印刷",
           url: "https://www.dnp.co.jp/",
           text: "ヘッダーに「サイト内検索」と明示した検索窓を置き、何を検索するのかが分かるようにしている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/dnp-home.jpg",
+            caption:
+              "大日本印刷 のヘッダー右側に「サイト内検索」と明示された検索導線がある（商品検索と紛れない）。（確認日 2026-07-15）",
+          },
         },
       ],
       badExamples: [
         { text: "検索窓が無い、または下層ページにしか存在しない。" },
-        { text: "モバイル表示で検索がメニューの奥に隠れ、到達に3タップ以上かかる。" },
+        {
+          text: "モバイル表示で検索がメニューの奥に隠れ、到達に3タップ以上かかる。",
+        },
       ],
       benchmark: {
         text: "サイト内検索の導入はESGサイト調査で185社中183社（98.9%）。事実上の必須項目。",
@@ -303,7 +378,8 @@ const C3: UxCategory = {
       title: "検索機能の質",
       points: 5,
       judgeMethod: "screen",
-      criteria: "サジェスト・絞り込み（ファセット）・件数表示・0件時のフォローがあるか。",
+      criteria:
+        "サジェスト・絞り込み（ファセット）・件数表示・0件時のフォローがあるか。",
       background:
         "検索窓があっても、結果が役に立たなければ意味がない。サジェストやファセット絞り込み、0件時の代替提案は、検索の成功率を高める。0件で行き止まりになる検索は、離脱を生む典型的な設計になる。",
       checkpoints: [
@@ -319,8 +395,12 @@ const C3: UxCategory = {
         },
       ],
       badExamples: [
-        { text: "単純な全文検索のみで、0件時に「該当する情報はありません」だけが表示される。" },
-        { text: "検索結果がPDFのファイル名だけ並び、どのページの情報か分からない。" },
+        {
+          text: "単純な全文検索のみで、0件時に「該当する情報はありません」だけが表示される。",
+        },
+        {
+          text: "検索結果がPDFのファイル名だけ並び、どのページの情報か分からない。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["faceted-search", "site-search"],
@@ -346,7 +426,9 @@ const C3: UxCategory = {
         },
       ],
       badExamples: [
-        { text: "サイトマップが無く、titleも全ページ同一で検索結果から区別できない。" },
+        {
+          text: "サイトマップが無く、titleも全ページ同一で検索結果から区別できない。",
+        },
         { text: "見出しがすべて画像で、テキストとしての構造がない。" },
       ],
       benchmark: {
@@ -373,7 +455,8 @@ const C4: UxCategory = {
       title: "見出し階層・文章の簡潔さ",
       points: 5,
       judgeMethod: "screen",
-      criteria: "見出し階層が論理的で、1文が簡潔、専門用語に説明が付いているか。",
+      criteria:
+        "見出し階層が論理的で、1文が簡潔、専門用語に説明が付いているか。",
       background:
         "Webは読まれるより「斜め読み」される。論理的な見出しと簡潔な文、用語説明があると、必要な情報に素早くたどり着ける。紙の資料をそのままWebに載せると、見出しのない長文の塊になりやすい。",
       checkpoints: [
@@ -389,7 +472,9 @@ const C4: UxCategory = {
       ],
       badExamples: [
         { text: "長文が改行なく続き、専門用語の説明もない。" },
-        { text: "見出しが「はじめに」「概要」など内容を表さない定型語になっている。" },
+        {
+          text: "見出しが「はじめに」「概要」など内容を表さない定型語になっている。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["scannability"],
@@ -414,11 +499,18 @@ const C4: UxCategory = {
           url: "https://www.jcom.co.jp/",
           text: "サポートへの導線を複数箇所に置き、料金・申し込み・変更手続きなど利用者の目的別に情報を整理している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
       ],
       badExamples: [
         { text: "紙媒体の丸写しで、図表もFAQもない。" },
-        { text: "FAQはあるが、実際の問い合わせと関係のない当たり障りのない質問だけが並ぶ。" },
+        {
+          text: "FAQはあるが、実際の問い合わせと関係のない当たり障りのない質問だけが並ぶ。",
+        },
       ],
       sources: ["tribeck", "nng-heuristics"],
       relatedTerms: ["scannability"],
@@ -445,7 +537,7 @@ const C5: UxCategory = {
         "代替テキスト（WCAG 1.1.1）、コントラスト比（1.4.3 レベルAA）、テキストの拡大（1.4.4 レベルAA）は、視覚に制約のある利用者に情報を届ける基本。装飾画像に無意味なaltを付けるのも、意味のある画像にaltが無いのと同じくらい読み上げの妨げになる。",
       checkpoints: [
         "意味のある画像に、内容を伝えるaltがあるか",
-        "装飾画像のaltが空（alt=\"\"）になっているか",
+        '装飾画像のaltが空（alt=""）になっているか',
         "文字と背景のコントラスト比が4.5:1以上か（大きな文字は3:1）",
         "ブラウザで200%まで拡大してもレイアウトが破綻しないか",
         "図表の内容がテキストでも取得できるか",
@@ -457,7 +549,9 @@ const C5: UxCategory = {
       ],
       badExamples: [
         { text: "実績データのグラフが画像のみで、altもテキストの代替もない。" },
-        { text: "淡いグレーの文字が白背景に置かれ、コントラスト比がAA基準を下回る。" },
+        {
+          text: "淡いグレーの文字が白背景に置かれ、コントラスト比がAA基準を下回る。",
+        },
       ],
       benchmark: {
         text: "自動ツール（Lighthouse等）で検出できるのはアクセシビリティ問題の一部にとどまる。目視・キーボード操作・スクリーンリーダーでの確認が要る。",
@@ -489,8 +583,12 @@ const C5: UxCategory = {
         },
       ],
       badExamples: [
-        { text: "メガメニューがマウスホバー専用で、キーボードでは下層に到達できない。" },
-        { text: "カルーセルが自動再生で止められず、読んでいる途中で切り替わる。" },
+        {
+          text: "メガメニューがマウスホバー専用で、キーボードでは下層に到達できない。",
+        },
+        {
+          text: "カルーセルが自動再生で止められず、読んでいる途中で切り替わる。",
+        },
       ],
       sources: ["wcag22", "nng-heuristics"],
       relatedTerms: ["wcag", "nielsen-heuristics"],
@@ -516,7 +614,9 @@ const C5: UxCategory = {
       ],
       badExamples: [
         { text: "アクセシビリティに関する記載が一切ない。" },
-        { text: "「配慮しています」とだけ書き、準拠レベルも対象範囲も示していない。" },
+        {
+          text: "「配慮しています」とだけ書き、準拠レベルも対象範囲も示していない。",
+        },
       ],
       benchmark: {
         text: "アクセシビリティポリシーの掲載はESGサイト調査で185社中86社（46.5%）。半数以上が未掲載。",
@@ -559,10 +659,17 @@ const C6: UxCategory = {
           text: "サービス・料金・サポートの各導線をモバイルでも押しやすい単位で配置している。",
           checkedOn: CHECKED,
           note: "Webユーザビリティランキング2026 1位",
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "PC固定幅でスマホでは横スクロールが必要、ボタンが小さすぎて押し間違える。" },
+        {
+          text: "PC固定幅でスマホでは横スクロールが必要、ボタンが小さすぎて押し間違える。",
+        },
         { text: "リンクが密集し、意図しないリンクを押してしまう。" },
       ],
       sources: ["wcag22", "tribeck"],
@@ -589,7 +696,9 @@ const C6: UxCategory = {
       ],
       badExamples: [
         { text: "LCPが4秒を超え、ファーストビューの表示に待たされる。" },
-        { text: "画像のサイズ指定がなく、読み込み中にレイアウトがガタつく（CLSが大きい）。" },
+        {
+          text: "画像のサイズ指定がなく、読み込み中にレイアウトがガタつく（CLSが大きい）。",
+        },
       ],
       benchmark: {
         text: "良好の閾値は LCP 2.5秒以内／INP 200ms以内／CLS 0.1以下（Google）。実ユーザー計測での75パーセンタイルで判定する。",
@@ -633,11 +742,20 @@ const C7: UxCategory = {
           url: "https://www.jcom.co.jp/",
           text: "「お申し込み・お問い合わせ」「お客さまサポート」への導線を複数箇所に配置し、目的から問い合わせに到達できるようにしている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "問い合わせ先が探しにくく、送信後にまとめてエラーが出て入力内容が消える。" },
-        { text: "エラーメッセージが「入力内容に誤りがあります」だけで、どこが誤りか分からない。" },
+        {
+          text: "問い合わせ先が探しにくく、送信後にまとめてエラーが出て入力内容が消える。",
+        },
+        {
+          text: "エラーメッセージが「入力内容に誤りがあります」だけで、どこが誤りか分からない。",
+        },
       ],
       sources: ["nng-heuristics", "tribeck"],
       relatedTerms: ["nielsen-heuristics", "error-prevention"],
@@ -663,11 +781,20 @@ const C7: UxCategory = {
           url: "https://www.jcom.co.jp/",
           text: "日本語・English・簡体中文・한국어・Tiếng Việt・नेपाली の6言語に対応し、在留外国人の利用者にも配慮している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/jcom-home.jpg",
+            caption:
+              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "SSL未対応のページが混在し、プライバシーポリシーやクッキー同意が見当たらない。" },
-        { text: "クッキー同意バナーに「同意する」しかなく、拒否の選択肢がない。" },
+        {
+          text: "SSL未対応のページが混在し、プライバシーポリシーやクッキー同意が見当たらない。",
+        },
+        {
+          text: "クッキー同意バナーに「同意する」しかなく、拒否の選択肢がない。",
+        },
       ],
       benchmark: {
         text: "Cookie同意の導入はESGサイト調査で185社中109社（58.9%）、サイバーセキュリティポリシーの掲載は143社（77.3%）。",
@@ -691,13 +818,19 @@ export function uxAllItems(): (UxCriteriaItem & {
   categoryTitle: string;
 })[] {
   return uxCategories.flatMap((c) =>
-    c.items.map((item) => ({ ...item, categoryId: c.id, categoryTitle: c.title }))
+    c.items.map((item) => ({
+      ...item,
+      categoryId: c.id,
+      categoryTitle: c.title,
+    })),
   );
 }
 
 export function getUxItem(
-  id: string
-): (UxCriteriaItem & { categoryId: UxCategoryId; categoryTitle: string }) | undefined {
+  id: string,
+):
+  | (UxCriteriaItem & { categoryId: UxCategoryId; categoryTitle: string })
+  | undefined {
   return uxAllItems().find((it) => it.id === id);
 }
 

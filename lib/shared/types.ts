@@ -2,6 +2,14 @@
 // 実例は「実在サイトを見て観測できた事実」を書く。company/url を伴う記述は、
 // checkedOn の時点で実際に確認したものだけを載せる（サイトは改修されるため日付が必須）。
 
+// 良い例に添えるサイトのスクリーンショット（public/ 配下の相対パス）。
+export interface ExampleImage {
+  // 例: "/screenshots/sites/jcom-home.jpg"（basePath は ExampleBox 側で前置きする）。
+  src: string;
+  // 図のキャプション（省略時は company から自動生成）。
+  caption?: string;
+}
+
 export interface Example {
   // 何が良い／悪いのか。観測できた事実ベースで書く。
   text: string;
@@ -13,6 +21,8 @@ export interface Example {
   checkedOn?: string;
   // 補足（受賞歴、順位など）。
   note?: string;
+  // サイトのスクリーンショット（良い例で、実際に撮影したもののみ）。
+  image?: ExampleImage;
 }
 
 export interface Benchmark {

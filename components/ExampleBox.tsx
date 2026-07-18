@@ -1,4 +1,13 @@
+import Image from "next/image";
 import type { Example } from "@/lib/shared/types";
+
+// images.unoptimized では next/image が basePath を付けないため、自前で前置きする。
+// （_next 配下のCSS/JSには自動で付くので、画像だけ404になり気づきにくい）
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+function assetUrl(src: string): string {
+  return src.startsWith("/") ? BASE_PATH + src : src;
+}
 
 // 良い例／悪い例を色分けして表示する。
 // 実企業の例には社名・URL・確認日を添える（サイトは改修されるため、日付なしで断定しない）。
@@ -41,6 +50,35 @@ export function ExampleBox({
                 </a>
                 {ex.checkedOn && <span className="ex-checked">確認日 {ex.checkedOn}</span>}
               </span>
+            )}
+            {ex.image && (
+              <figure className="ex-figure">
+                {ex.url ? (
+                  <a href={ex.url} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      className="ex-shot"
+                      src={assetUrl(ex.image.src)}
+                      alt={`${ex.company ?? "参考サイト"}の画面例`}
+                      width={1366}
+                      height={768}
+                      unoptimized
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    className="ex-shot"
+                    src={assetUrl(ex.image.src)}
+                    alt={`${ex.company ?? "参考サイト"}の画面例`}
+                    width={1366}
+                    height={768}
+                    unoptimized
+                  />
+                )}
+                <figcaption>
+                  {ex.image.caption ??
+                    `${ex.company ?? ""}の画面例${ex.checkedOn ? `（確認日 ${ex.checkedOn}）` : ""}`}
+                </figcaption>
+              </figure>
             )}
           </li>
         ))}

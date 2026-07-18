@@ -26,7 +26,8 @@ const C1: IrCategory = {
       title: "グローバルナビ／メニュー",
       points: 6,
       judgeMethod: "screen",
-      criteria: "IRトップから主要ページへワンクリックで到達でき、論理的に分類されているか。",
+      criteria:
+        "IRトップから主要ページへワンクリックで到達でき、論理的に分類されているか。",
       background:
         "IRサイトは決算・株式・ガバナンス・ESGなど情報が多岐にわたる。目的別に整理され、オンマウス展開などで下層まで見通せるナビは、回遊性と情報の網羅性の印象を左右する。オンマウスでのメニュー表示は上場企業の73.0%が採用しており、いまや標準装備に近い。",
       checkpoints: [
@@ -42,11 +43,20 @@ const C1: IrCategory = {
           text: "IRトップから最新IR資料・IRニュース・統合レポート・個人投資家向けページへそれぞれ直接たどれる構成になっている。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合1位（8.87点）",
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "「IR情報」の下に大分類しかなく、下層に何があるかメニューから見えない。" },
-        { text: "会社案内の階層構造をそのまま流用しており、投資家の目的別になっていない。" },
+        {
+          text: "「IR情報」の下に大分類しかなく、下層に何があるかメニューから見えない。",
+        },
+        {
+          text: "会社案内の階層構造をそのまま流用しており、投資家の目的別になっていない。",
+        },
       ],
       benchmark: {
         text: "オンマウスでのメニュー表示は上場企業の73.0%が採用（日興アイ・アール 2025年度調査）。",
@@ -77,11 +87,20 @@ const C1: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/",
           text: "株価情報、「最新IR資料のダウンロード」、「IR最新情報（適時開示等）」が上部に並び、第一画面で「今」の情報が揃う。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "ファーストビューがPDFリンクの羅列で、株価も最新ニュースも下までスクロールしないと出ない。" },
-        { text: "巨大なキービジュアルのスライダーが画面を占有し、投資家が求める情報が押し下げられている。" },
+        {
+          text: "ファーストビューがPDFリンクの羅列で、株価も最新ニュースも下までスクロールしないと出ない。",
+        },
+        {
+          text: "巨大なキービジュアルのスライダーが画面を占有し、投資家が求める情報が押し下げられている。",
+        },
       ],
       benchmark: {
         text: "IRトップでの最新資料ダウンロード導線は389社中291社（74.8%）が実装。",
@@ -96,7 +115,8 @@ const C1: IrCategory = {
       title: "サイト内検索・回遊",
       points: 5,
       judgeMethod: "url-screen",
-      criteria: "サイト内検索機能・パンくず・関連リンクで情報を探し回遊できるか。",
+      criteria:
+        "サイト内検索機能・パンくず・関連リンクで情報を探し回遊できるか。",
       background:
         "目的の資料名が分かっている投資家には検索が最短路。パンくずや関連リンク、人気ページ導線があると、深い階層でも迷わず回遊できる。検索から直接下層に着地する読み手が多いため、現在地表示は「あれば良い」ではなく前提装備になる。",
       checkpoints: [
@@ -111,6 +131,11 @@ const C1: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/",
           text: "ヘッダーに検索機能を常設し、IRトップから決算情報・IRニュース一覧などへ複数の回遊導線を用意している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
@@ -146,11 +171,18 @@ const C1: IrCategory = {
           text: "個人投資家向けを含むIRコンテンツをHTMLで提供し、PDFに閉じない設計になっている。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合2位（8.66点）",
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
         { text: "PC専用の固定幅で、スマホでは横スクロールが必要になる。" },
-        { text: "レスポンシブではあるが、業績数値の表が画面外にはみ出して読めない。" },
+        {
+          text: "レスポンシブではあるが、業績数値の表が画面外にはみ出して読めない。",
+        },
       ],
       sources: ["gomez-ir", "core-web-vitals"],
       furtherReading: ["pagespeed"],
@@ -178,7 +210,9 @@ const C1: IrCategory = {
       ],
       badExamples: [
         { text: "低コントラストの淡色テキストが多用され、方針の記載もない。" },
-        { text: "IRカレンダーやチャートがマウス操作前提で、キーボードでは到達できない。" },
+        {
+          text: "IRカレンダーやチャートがマウス操作前提で、キーボードでは到達できない。",
+        },
       ],
       benchmark: {
         text: "アクセシビリティポリシーの掲載はESGサイト調査で185社中86社（46.5%）。半数以上が未掲載。",
@@ -194,7 +228,8 @@ const C1: IrCategory = {
       title: "表示速度・技術品質",
       points: 5,
       judgeMethod: "technical",
-      criteria: "表示速度、XMLサイトマップ、テクニカルSEOなど技術基盤が整っているか。",
+      criteria:
+        "表示速度、XMLサイトマップ、テクニカルSEOなど技術基盤が整っているか。",
       background:
         "表示速度は離脱率とSEOに直結する。XMLサイトマップやテクニカルSEOの整備は、検索・AIからの発見可能性を高め、権威ある情報源としての位置づけを支える。ゴメスの2025年講評は、XMLサイトマップの設置率が52.4%にとどまり、エラー残存や重複ページの正規化不足が課題だと明示している。",
       checkpoints: [
@@ -210,11 +245,18 @@ const C1: IrCategory = {
           text: "XMLサイトマップの整合性を確保し正常URL率を高水準に維持、ページ表示速度も良好とゴメスの講評で評価された。",
           checkedOn: CHECKED,
           note: "Gomez IRサイトランキング2025 総合3位（8.60点）",
+          image: {
+            src: "/screenshots/sites/konicaminolta-investors.jpg",
+            caption:
+              "コニカミノルタ 株主・投資家情報。最新の決算短信・説明会資料が公表日つきで先頭に置かれている。",
+          },
         },
       ],
       badExamples: [
         { text: "ページが極端に重く、XMLサイトマップも未整備。" },
-        { text: "サイトマップは置いてあるが、削除済みページのURLが残ったまま更新されていない。" },
+        {
+          text: "サイトマップは置いてあるが、削除済みページのURLが残ったまま更新されていない。",
+        },
       ],
       benchmark: {
         text: "XMLサイトマップの設置は389社中204社（52.4%）。半数弱が未設置で、差がつきやすい。",
@@ -257,11 +299,18 @@ const C2: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/financial_statements/index.html",
           text: "決算情報を専用セクションにまとめ、IRトップからも最新の決算短信を直接ダウンロードできる。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-financial-statements.jpg",
+            caption:
+              "伊藤忠商事 決算公表資料。短信・説明資料・質疑応答要旨が期ごとに整理され、PDFの容量が併記されている。",
+          },
         },
       ],
       badExamples: [
         { text: "最新期のみで過去資料が欠落しており、経年比較ができない。" },
-        { text: "資料一覧がPDFのリンク名だけで、どの期のものか開くまで分からない。" },
+        {
+          text: "資料一覧がPDFのリンク名だけで、どの期のものか開くまで分からない。",
+        },
       ],
       benchmark: {
         text: "決算説明会の資料掲載は全上場企業で80.8%（前年比+1.4pt）、ガバナンス報告書は75.4%（日興2025）。",
@@ -276,7 +325,8 @@ const C2: IrCategory = {
       title: "業績ハイライト",
       points: 5,
       judgeMethod: "screen",
-      criteria: "主要業績がグラフ化され、ROE/ROIC/PBR等の主要指標が示されているか。",
+      criteria:
+        "主要業績がグラフ化され、ROE/ROIC/PBR等の主要指標が示されているか。",
       background:
         "数表の羅列より、経年グラフやチャートジェネレータの方が直感的に理解できる。資本コストや株価を意識した経営の要請を受け、ROE/ROIC/PBRの掲載が増えている。ゴメスの講評でも、上位企業の共通項としてチャートジェネレータと資本コスト経営の専用セクションが挙げられている。",
       checkpoints: [
@@ -292,7 +342,9 @@ const C2: IrCategory = {
       ],
       badExamples: [
         { text: "テキストや表だけで、視覚化された業績ハイライトがない。" },
-        { text: "グラフはあるが画像で、数値を取り出せずモバイルでは読めない。" },
+        {
+          text: "グラフはあるが画像で、数値を取り出せずモバイルでは読めない。",
+        },
       ],
       sources: ["gomez-ir", "gomez-ir-2025-press"],
       relatedTerms: ["chart-generator", "capital-cost"],
@@ -302,7 +354,8 @@ const C2: IrCategory = {
       title: "ヒストリカルデータ",
       points: 5,
       judgeMethod: "url",
-      criteria: "経年・セグメント別データがCSV/Excelで加工可能に提供されているか。",
+      criteria:
+        "経年・セグメント別データがCSV/Excelで加工可能に提供されているか。",
       background:
         "機関投資家・アナリストは自らデータを加工する。過去10年分などのCSV/Excelダウンロードは、分析の手間を大きく減らし高く評価される。PDFしかない場合、アナリストは手入力するか、そもそも分析対象から外すことになる。",
       checkpoints: [
@@ -359,7 +412,8 @@ const C2: IrCategory = {
       title: "株式・株主還元",
       points: 4,
       judgeMethod: "url",
-      criteria: "株価情報、配当実績・方針、株主総会情報など株式関連情報があるか。",
+      criteria:
+        "株価情報、配当実績・方針、株主総会情報など株式関連情報があるか。",
       background:
         "配当方針・株主還元の基本方針は個人投資家の関心が高い。株価情報・株主総会情報とあわせ、株主目線の情報が揃っているかを見る。株主還元の数値目標（配当性向・総還元性向）まで踏み込めているかで差がつく。",
       checkpoints: [
@@ -374,11 +428,20 @@ const C2: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/",
           text: "IRトップに株価情報を配置し、株主還元・株式情報へ個別の導線を設けている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "配当実績はあるが、還元方針が「安定配当を目指す」だけで数値目標がない。" },
-        { text: "株主総会の情報が招集通知PDFのみで、議決権行使結果が載っていない。" },
+        {
+          text: "配当実績はあるが、還元方針が「安定配当を目指す」だけで数値目標がない。",
+        },
+        {
+          text: "株主総会の情報が招集通知PDFのみで、議決権行使結果が載っていない。",
+        },
       ],
       benchmark: {
         text: "株主還元の数値目標の記載は389社中266社（68.4%）。",
@@ -404,7 +467,8 @@ const C3: IrCategory = {
       title: "経営方針・戦略",
       points: 6,
       judgeMethod: "url-screen",
-      criteria: "トップメッセージ、中期経営計画、成長戦略が具体的に語られているか。",
+      criteria:
+        "トップメッセージ、中期経営計画、成長戦略が具体的に語られているか。",
       background:
         "エクイティストーリーの核。CEO/CFOメッセージのHTML化、中期経営計画・資本政策の説明は、経営の本気度と将来像を伝える。ゴメスの2025年講評は、1位企業について「豊富な情報量とマネジメントによる力強いメッセージ発信を高い水準で両立」と評しており、量と語りの両立が上位の条件になっている。",
       checkpoints: [
@@ -419,10 +483,17 @@ const C3: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/",
           text: "HTML形式の統合レポートを掲載し、その中でCFOメッセージまで読める形にしている（ゴメス講評で評価点として明記）。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
       ],
       badExamples: [
-        { text: "抽象的な方針が数年前のまま置かれ、現在の戦略が読み取れない。" },
+        {
+          text: "抽象的な方針が数年前のまま置かれ、現在の戦略が読み取れない。",
+        },
         { text: "中期経営計画がPDF1本のみで、進捗の更新がない。" },
       ],
       benchmark: {
@@ -453,10 +524,17 @@ const C3: IrCategory = {
           url: "https://www.nipponpaint-holdings.com/ir/",
           text: "個人投資家向けページで塗料市場・グループ概要・成長戦略を噛み砕いて説明し、BtoB事業の理解を助けている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "会社概要の沿革と数値だけで、何をして稼いでいる会社なのか分からない。" },
+        {
+          text: "会社概要の沿革と数値だけで、何をして稼いでいる会社なのか分からない。",
+        },
         { text: "専門用語のまま説明され、業界の予備知識がないと読めない。" },
       ],
       sources: ["gomez-ir", "daiwa-ir"],
@@ -467,7 +545,8 @@ const C3: IrCategory = {
       title: "ガバナンス",
       points: 5,
       judgeMethod: "url",
-      criteria: "役員経歴、スキルマトリックス、コーポレートガバナンス報告書があるか。",
+      criteria:
+        "役員経歴、スキルマトリックス、コーポレートガバナンス報告書があるか。",
       background:
         "取締役会の実効性を示すスキルマトリックスの開示が広がっている。コーポレートガバナンス・コードが開示を求める項目であり、CG報告書へのリンクだけでなく、役員の経歴・専門性まで分かることが望ましい。社外取締役自身の言葉が読めると、実効性の印象が大きく変わる。",
       checkpoints: [
@@ -484,11 +563,18 @@ const C3: IrCategory = {
           text: "「独立社外取締役への質問（一問一答）」を経営方針セクションから直接たどれる位置に置いている。",
           checkedOn: CHECKED,
           note: "ゴメスは同社の独立社外取締役インタビュー掲載を評価点として挙げている",
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
         { text: "CG報告書へのリンクのみで、役員の専門性が分からない。" },
-        { text: "スキルマトリックスがCG報告書PDFの中だけにあり、Webページ上で読めない。" },
+        {
+          text: "スキルマトリックスがCG報告書PDFの中だけにあり、Webページ上で読めない。",
+        },
       ],
       benchmark: {
         text: "ガバナンス報告書の掲載は全上場企業で75.4%（前年比+1.8pt、日興2025）。",
@@ -503,7 +589,8 @@ const C3: IrCategory = {
       title: "サステナビリティ／ESG",
       points: 5,
       judgeMethod: "url",
-      criteria: "ESG方針・重要課題・定量データがあり、企業価値と結びついているか。",
+      criteria:
+        "ESG方針・重要課題・定量データがあり、企業価値と結びついているか。",
       background:
         "ESGと企業価値の結びつきは投資家の関心事。E/S/Gが体系的に整理され、定量データまで提供されているかを見る。大和インターネットIR表彰は「サステナビリティ部門」を設け、トップページ／全体方針／環境／社会／ガバナンス／サポートの6大項目で採点している。詳細な評価軸は本サイトのサステナビリティ編を参照。",
       checkpoints: [
@@ -519,18 +606,29 @@ const C3: IrCategory = {
           text: "マテリアリティを軸にサステナビリティ情報を体系化し、IR側からも到達できる構造にしている。",
           checkedOn: CHECKED,
           note: "大和インターネットIR表彰2025 最優秀賞／Gomez ESGサイトランキング2025 総合2位",
+          image: {
+            src: "/screenshots/sites/softbank-sustainability.jpg",
+            caption:
+              "ソフトバンク サステナビリティのトップ。外部評価や主要な取り組みをスライダーで見せている。",
+          },
         },
       ],
       badExamples: [
         { text: "ESG情報が断片的で、企業価値との関係が示されていない。" },
-        { text: "サステナビリティサイトとIRサイトが分断し、相互リンクがない。" },
+        {
+          text: "サステナビリティサイトとIRサイトが分断し、相互リンクがない。",
+        },
       ],
       benchmark: {
         text: "IRトップから統合報告書への導線確保は389社中334社（85.9%）。統合報告書そのものの掲載は全上場企業では28.2%（日興2025）。",
         confirmed: true,
         source: "gomez-ir-2025-press",
       },
-      sources: ["daiwa-ir-2025-pdf", "gomez-ir-2025-press", "nikko-ir-2025-pdf"],
+      sources: [
+        "daiwa-ir-2025-pdf",
+        "gomez-ir-2025-press",
+        "nikko-ir-2025-pdf",
+      ],
       relatedTerms: ["materiality-ir", "integrated-report-ir"],
     },
     {
@@ -538,7 +636,8 @@ const C3: IrCategory = {
       title: "規約・ポリシー",
       points: 4,
       judgeMethod: "url",
-      criteria: "ディスクロージャーポリシー、免責事項、IRポリシーが整備されているか。",
+      criteria:
+        "ディスクロージャーポリシー、免責事項、IRポリシーが整備されているか。",
       background:
         "FDルール（フェア・ディスクロージャー・ルール）への対応方針など、開示姿勢を示すポリシーの整備はガバナンスの成熟度を示す。沈黙期間（クワイエット・ピリオド）の明記は、投資家が問い合わせのタイミングを判断する助けにもなる。",
       checkpoints: [
@@ -591,12 +690,22 @@ const C4: IrCategory = {
           text: "ヘッダーに English 切替を常設し、英語版でも同等のIR情報を提供している。",
           checkedOn: CHECKED,
           note: "大和インターネットIR表彰2025 最優秀賞（日英5:5の統合評価）",
+          image: {
+            src: "/screenshots/sites/itochu-ir.jpg",
+            caption:
+              "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
         },
         {
           company: "ミネベアミツミ",
           url: "https://www.minebeamitsumi.com/corp/investors/",
           text: "大和インターネットIR表彰で8年連続の最優秀賞を受賞。日英双方の評価を経た上位常連にあたる。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/minebeamitsumi-investors.jpg",
+            caption:
+              "ミネベアミツミ IR情報。次回決算発表の日時と配信予定が、更新日つきで先頭に示されている。",
+          },
         },
       ],
       badExamples: [
@@ -616,7 +725,8 @@ const C4: IrCategory = {
       title: "個人投資家向け",
       points: 5,
       judgeMethod: "url-screen",
-      criteria: "自己紹介型コンテンツ、用語集、FAQ、動画など個人投資家向けの工夫があるか。",
+      criteria:
+        "自己紹介型コンテンツ、用語集、FAQ、動画など個人投資家向けの工夫があるか。",
       background:
         "個人投資家向けには「何をしている会社か」を平易に伝える入口と、用語集・FAQ・動画が有効。機関投資家向けの加工可能データとは別導線で用意する企業が増えている。ゴメスは2位の日本ペイントHDについて、個人投資家向け専用セクションの設置を評価点に挙げている。",
       checkpoints: [
@@ -631,17 +741,31 @@ const C4: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/investor/index.html",
           text: "「個人投資家の皆様へ」と「インベスターズガイド」を用意し、知識量に応じた入口を分けている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-investor.jpg",
+            caption:
+              "伊藤忠商事 個人投資家向けページ。決算資料・統合レポート・経営計画・企業紹介映像が図版つきで並ぶ。",
+          },
         },
         {
           company: "日本ペイントホールディングス",
           url: "https://www.nipponpaint-holdings.com/ir/",
           text: "個人投資家向けセクションで塗料市場・グループ概要・成長戦略を解説している。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
-        { text: "個人投資家向けの平易なコンテンツがなく、決算短信を読める人だけが対象になっている。" },
-        { text: "「個人投資家の皆様へ」はあるが、中身が決算資料へのリンク集にすぎない。" },
+        {
+          text: "個人投資家向けの平易なコンテンツがなく、決算短信を読める人だけが対象になっている。",
+        },
+        {
+          text: "「個人投資家の皆様へ」はあるが、中身が決算資料へのリンク集にすぎない。",
+        },
       ],
       sources: ["gomez-ir-2025-press", "gomez-ir"],
       relatedTerms: [],
@@ -651,7 +775,8 @@ const C4: IrCategory = {
       title: "適時性・更新",
       points: 5,
       judgeMethod: "url",
-      criteria: "決算の即時反映、IRカレンダー、メール配信登録など適時性の仕組みがあるか。",
+      criteria:
+        "決算の即時反映、IRカレンダー、メール配信登録など適時性の仕組みがあるか。",
       background:
         "適時開示制度・FDルールの下、発表と同時のサイト反映が求められる。IRカレンダーやメール配信は、投資家が情報を取り逃さない仕組みとして機能する。更新が滞っているサイトは、それ自体がIRへの姿勢のシグナルとして読まれる。",
       checkpoints: [
@@ -666,6 +791,11 @@ const C4: IrCategory = {
           url: "https://www.nipponpaint-holdings.com/ir/",
           text: "IRサポートのセクションにIRカレンダーへの直接導線を置いている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/nipponpaint-ir.jpg",
+            caption:
+              "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
         },
       ],
       badExamples: [
@@ -695,11 +825,20 @@ const C4: IrCategory = {
           url: "https://www.itochu.co.jp/ja/ir/doc/annual_report/",
           text: "統合レポートをHTML形式でも掲載しており、ゴメスの2025年講評でも評価点として挙げられている。",
           checkedOn: CHECKED,
+          image: {
+            src: "/screenshots/sites/itochu-annual-report.jpg",
+            caption:
+              "伊藤忠商事 統合レポート。最新号のCEO／COOメッセージがPDFの容量表示つきで置かれている。",
+          },
         },
       ],
       badExamples: [
-        { text: "重要資料がPDFのみで、図表も画像貼付のためAI・検索に読まれない。" },
-        { text: "HTML版はあるが、中身がPDFを画像として貼っただけになっている。" },
+        {
+          text: "重要資料がPDFのみで、図表も画像貼付のためAI・検索に読まれない。",
+        },
+        {
+          text: "HTML版はあるが、中身がPDFを画像として貼っただけになっている。",
+        },
       ],
       sources: ["gomez-ir-2025-press"],
       relatedTerms: ["ai-friendly"],
@@ -718,13 +857,19 @@ export function irAllItems(): (IrCriteriaItem & {
   categoryTitle: string;
 })[] {
   return irCategories.flatMap((c) =>
-    c.items.map((item) => ({ ...item, categoryId: c.id, categoryTitle: c.title }))
+    c.items.map((item) => ({
+      ...item,
+      categoryId: c.id,
+      categoryTitle: c.title,
+    })),
   );
 }
 
 export function getIrItem(
-  id: string
-): (IrCriteriaItem & { categoryId: IrCategoryId; categoryTitle: string }) | undefined {
+  id: string,
+):
+  | (IrCriteriaItem & { categoryId: IrCategoryId; categoryTitle: string })
+  | undefined {
   return irAllItems().find((it) => it.id === id);
 }
 
