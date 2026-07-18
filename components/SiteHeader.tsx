@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader() {
   return (
@@ -13,6 +14,7 @@ export function SiteHeader() {
           <Link href="/ir/">IRサイト</Link>
           <Link href="/usability/">ユーザビリティ</Link>
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );

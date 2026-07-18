@@ -15,6 +15,8 @@ import type { Category, CategoryId, CriteriaItem } from "./types";
 //  一般的枠組みに基づくドラフト（draft: true）で、実施率は確認中（confirmed: false）。
 
 const CHECKED = "2026-07-15";
+// 事例の偏りを減らすために後から追加した分の確認日。
+const CHECKED2 = "2026-07-18";
 
 const A: Category = {
   id: "A",
@@ -61,6 +63,17 @@ const A: Category = {
             src: "/screenshots/sites/softbank-sustainability.jpg",
             caption:
               "ソフトバンク サステナビリティのトップ。外部評価や主要な取り組みをスライダーで見せている。",
+          },
+        },
+        {
+          company: "リコー",
+          url: "https://jp.ricoh.com/sustainability/",
+          text: "グローバルナビの第一階層に「サステナビリティ」と「株主・投資家情報」を並べ、トップページから1クリックで到達できる。パンくずも「ホーム > サステナビリティ」と表示される。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/ricoh-sustainability.jpg",
+            caption:
+              "リコー サステナビリティのトップ。第一階層のナビに「サステナビリティ」があり、直下にパンくずが出る。",
           },
         },
       ],
@@ -182,6 +195,17 @@ const A: Category = {
       ],
       goodExamples: [
         {
+          company: "KDDI",
+          url: "https://www.kddi.com/corporate/sustainability/",
+          text: "ページ上部に「KDDIホーム > 企業情報 > サステナビリティ」のパンくずを置き、上位2階層をリンクにしている。グローバルナビ側でも現在のカテゴリが強調される。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/kddi-sustainability.jpg",
+            caption:
+              "KDDI サステナビリティ。パンくずで現在地を示し、グローバルナビの「サステナビリティ」に下線がついている。",
+          },
+        },
+        {
           text: "「ホーム > サステナビリティ > 環境 > 気候変動」のように全階層がリンクになっており、外部から直接着地しても上位階層へ戻れる。",
         },
       ],
@@ -233,6 +257,17 @@ const A: Category = {
             src: "/screenshots/sites/itochu-annual-report.jpg",
             caption:
               "伊藤忠商事 統合レポート。最新号のCEO／COOメッセージがPDFの容量表示つきで置かれている。",
+          },
+        },
+        {
+          company: "積水ハウス",
+          url: "https://www.sekisuihouse.co.jp/company/sustainable/",
+          text: "「CEOメッセージ」「Value Report」「ESG Fact Book / Data Book」を横並びの3つの入口として示し、更新情報欄では公開日とPDFの容量（「ESG FACT BOOK 2026」9.3MB）まで併記している。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/sekisuihouse-sustainability.jpg",
+            caption:
+              "積水ハウス ESG経営。報告書・データ集への3つの入口が並び、その下の更新情報に公開日とファイル容量が出る。",
           },
         },
       ],

@@ -26,54 +26,43 @@ export function ExampleBox({
       </div>
       <ul className="ex-list">
         {items.map((ex, i) => (
-          <li key={i}>
-            {ex.company && (
-              <span className="ex-company">
-                {ex.url ? (
+          // 画面例のある行は、広い画面で「説明＋画像」の2カラムに組む。
+          // 画像が本文を押し下げて主役になってしまうのを避ける。
+          <li key={i} className={ex.image ? "has-shot" : undefined}>
+            <div className="ex-body">
+              {ex.company && (
+                <span className="ex-company">
+                  {ex.url ? (
+                    <a href={ex.url} target="_blank" rel="noopener noreferrer">
+                      {ex.company}
+                      <span className="ext" aria-hidden="true">
+                        ↗
+                      </span>
+                    </a>
+                  ) : (
+                    ex.company
+                  )}
+                </span>
+              )}
+              <span className="ex-text">{ex.text}</span>
+              {ex.note && <span className="ex-note">{ex.note}</span>}
+              {ex.url && (
+                <span className="ex-meta">
                   <a href={ex.url} target="_blank" rel="noopener noreferrer">
-                    {ex.company}
-                    <span className="ext" aria-hidden="true">
-                      ↗
-                    </span>
+                    {shortUrl(ex.url)}
                   </a>
-                ) : (
-                  ex.company
-                )}
-              </span>
-            )}
-            <span className="ex-text">{ex.text}</span>
-            {ex.note && <span className="ex-note">{ex.note}</span>}
-            {ex.url && (
-              <span className="ex-meta">
-                <a href={ex.url} target="_blank" rel="noopener noreferrer">
-                  {shortUrl(ex.url)}
-                </a>
-                {ex.checkedOn && <span className="ex-checked">確認日 {ex.checkedOn}</span>}
-              </span>
-            )}
+                  {ex.checkedOn && <span className="ex-checked">確認日 {ex.checkedOn}</span>}
+                </span>
+              )}
+            </div>
             {ex.image && (
               <figure className="ex-figure">
-                {ex.url ? (
-                  <a href={ex.url} target="_blank" rel="noopener noreferrer">
-                    <Image
-                      className="ex-shot"
-                      src={assetUrl(ex.image.src)}
-                      alt={`${ex.company ?? "参考サイト"}の画面例`}
-                      width={1366}
-                      height={768}
-                      unoptimized
-                    />
-                  </a>
-                ) : (
-                  <Image
-                    className="ex-shot"
-                    src={assetUrl(ex.image.src)}
-                    alt={`${ex.company ?? "参考サイト"}の画面例`}
-                    width={1366}
-                    height={768}
-                    unoptimized
-                  />
-                )}
+                <Shot
+                  src={assetUrl(ex.image.src)}
+                  alt={`${ex.company ?? "参考サイト"}の画面例`}
+                  url={ex.url}
+                  host={ex.url ? hostOf(ex.url) : undefined}
+                />
                 <figcaption>
                   {ex.image.caption ??
                     `${ex.company ?? ""}の画面例${ex.checkedOn ? `（確認日 ${ex.checkedOn}）` : ""}`}
@@ -85,6 +74,51 @@ export function ExampleBox({
       </ul>
     </div>
   );
+}
+
+// スクリーンショットをブラウザ風の枠に収める。
+// 枠上部にドメインを出し、「実在サイトの画面を撮ったもの」であることを図として示す。
+function Shot({
+  src,
+  alt,
+  url,
+  host,
+}: {
+  src: string;
+  alt: string;
+  url?: string;
+  host?: string;
+}) {
+  const img = (
+    <Image className="ex-shot" src={src} alt={alt} width={1366} height={768} unoptimized />
+  );
+  return (
+    <div className="shot-frame">
+      <div className="shot-bar" aria-hidden="true">
+        <span className="shot-dots">
+          <i />
+          <i />
+          <i />
+        </span>
+        {host && <span className="shot-host">{host}</span>}
+      </div>
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {img}
+        </a>
+      ) : (
+        img
+      )}
+    </div>
+  );
+}
+
+function hostOf(url: string): string | undefined {
+  try {
+    return new URL(url).host;
+  } catch {
+    return undefined;
+  }
 }
 
 // 表示用にドメイン＋先頭パスへ短縮する（長いURLで本文が読みにくくなるのを避ける）。

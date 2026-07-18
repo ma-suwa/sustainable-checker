@@ -14,7 +14,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
+      <head>
+        {/*
+          描画前に保存済みテーマを適用する。CSSより先に属性を付けないと、
+          OSがダークでライト指定の人に一瞬ダークが見える（フラッシュ）。
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <SiteHeader />
         <main className="container">{children}</main>

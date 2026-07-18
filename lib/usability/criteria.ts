@@ -13,6 +13,8 @@ import type { UxCategory, UxCategoryId, UxCriteriaItem } from "./types";
 // 【出典】sources / benchmark.source は lib/sources.ts のキー。
 
 const CHECKED = "2026-07-15";
+// 事例の偏りを減らすために後から追加した分の確認日。
+const CHECKED2 = "2026-07-18";
 
 const C1: UxCategory = {
   id: "1",
@@ -466,6 +468,17 @@ const C4: UxCategory = {
         "1段落が5〜6行以内に収まっているか",
       ],
       goodExamples: [
+        {
+          company: "日立製作所",
+          url: "https://www.hitachi.co.jp/sustainability/environment/",
+          text: "「日立の取り組み」「環境ビジョン」と内容を示す見出しが並び、各見出しの直下に1〜2文のリード文を置いているため、見出しを拾うだけでページの構成が掴める。専門用語も「グリーントランスフォーメーション(GX)」のように略語を併記している。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/hitachi-environment.jpg",
+            caption:
+              "日立製作所 サステナビリティ「環境」。見出しの直下に短いリード文、その下に「脱炭素／サーキュラーエコノミー／ネイチャーポジティブ」の3つの柱がタブで並ぶ。",
+          },
+        },
         {
           text: "見出しだけを拾い読みしてもページの要点が分かる構成で、専門用語には初出時に注釈を添えている。",
         },

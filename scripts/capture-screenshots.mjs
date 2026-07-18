@@ -14,7 +14,10 @@ import path from "node:path";
 
 const OUT_DIR = path.resolve(import.meta.dirname, "../public/screenshots/sites");
 
-// スラッグ → URL。criteria.ts の image.src と対応させる。
+// スラッグ → URL、または { url, scrollY }。criteria.ts の image.src と対応させる。
+//
+// 既定はファーストビュー（ページ最上部）。ただし「見出し構造」のように
+// 折り返しより下にしか写らない論点は、scrollY でその位置まで送ってから撮る。
 const SITES = {
   // ユーザビリティ
   "jcom-home": "https://www.jcom.co.jp/",
@@ -41,6 +44,21 @@ const SITES = {
   "konicaminolta-investors": "https://www.konicaminolta.com/jp-ja/investors/index.html",
   "nipponpaint-ir": "https://www.nipponpaint-holdings.com/ir/",
   "minebeamitsumi-investors": "https://www.minebeamitsumi.com/corp/investors/",
+  // 事例が一部の企業に偏らないよう、他社の同種ページも撮る。
+  // （オムロンはbot遮断、資生堂・花王は第一画面がブランド映像で良い例にならないため外した）
+  "ntt-ir": "https://group.ntt/jp/ir/",
+  "kddi-sustainability": "https://www.kddi.com/corporate/sustainability/",
+  "marui-ir": "https://www.0101maruigroup.co.jp/ir.html",
+  "ricoh-sustainability": "https://jp.ricoh.com/sustainability/",
+  "hitachi-ir": "https://www.hitachi.co.jp/IR/",
+  // 4-1（見出し階層）用。見出し群はヒーロー画像の下にあるので送ってから撮る。
+  "hitachi-environment": {
+    url: "https://www.hitachi.co.jp/sustainability/environment/",
+    // 見出し「日立の取り組み」が固定ヘッダーに隠れない位置。
+    scrollY: 720,
+  },
+  "tokiomarine-ir": "https://www.tokiomarinehd.com/ir/",
+  "sekisuihouse-sustainability": "https://www.sekisuihouse.co.jp/company/sustainable/",
 };
 
 // Cookieバナー・地域判定モーダルはファーストビューを覆うので取り除く。
@@ -209,7 +227,9 @@ await context.route("**/*", (route) => {
 
 const results = { saved: [], skipped: [], failed: [] };
 
-for (const [slug, url] of targets) {
+for (const [slug, spec] of targets) {
+  const url = typeof spec === "string" ? spec : spec.url;
+  const scrollY = typeof spec === "string" ? 0 : (spec.scrollY ?? 0);
   const out = path.join(OUT_DIR, `${slug}.jpg`);
 
   if (!force) {
@@ -238,6 +258,13 @@ for (const [slug, url] of targets) {
     await page.waitForTimeout(2000);
     // 待っている間にバナーが貼り直されることがあるので、直前にもう一度払う。
     await page.evaluate(stripOverlays).catch(() => {});
+
+    // stripOverlays が先頭に戻すので、送るのはその後。遅延読み込みの発火も待つ。
+    if (scrollY > 0) {
+      await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+      await page.waitForTimeout(1500);
+    }
+
     await page.screenshot({
       path: out,
       type: "jpeg",

@@ -1,6 +1,9 @@
+/* 配色は「OSの設定に従う」を既定とし、ヘッダーのトグルで明示指定もできる。
+   明示指定は html[data-theme] で入り、OSの設定より優先する。 */
 :root {
   --bg: #f6f8f6;
   --card: #ffffff;
+  --chrome: #eef2ef;
   --border: #e2e8e2;
   --text: #1a2b22;
   --muted: #5c6b63;
@@ -13,10 +16,12 @@
   --radius: 12px;
 }
 
+/* ライトを明示選択している場合は、OSがダークでも上書きしない。 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #121714;
     --card: #1a221d;
+    --chrome: #222b25;
     --border: #2b352e;
     --text: #e6ede8;
     --muted: #9db0a5;
@@ -27,6 +32,47 @@
     --none: #e07070;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #121714;
+  --card: #1a221d;
+  --chrome: #222b25;
+  --border: #2b352e;
+  --text: #e6ede8;
+  --muted: #9db0a5;
+  --accent: #3fb87d;
+  --accent-weak: #1e2c24;
+  --good: #3fb87d;
+  --partial: #e0ac48;
+  --none: #e07070;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- テーマ切替ボタン ---- */
+.theme-toggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.78rem;
+  font-family: inherit;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.theme-toggle .tt-icon {
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 * {
@@ -825,9 +871,49 @@ main.container:has(.longform) {
 /* 良い例に添えるサイトのスクリーンショット */
 .ex-figure {
   margin: 0.6rem 0 0.2rem;
+  min-width: 0;
 }
 
-.ex-figure a {
+/* ブラウザ風の枠。実在サイトの画面であることが図として伝わるようにする。 */
+.shot-frame {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.55rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--chrome);
+}
+
+.shot-dots {
+  display: inline-flex;
+  gap: 0.22rem;
+  flex: none;
+}
+
+.shot-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.shot-host {
+  font-size: 0.68rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shot-frame a {
   display: block;
 }
 
@@ -835,15 +921,29 @@ main.container:has(.longform) {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
 }
 
 .ex-figure figcaption {
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   font-size: 0.74rem;
+  line-height: 1.6;
   color: var(--muted);
+  border-left: 2px solid var(--border);
+  padding-left: 0.5rem;
+}
+
+/* 広い画面では「説明（左）＋画面例（右）」に組む。狭い画面では縦積み。 */
+@media (min-width: 900px) {
+  .example .ex-list > li.has-shot {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 0 1.25rem;
+    align-items: start;
+  }
+
+  .example .ex-list > li.has-shot .ex-figure {
+    margin-top: 0.15rem;
+  }
 }
 
 .ext {

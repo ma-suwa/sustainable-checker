@@ -12,6 +12,8 @@ import type { IrCategory, IrCategoryId, IrCriteriaItem } from "./types";
 // 【出典】sources / benchmark.source は lib/sources.ts のキー。
 
 const CHECKED = "2026-07-15";
+// 事例の偏りを減らすために後から追加した分の確認日。
+const CHECKED2 = "2026-07-18";
 
 const C1: IrCategory = {
   id: "1",
@@ -47,6 +49,17 @@ const C1: IrCategory = {
             src: "/screenshots/sites/itochu-ir.jpg",
             caption:
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
+        },
+        {
+          company: "東京海上ホールディングス",
+          url: "https://www.tokiomarinehd.com/ir/",
+          text: "グローバルナビの第一階層に「IR情報」を置いてドロップダウンで下層を示し、パンくず（ホーム > IR情報）で現在地も分かる。見出し直下のリード文で開示姿勢を明示している。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/tokiomarine-ir.jpg",
+            caption:
+              "東京海上ホールディングス IRトップ。第一階層のナビ、パンくず、見出し直下のリード文が揃っている。",
           },
         },
       ],
@@ -305,6 +318,17 @@ const C2: IrCategory = {
               "伊藤忠商事 決算公表資料。短信・説明資料・質疑応答要旨が期ごとに整理され、PDFの容量が併記されている。",
           },
         },
+        {
+          company: "丸井グループ",
+          url: "https://www.0101maruigroup.co.jp/ir.html",
+          text: "投資家情報のトップに「最新資料」のタブを設け、直近の決算資料（2026年3月期）を最初に見せている。探しにいかなくても最新の決算資料に行き当たる。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/marui-ir.jpg",
+            caption:
+              "丸井グループ 投資家情報。「最新資料」タブの直下に最新期の決算資料が置かれ、右側に株価情報が並ぶ。",
+          },
+        },
       ],
       badExamples: [
         { text: "最新期のみで過去資料が欠落しており、経年比較ができない。" },
@@ -432,6 +456,17 @@ const C2: IrCategory = {
             src: "/screenshots/sites/itochu-ir.jpg",
             caption:
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
+        },
+        {
+          company: "NTT",
+          url: "https://group.ntt/jp/ir/",
+          text: "第一画面右側に株価情報をリアルタイムで表示し、市場・証券コード（東証プライム: 9432）、現在値、前日比、チャートへの導線までを1つのブロックにまとめている。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/ntt-ir.jpg",
+            caption:
+              "NTT 株主・投資家情報。第一画面の右側に、証券コード・現在値・前日比・チャート導線を含む株価情報ブロックが置かれている。",
           },
         },
       ],
@@ -795,6 +830,17 @@ const C4: IrCategory = {
             src: "/screenshots/sites/nipponpaint-ir.jpg",
             caption:
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
+        },
+        {
+          company: "日立製作所",
+          url: "https://www.hitachi.co.jp/IR/",
+          text: "第一画面に次回決算の発表予定日（2027年3月期第1四半期・2026年7月29日発表予定）を掲げ、その下に直近のIRニュース4件を発表日つきで並べている。予定と実績の双方が日付で追える。",
+          checkedOn: CHECKED2,
+          image: {
+            src: "/screenshots/sites/hitachi-ir.jpg",
+            caption:
+              "日立製作所 IRトップ。次回決算の発表予定日と、日付つきのIRニュース4件が第一画面に収まっている。",
           },
         },
       ],
