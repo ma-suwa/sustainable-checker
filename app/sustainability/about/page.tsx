@@ -9,6 +9,9 @@ import {
 } from "@/lib/content/framework";
 import { categories, totalPoints } from "@/lib/content/criteria";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { SourceList } from "@/components/SourceList";
+import { getSources } from "@/lib/sources";
+import { sustainabilityUsedSourceKeys } from "@/lib/usedSources";
 
 export const metadata: Metadata = {
   title: "評価の枠組み・出典",
@@ -19,7 +22,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Breadcrumb items={[{ label: "ホーム", href: "/" }, { label: "サステナビリティ", href: "/sustainability/" }, { label: "評価の枠組み" }]} />
+      <Breadcrumb
+        items={[
+          { label: "ホーム", href: "/" },
+          { label: "サステナビリティ", href: "/sustainability/" },
+          { label: "評価の枠組み" },
+        ]}
+      />
 
       <div className="page-head">
         <span className="eyebrow">評価の枠組み</span>
@@ -44,7 +53,11 @@ export default function AboutPage() {
         <h2>配点の目安（合計{totalPoints()}）</h2>
         <div className="tag-row" style={{ marginBottom: "0.75rem" }}>
           {categories.map((c) => (
-            <Link key={c.id} href={`/sustainability/categories/${c.id}/`} className="tag">
+            <Link
+              key={c.id}
+              href={`/sustainability/categories/${c.id}/`}
+              className="tag"
+            >
               {c.id}. {c.title}（{c.points}）
             </Link>
           ))}
@@ -53,7 +66,28 @@ export default function AboutPage() {
       </section>
 
       <section className="section">
-        <h2>出典・参考</h2>
+        <h2>この配点の土台にした評価機関</h2>
+        <p className="note" style={{ marginBottom: "0.9rem" }}>
+          三層ルーブリックの配点は、下記の第三者評価が公表している評価軸・項目数・配点を
+          突き合わせて組み立てています。各機関のページを実際に見ると、何をどこまで公開して
+          いるか（配点まで出すのか、項目数だけか）に差があることが分かります。
+        </p>
+        <SourceList
+          keys={sustainabilityUsedSourceKeys()}
+          grouped
+          only={["ranking"]}
+          headingLevel={3}
+        />
+        <p className="note" style={{ marginTop: "1rem" }}>
+          標準・ガイドライン、計測ツール、制度を含む全
+          {getSources(sustainabilityUsedSourceKeys()).length}件は
+          <Link href="/sustainability/sources/">出典・参考資料</Link>
+          にまとめています。
+        </p>
+      </section>
+
+      <section className="section">
+        <h2>そのほか参照した枠組み</h2>
         <ul className="source-list">
           {sources.map((s, i) => (
             <li key={i}>{s}</li>

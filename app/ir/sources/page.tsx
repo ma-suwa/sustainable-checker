@@ -48,7 +48,7 @@ export default function IrSourcesPage() {
         </p>
       </div>
 
-      <SourceList keys={keys} label="一次情報リンク集" />
+      <SourceList keys={keys} grouped />
     </>
   );
 }

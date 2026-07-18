@@ -59,6 +59,20 @@ const SITES = {
   },
   "tokiomarine-ir": "https://www.tokiomarinehd.com/ir/",
   "sekisuihouse-sustainability": "https://www.sekisuihouse.co.jp/company/sustainable/",
+
+  // ── 出典ページ（評価機関・基準）。lib/sources.ts の image から参照する ──
+  "src-gomez-ir": "https://www.gomez.co.jp/ranking/ir/",
+  "src-gomez-esg": "https://www.gomez.co.jp/ranking/esg/",
+  "src-nikko-ir": "https://www.nikkoir.co.jp/rank/rank.html",
+  "src-daiwa-ir": "https://www.daiwair.co.jp/news/internet_IR2025.html",
+  "src-tribeck": "https://brand.tribeck.jp/usability/",
+  "src-wcag22": "https://waic.jp/translations/WCAG22/",
+  "src-nng-heuristics": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  "src-core-web-vitals": "https://web.dev/articles/vitals",
+  "src-ghg-protocol": "https://ghgprotocol.org/",
+  "src-gri": "https://www.globalreporting.org/standards/",
+  "src-issb": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
+  "src-cg-code": "https://www.jpx.co.jp/equities/listing/cg/index.html",
 };
 
 // Cookieバナー・地域判定モーダルはファーストビューを覆うので取り除く。
@@ -101,7 +115,7 @@ function stripOverlays() {
 
   // 「Cookie」と言わず「端末情報」「広告配信」とだけ書くバナーもあるので広めに拾う。
   const CONSENT =
-    /cookie|クッキー|同意|consent|プライバシー設定|端末情報|広告配信|利便性向上|利用者情報/i;
+    /cookie|クッキー|同意|consent|プライバシー設定|端末情報|広告配信|利便性向上|利用者情報|your privacy|personal data|personal information/i;
 
   for (const el of Array.from(document.body.querySelectorAll("*"))) {
     const cs = getComputedStyle(el);

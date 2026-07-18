@@ -45,7 +45,7 @@ export default function SustainabilitySourcesPage() {
         </p>
       </div>
 
-      <SourceList keys={keys} label="一次情報リンク集" />
+      <SourceList keys={keys} grouped />
     </>
   );
 }
