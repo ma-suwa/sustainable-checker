@@ -791,6 +791,11 @@ main.container:has(.longform) {
   line-height: 1.9;
 }
 
+/* 本文が複数段落続くのはプレスリリース編だけ。既存ページの単段落表示は変えない。 */
+.criterion-body + .criterion-body {
+  margin-top: 0.9rem;
+}
+
 .benchmark-line .badge.draft {
   margin-left: 0.5rem;
 }
@@ -1089,4 +1094,86 @@ main.container:has(.longform) {
   .criterion-head .anchor {
     display: none;
   }
+}
+
+/* ---- プレスリリース編 ---- */
+
+/* 根拠リスト：本文と出所を視覚的に分け、出所は必ずリンクで一次情報へ返す。 */
+.evidence-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.evidence-list li {
+  margin: 0.5rem 0;
+  line-height: 1.65;
+}
+
+.evidence-text {
+  color: var(--text);
+}
+
+.evidence-src {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.evidence-date {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 対応策：着手順のバッジを行頭に置き、拾い読みできるようにする。 */
+.action-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.92rem;
+}
+
+.action-list li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  margin: 0.55rem 0;
+  line-height: 1.7;
+}
+
+.badge.level-first {
+  background: var(--accent);
+  color: #fff;
+}
+
+.badge.level-standard {
+  background: var(--accent-weak);
+  color: var(--accent);
+}
+
+.badge.level-advanced {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* リリース一覧のカード */
+.release-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.release-facts {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.release-facts summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.release-facts .checklist {
+  margin-top: 0.5rem;
+  line-height: 1.7;
 }

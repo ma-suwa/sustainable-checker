@@ -2,7 +2,14 @@
 
 企業のコーポレートサイトを評価する3領域——**サステナビリティ／ESG開示**・**IR（投資家向け情報）**・**ユーザビリティ（使いやすさ）**——について、評価機関が用いる評価軸を、良い例／悪い例／出典とともにカテゴリ別に解説する**情報サイト**。
 
-> 沿革：v0.1はURL入力の自動診断ツール → v0.2で「評価基準の解説サイト」へ方向転換（診断エンジン廃止・完全静的化） → v0.3でトップをハブ化しIR編を追加 → v0.4でユーザビリティ編を追加（3領域） → v0.5で各項目に実企業の良い例（社名・URL・確認日つき）と一次情報リンクを付与し、カテゴリページを「配下の全項目を追従目次つきで通読できるロングフォーム記事」に再構成。
+> 沿革：v0.1はURL入力の自動診断ツール → v0.2で「評価基準の解説サイト」へ方向転換（診断エンジン廃止・完全静的化） → v0.3でトップをハブ化しIR編を追加 → v0.4でユーザビリティ編を追加（3領域） → v0.5で各項目に実企業の良い例（社名・URL・確認日つき）と一次情報リンクを付与し、カテゴリページを「配下の全項目を追従目次つきで通読できるロングフォーム記事」に再構成 → v0.6でプレスリリース編（`/press/`）を追加。
+
+## v0.6 の変更点（プレスリリース編の追加）
+
+- **`/press/` セクションを新設**：コーポレートサイト評価・ランキング・サイトブランド調査の**プレスリリース51件**（2024〜2026年発表分）を収集し、横断して読み取れた**12の特徴**と、それぞれの**具体的な対応策**をまとめた。
+- 既存3領域が「評価軸を規範として示す」構成なのに対し、本セクションは「評価機関が実際に何を発表したか」という**観測結果**を扱う。したがって各特徴には必ず `evidence`（どのリリースのどの記述か）を紐づけ、出所を示せない一般論は載せない方針。
+- 対応策には着手順の目安（**まず着手／標準／上位を狙う**）を付与。
+- 収集元：日興アイ・アール／大和IR／ゴメス／トライベック／サステナビリティコミュニケーション協会／日経BPコンサルティング、および受賞企業側の発表。全URLは 2026-07-19 時点で HTTP 200 を確認済み。
 
 ## v0.5 の変更点（実例・出典リンク・ロングフォーム化）
 
@@ -11,7 +18,7 @@
 - **ロングフォーム化**：`categories/[id]` が配下の全項目を縦に全展開し、sticky な追従目次（現在地ハイライト）を備える。`criteria/[id]` は同じ本文を表示するパーマリンクとして存続（既存の共有リンクを壊さない）。
 - **出典一覧ページ**：各領域に `sources/` を新設し、その領域で参照した一次情報のリンク集を提供。
 
-## 2つの領域
+## 3つの領域＋プレスリリース編
 
 ### 🌱 サステナビリティ開示ガイド（`/sustainability/`）
 三層ルーブリック（ゴメスの配点構造＋トライベックの体験フロー＋JSBIの独自性加点）を骨格に、6カテゴリ・全項目を解説。
@@ -54,6 +61,7 @@
 - `/sustainability/` … landing／`categories/[id]`（ロングフォーム）／`criteria/[id]`（パーマリンク）／`sources`／`glossary`／`about`
 - `/ir/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`sources`／`glossary`／`about`
 - `/usability/` … landing／`categories/[id]`／`criteria/[id]`／`institutions`（評価機関比較）／`sources`／`glossary`／`about`
+- `/press/` … landing／`findings`（12の特徴の通し読み）／`findings/[id]`（パーマリンク）／`releases`（収集した全51件）
 
 ## セットアップ
 
@@ -79,6 +87,7 @@ NEXT_PUBLIC_BASE_PATH="/<repo>" npm run build:static  # GitHub Pages配信時
 lib/content/    サステナビリティ編（types / criteria(A〜F) / glossary / framework / labels）
 lib/ir/         IR編（types / criteria(1〜4) / institutions / glossary / framework / labels）
 lib/usability/  ユーザビリティ編（types / criteria(1〜7) / institutions / glossary / framework / labels）
+lib/press/      プレスリリース編（types / releases（収集した一次情報） / findings（特徴と対応策））
 ```
 
 年次改定（ゴメス／日興／大和の項目改訂、SSBJ義務化など）はこのデータを差し替えて追従する。
@@ -97,9 +106,11 @@ app/
   sustainability/       サステナビリティ編（landing/categories/criteria/glossary/about）
   ir/                   IR編（landing/categories/criteria/institutions/glossary/about）
   usability/            ユーザビリティ編（landing/categories/criteria/institutions/glossary/about）
+  press/                プレスリリース編（landing/findings/releases）
   layout.tsx            共通レイアウト（ヘッダー／フッター）
-components/              SiteHeader / Breadcrumb / ExampleBox
+components/              SiteHeader / Breadcrumb / ExampleBox / FindingArticle
 lib/content/            サステナビリティ編コンテンツ
 lib/ir/                 IR編コンテンツ
 lib/usability/          ユーザビリティ編コンテンツ
+lib/press/              プレスリリース編コンテンツ
 ```

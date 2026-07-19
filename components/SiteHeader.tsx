@@ -13,6 +13,7 @@ export function SiteHeader() {
           <Link href="/sustainability/">サステナビリティ</Link>
           <Link href="/ir/">IRサイト</Link>
           <Link href="/usability/">ユーザビリティ</Link>
+          <Link href="/press/">評価の傾向</Link>
         </nav>
         <ThemeToggle />
       </div>

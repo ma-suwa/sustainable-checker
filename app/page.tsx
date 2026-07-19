@@ -2,6 +2,8 @@ import Link from "next/link";
 import { categories } from "@/lib/content/criteria";
 import { irCategories } from "@/lib/ir/criteria";
 import { uxCategories } from "@/lib/usability/criteria";
+import { findings } from "@/lib/press/findings";
+import { releases } from "@/lib/press/releases";
 
 export default function Hub() {
   return (
@@ -54,6 +56,20 @@ export default function Hub() {
         いずれも「情報の網羅性」「探しやすさ・使いやすさ」を共通軸としつつ、
         対象読者と評価観点が異なります。関心のある領域から選んでください。
       </p>
+
+      <div className="grid" style={{ marginTop: "1.5rem" }}>
+        <Link href="/press/" className="link-card">
+          <h3>📰 プレスリリースから読む評価の傾向</h3>
+          <p>
+            評価機関のプレスリリース{releases.length}件を収集し、
+            評価されるサイトに共通する{findings.length}
+            の特徴と具体的な対応策を、一次情報の記述とともに整理。
+          </p>
+          <div className="card-meta">
+            <span>日興／大和／ゴメス／トライベック ほか</span>
+          </div>
+        </Link>
+      </div>
     </>
   );
 }
