@@ -655,6 +655,28 @@ const C3: UxCategory = {
       ],
       goodExamples: [
         {
+          company: "NTT",
+          url: "https://group.ntt/jp/sitemap/",
+          text: "HTMLサイトマップで、NTTグループについて・ニュース・株主投資家情報・研究開発・サステナビリティ・会社情報・採用など主要カテゴリごとに配下ページをリンク一覧化し、サイト全体像を1ページで俯瞰できるようにしている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/ntt-sitemap.jpg",
+            caption:
+              "NTT サイトマップ。カテゴリ見出しの下に配下ページをリンクで列挙している（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "KDDI",
+          url: "https://www.kddi.com/sitemap/",
+          text: "「総合サイトマップ」で、理念・ビジョン／サービス／ニュース／サステナビリティ／企業情報／株主・投資家情報などをアコーディオンで展開できるようにし、全体像を一覧しつつ必要な範囲だけ開ける。印刷導線も備える。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/kddi-sitemap.jpg",
+            caption:
+              "KDDI 総合サイトマップ。カテゴリをアコーディオンで展開できる一覧ページ（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "HTMLサイトマップで全体像を示しつつ、XMLサイトマップも整備し、各ページのtitleを固有にしている。",
         },
       ],
@@ -934,6 +956,28 @@ const C5: UxCategory = {
         "試験結果（達成状況）を公開しているか",
       ],
       goodExamples: [
+        {
+          company: "NTT",
+          url: "https://group.ntt/jp/accessibility/",
+          text: "ウェブアクセシビリティポリシーで準拠規格（JIS X 8341-3）と適合レベル（AA）、対象範囲（group.ntt配下の主要ページ）を明記し、年度別の試験結果まで公開している。方針の作成・改訂履歴も残している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/ntt-accessibility.jpg",
+            caption:
+              "NTT ウェブアクセシビリティポリシー。JIS X 8341-3 レベルAA準拠・対象範囲・更新履歴を明記（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "リコー",
+          url: "https://jp.ricoh.com/terms_of_use/accessibility",
+          text: "「リコーWebアクセシビリティ方針」でWCAG 2.2を品質基準と明記し、対象範囲（グループ全Webサイト、PDF等HTML以外は当面対象外）と改訂日を示している。何にどこまで対応するかが読み取れる。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/ricoh-accessibility.jpg",
+            caption:
+              "リコー Webアクセシビリティ方針。WCAG 2.2を品質基準とし、対象範囲・改訂日を明記（確認日 2026-07-23）。",
+          },
+        },
         {
           text: "アクセシビリティ方針でWCAG 2.2 レベルAA準拠と対象範囲を明示し、試験結果と未達成項目の改善予定まで公開している。",
         },

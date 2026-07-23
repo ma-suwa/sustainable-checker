@@ -166,6 +166,15 @@ const SITES = {
   "chugai-ir-mobile": { url: "https://www.chugai-pharm.co.jp/ir/", mobile: true },
   "tokyu-ir-mobile": { url: "https://www.tokyu-fudosan-hd.co.jp/ir/", mobile: true },
 
+  // ── v0.10：アクセシビリティ方針・HTMLサイトマップの補強撮影 ──
+  // アクセシビリティ方針（サステナA6／ユーザビリティ5-3／IR 1-5）は、準拠規格・
+  // 適合レベル・対象範囲・試験結果が明記されたページを撮る。
+  "ntt-accessibility": "https://group.ntt/jp/accessibility/", // JIS X 8341-3:2016 AA準拠・試験結果公開
+  "ricoh-accessibility": "https://jp.ricoh.com/terms_of_use/accessibility", // WCAG 2.2 AA・対象範囲明記
+  // HTMLサイトマップ（ユーザビリティ3-3）は、サイト全体を俯瞰できる一覧ページを撮る。
+  "ntt-sitemap": "https://group.ntt/jp/sitemap/",
+  "kddi-sitemap": "https://www.kddi.com/sitemap/",
+
   // ── 出典ページ（評価機関・基準）。lib/sources.ts の image から参照する ──
   "src-gomez-ir": "https://www.gomez.co.jp/ranking/ir/",
   "src-gomez-esg": "https://www.gomez.co.jp/ranking/esg/",

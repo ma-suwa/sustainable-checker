@@ -353,6 +353,28 @@ const C1: IrCategory = {
           },
         },
         {
+          company: "NTT",
+          url: "https://group.ntt/jp/accessibility/",
+          text: "ウェブアクセシビリティポリシーで、IRを含むgroup.ntt配下の主要ページを対象に、JIS X 8341-3 のレベルAA準拠を明示し、年度別の試験結果まで公開している。投資家向けページもこの方針の対象になる。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/ntt-accessibility.jpg",
+            caption:
+              "NTT ウェブアクセシビリティポリシー。JIS X 8341-3 レベルAA準拠と対象範囲・試験結果を明記（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "リコー",
+          url: "https://jp.ricoh.com/terms_of_use/accessibility",
+          text: "「リコーWebアクセシビリティ方針」でWCAG 2.2を品質基準とし、IRサイトを含むグループ全Webサイトを対象範囲として明記している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/ricoh-accessibility.jpg",
+            caption:
+              "リコー Webアクセシビリティ方針。WCAG 2.2を品質基準とし、IRを含む全Webサイトを対象とする（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "アクセシビリティ方針でWCAG 2.2 レベルAA準拠と対象範囲を明示し、業績グラフの数値をHTMLの表としても提供している。",
         },
       ],
