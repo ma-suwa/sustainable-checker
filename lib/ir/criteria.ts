@@ -14,6 +14,9 @@ import type { IrCategory, IrCategoryId, IrCriteriaItem } from "./types";
 const CHECKED = "2026-07-15";
 // 事例の偏りを減らすために後から追加した分の確認日。
 const CHECKED2 = "2026-07-18";
+// v0.9：各項目の良い例を3〜8件に拡充した際に確認した分
+//（ゴメスIRサイトランキング2025 上位企業のIRページを追加）。
+const CHECKED3 = "2026-07-23";
 
 const C1: IrCategory = {
   id: "1",
@@ -62,6 +65,42 @@ const C1: IrCategory = {
               "東京海上ホールディングス IRトップ。第一階層のナビ、パンくず、見出し直下のリード文が揃っている。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "グローバルナビの第一階層に「IR情報」を置き、パンくず「ホーム > IR情報」で現在地を示す。見出し直下のリード文で「財務情報、株主・株式情報、各種IR資料」と扱う情報の範囲を明示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir.jpg",
+            caption:
+              "双日 IRトップ。第一階層のナビ、パンくず、リード文、右側の株価情報ブロックが揃う（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "グローバルナビの「IR情報」を強調表示し、パンくず「ホーム > IR情報」で現在地を示す。IR配下でも同じヘッダーが維持される。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir.jpg",
+            caption:
+              "中外製薬 IRトップ。ナビの「IR情報」が青く強調され、直下にパンくずが出る（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "グローバルナビを「会社案内／事業紹介／投資家情報／グループの取り組み／サステナビリティ」の5項目に整理し、現在地の「投資家情報」を強調している。下層の各財務ページでも同じIRローカルメニューが維持される。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir.jpg",
+            caption:
+              "東急不動産HD 投資家情報トップ。5項目のナビで現在地を強調し、株価チャートや決算短信が第一画面に並ぶ（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -104,6 +143,42 @@ const C1: IrCategory = {
             src: "/screenshots/sites/itochu-ir.jpg",
             caption:
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "第一画面に株価情報ブロック（現在値・年間配当予想・配当利回り・時価総額）と「IR資料一括ダウンロード（ZIP：27.7MB）」を置き、その下に次回決算発表の予定日と最新の更新（統合報告書2026を発行）を日付つきで並べている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir.jpg",
+            caption:
+              "双日 IRトップ。株価情報・IR資料一括DL・次回決算予定・最新更新が第一画面に収まっている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "第一画面に株価・前日比・証券コードと「株価チャートを見る」を置き、その直下に「最新の説明会資料」「アニュアルレポート（統合報告書）」への導線を並べている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir.jpg",
+            caption:
+              "中外製薬 IRトップ。株価ブロックと、最新の説明会資料・アニュアルレポートへの導線が第一画面に並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "第一画面に「PICK UP 決算短信（2026年3月期決算発表）」と、証券コード・終値つきの株価チャートを並置。イメージ画像で埋めず、投資家が最初に見たい情報を上部に置いている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir.jpg",
+            caption:
+              "東急不動産HD 投資家情報。PICK UPの決算短信と株価チャートが第一画面に並ぶ（確認日 2026-07-23）。",
           },
         },
       ],
@@ -150,6 +225,30 @@ const C1: IrCategory = {
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
           },
         },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "ヘッダーに「サイト内検索」の入力窓を常設し、下層の財務ページでは「業績推移トップ／主な経営指標／セグメント別情報…」のローカルメニューで隣接情報へ回遊できる。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-highlights.jpg",
+            caption:
+              "東急不動産HD 業績ハイライト。下層でも指標別のローカルメニューが並び、隣接情報へ回遊できる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "ヘッダーに検索アイコンを常設し、IR配下の各ページでパンくず（ホーム > IR情報 > …）を表示。深い階層に着地しても上位へ戻れる。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-financial.jpg",
+            caption:
+              "双日 決算説明会。パンくず「ホーム > IR情報 > IRイベント > 決算説明会」で現在地と経路が分かる（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "検索機能がなく、深い階層で現在地も分からない。" },
@@ -190,6 +289,30 @@ const C1: IrCategory = {
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
           },
         },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "スマホ幅（390px）で横スクロールが発生せず、株価カード（株価・前日比・証券コード）を崩さず表示。「株価チャートを見る」を大きなタップ対象にし、検索・ハンバーガーメニューをヘッダーに集約している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位（スマホ幅390pxで確認）",
+          image: {
+            src: "/screenshots/sites/chugai-ir-mobile.jpg",
+            caption:
+              "中外製薬 IRトップのスマホ表示（390px）。株価カードが崩れず、大きなタップ対象で並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "スマホ幅で株価チャートを読める形で表示し、画面下部に「ニュース／会社案内／投資家情報／検索／メニュー」の固定タブバーを置いて、主要導線に指で届くようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位（スマホ幅390pxで確認）",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-mobile.jpg",
+            caption:
+              "東急不動産HD IRトップのスマホ表示（390px）。株価チャートが読め、下部に固定タブバーが並ぶ（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "PC専用の固定幅で、スマホでは横スクロールが必要になる。" },
@@ -217,6 +340,18 @@ const C1: IrCategory = {
         "キーボード操作だけでメニューを開けるか",
       ],
       goodExamples: [
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "ヘッダーに「文字サイズ 標準／拡大」の切り替えと「印刷する」を常設し、ブラウザ操作に不慣れな投資家でも本文を大きくできる。IRサイトの機能として文字拡大に配慮している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir.jpg",
+            caption:
+              "東急不動産HD 投資家情報。ヘッダーに「文字サイズ 標準／拡大」の切り替えがある（確認日 2026-07-23）。",
+          },
+        },
         {
           text: "アクセシビリティ方針でWCAG 2.2 レベルAA準拠と対象範囲を明示し、業績グラフの数値をHTMLの表としても提供している。",
         },
@@ -329,6 +464,30 @@ const C2: IrCategory = {
               "丸井グループ 投資家情報。「最新資料」タブの直下に最新期の決算資料が置かれ、右側に株価情報が並ぶ。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/meetings/financial/",
+          text: "決算説明会ページで年度を選んで絞り込めるプルダウンを用意し、期ごとに「IR説明資料 一括ダウンロード」（PDF容量表示つき）を提供している。過去期のアーカイブに辿り着ける。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-financial.jpg",
+            caption:
+              "双日 決算説明会。年度選択のプルダウンと、期ごとのIR説明資料一括ダウンロードがある（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/finance/latest.html",
+          text: "「最新の決算」を、IFRS実績・Core実績の見出しつきHTMLで掲載し、売上収益・営業利益・四半期利益を前年同期比つきの本文で示している。PDFを開かなくても要点が読める。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir-finance.jpg",
+            caption:
+              "中外製薬 最新の決算。連結決算概要をHTML本文（IFRS実績／Core実績）で示している（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "最新期のみで過去資料が欠落しており、経年比較ができない。" },
@@ -361,6 +520,30 @@ const C2: IrCategory = {
       ],
       goodExamples: [
         {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/financialinfo/highlights/",
+          text: "業績推移を「業績ハイライト／主な経営指標／主な営業指標／セグメント別情報／連結損益計算書…」と指標別のローカルメニューで整理し、会計基準を明示。数値はExcelでも提供している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-highlights.jpg",
+            caption:
+              "東急不動産HD 業績ハイライト。指標別のローカルメニューと会計基準の明示、Excel提供がある（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/finance/latest.html",
+          text: "四半期決算の業績を、売上収益・営業利益・四半期利益の前年同期比つきでHTML本文に示し、数表を開かなくても増減が掴めるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir-finance.jpg",
+            caption:
+              "中外製薬 最新の決算。主要業績を前年同期比つきの本文で示している（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "チャートジェネレータで指標と期間を選んで経年グラフを描け、ROE・ROIC・PBRを資本コストの説明と同じセクションに置いている。",
         },
       ],
@@ -390,6 +573,18 @@ const C2: IrCategory = {
       ],
       goodExamples: [
         {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/financialinfo/highlights/",
+          text: "業績ハイライトをExcel（32KB）でダウンロード提供し、指標別・セグメント別の数値をそのまま加工できる。PDFの手入力に頼らせない。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-highlights.jpg",
+            caption:
+              "東急不動産HD 業績ハイライト。数値をExcel（32KB）でダウンロードできる（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "過去10年分の財務データとセグメント別数値をExcelで提供し、会計基準変更時の組替済み数値も併記している。",
         },
       ],
@@ -415,6 +610,30 @@ const C2: IrCategory = {
         "英語版の説明会コンテンツがあるか",
       ],
       goodExamples: [
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/meetings/financial/",
+          text: "「決算説明会」を専用ページとして立て、年度を選んで各期の説明会資料に辿れるようにし、「IR説明資料 一括ダウンロード」を用意している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-financial.jpg",
+            caption:
+              "双日 決算説明会。年度選択と一括ダウンロードで、期ごとの説明会資料に辿れる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "IRトップの「TOP IR CONTENTS」に「最新の説明会資料」と「過去の説明会資料を見る」を並べ、最新回と過去回の双方に辿れるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir.jpg",
+            caption:
+              "中外製薬 IRトップ。最新・過去の説明会資料への導線が第一画面付近に置かれている（確認日 2026-07-23）。",
+          },
+        },
         {
           text: "説明会動画に加えて、質疑応答をテキスト化して掲載し、投資家が検索・引用できる形にしている。",
         },
@@ -467,6 +686,30 @@ const C2: IrCategory = {
             src: "/screenshots/sites/ntt-ir.jpg",
             caption:
               "NTT 株主・投資家情報。第一画面の右側に、証券コード・現在値・前日比・チャート導線を含む株価情報ブロックが置かれている。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/stockandbond/return/",
+          text: "「利益還元方針」で、2028年3月期までの配当性向を35%以上・累進配当を継続、という数値目標つきの方針を明記している。株主優待・株主総会・株主の状況などもローカルメニューで揃う。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-return.jpg",
+            caption:
+              "東急不動産HD 株主還元（配当等）。配当性向35%以上・累進配当という数値目標を明記している（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "IRトップの株価情報ブロックに、現在値・前日比だけでなく年間配当予想（180円）・配当利回り（3.29%）・時価総額（11,487億円）まで一体で示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir.jpg",
+            caption:
+              "双日 IRトップ。株価情報に年間配当予想・配当利回り・時価総額まで含めて表示している（確認日 2026-07-23）。",
           },
         },
       ],
@@ -524,6 +767,29 @@ const C3: IrCategory = {
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
           },
         },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/mgtpolicy/mid-term-plan/",
+          text: "中期経営計画を、ごあいさつ・長期経営方針・中期経営計画・IRポリシーなどのローカルメニューで整理し、「中期経営計画2030」の背景と目的を見出しつきのHTML本文で読める形にしている。PDF1本に閉じていない。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-midterm.jpg",
+            caption:
+              "東急不動産HD 中期経営計画。策定の背景と目的を見出しつきのHTML本文で説明している（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "投資家情報トップに「Management Messages」と「経営方針」のカードを並べ、経営メッセージと方針への導線を第一画面付近に置いている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/tokyu-ir.jpg",
+            caption:
+              "東急不動産HD 投資家情報。Management Messages・経営方針のカードが並ぶ（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -565,6 +831,30 @@ const C3: IrCategory = {
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
           },
         },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/individual/",
+          text: "個人投資家向けページで「どんな会社か／どんな製品を扱っているか／戦略と将来性は」の3つの視点に分けて自己紹介型に説明し、製薬事業を予備知識なしでも掴めるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir-individual.jpg",
+            caption:
+              "中外製薬 個人投資家の皆さまへ。会社・製品・戦略の3つの視点をカードで説明している（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/individual/",
+          text: "個人株主・投資家向けページを設け、「双日ってこんな会社です」と平易な自己紹介から始めて、総合商社の事業を理解しやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-individual.jpg",
+            caption:
+              "双日 個人株主・投資家の皆さまへ。「双日ってこんな会社です」と平易な説明から始まる（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -602,6 +892,29 @@ const C3: IrCategory = {
             src: "/screenshots/sites/nipponpaint-ir.jpg",
             caption:
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/governance/",
+          text: "ガバナンスを、コーポレートガバナンス・役員紹介・社外取締役からのメッセージ・内部統制システムに関する基本的な考え方及びその整備状況・内部統制報告書などのカードで整理し、体制図の掲載にとどまらず社外役員の視点まで読める。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合17位",
+          image: {
+            src: "/screenshots/sites/mgc-governance.jpg",
+            caption:
+              "三菱瓦斯化学 ガバナンス。役員紹介・社外取締役からのメッセージ・内部統制がカードで並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/governance/",
+          text: "コーポレートガバナンス・リスクマネジメント・法務／倫理・情報管理などをカードで一覧化し、統治の構成要素を俯瞰したうえで各テーマへ入れるようにしている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sekisui-chem-governance.jpg",
+            caption:
+              "積水化学 ガバナンス。コーポレートガバナンス・リスク・法務など8テーマをカードで示す（確認日 2026-07-23）。",
           },
         },
       ],
@@ -645,6 +958,30 @@ const C3: IrCategory = {
             src: "/screenshots/sites/softbank-sustainability.jpg",
             caption:
               "ソフトバンク サステナビリティのトップ。外部評価や主要な取り組みをスライダーで見せている。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/reports/annual/",
+          text: "IR資料室に統合報告書を置き、「統合報告書2026（Set for Next Stage）」をIR側から直接読める。財務と非財務を束ねた報告書へIRから到達できる構造になっている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-annual.jpg",
+            caption:
+              "双日 統合報告書2026。IR資料室から統合報告書のPDF（全編）に直接たどれる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "IRトップの「TOP IR CONTENTS」に「アニュアルレポート2025（統合報告書）」を置き、IR側からサステナビリティを含む統合報告書へ到達できるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir.jpg",
+            caption:
+              "中外製薬 IRトップ。アニュアルレポート（統合報告書）への導線が第一画面付近にある（確認日 2026-07-23）。",
           },
         },
       ],
@@ -742,6 +1079,42 @@ const C4: IrCategory = {
               "ミネベアミツミ IR情報。次回決算発表の日時と配信予定が、更新日つきで先頭に示されている。",
           },
         },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/",
+          text: "IRの各ページに「View in English」ボタンを常設し、決算などの下層ページからも対応する英語版へ切り替えられる。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir.jpg",
+            caption:
+              "中外製薬 IRトップ。「View in English」ボタンが常設されている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "グローバルナビに「JP｜EN」の言語切替を常設し、IR配下のどのページからでも英語版へ移動できる。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir.jpg",
+            caption:
+              "双日 IRトップ。ヘッダーに「JP｜EN」の言語切替が常設される（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/",
+          text: "ヘッダーに「English」を独立して置き、投資家情報の下層ページからも同じ位置から英語版に移動できる。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir.jpg",
+            caption:
+              "東急不動産HD 投資家情報。ヘッダーに「English」への切替が常設される（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "英語版がない、または情報量・更新が日本語版から大幅に劣る。" },
@@ -791,6 +1164,30 @@ const C4: IrCategory = {
             src: "/screenshots/sites/nipponpaint-ir.jpg",
             caption:
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/individual/",
+          text: "「個人投資家の皆さまへ」を専用ページとして立て、会社・製品・戦略の3つの視点でカード化。読む以外の入口を用意して知識量に応じて選べるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir-individual.jpg",
+            caption:
+              "中外製薬 個人投資家の皆さまへ。3つの視点のカードで自己紹介型に説明している（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/individual/",
+          text: "「個人株主・投資家の皆さまへ」を機関投資家向けとは別導線で用意し、「双日ってこんな会社です」と平易な入口を設けている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir-individual.jpg",
+            caption:
+              "双日 個人株主・投資家の皆さまへ。個人向けの平易な入口を分けて用意している（確認日 2026-07-23）。",
           },
         },
       ],
@@ -843,6 +1240,29 @@ const C4: IrCategory = {
               "日立製作所 IRトップ。次回決算の発表予定日と、日付つきのIRニュース4件が第一画面に収まっている。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/",
+          text: "IRトップに「次回決算発表（2027年3月期第1四半期）は2026年7月31日 12:30の予定です」と予定を掲げ、その下に「UPDATE 2026.07.23 統合報告書2026を発行」と直近の更新を日付つきで示している。予定と実績の双方が日付で追える。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合15位",
+          image: {
+            src: "/screenshots/sites/sojitz-ir.jpg",
+            caption:
+              "双日 IRトップ。次回決算の発表予定日と、日付つきの最新更新（UPDATE）が第一画面に並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/ir/meetings/calendar/",
+          text: "IRカレンダーで「2026年度年間予定表」を月別グリッドにし、決算発表などのイベント時期を一覧できるようにしている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sojitz-ir-calendar.jpg",
+            caption:
+              "双日 IRカレンダー。4月〜3月の年間予定表で、決算発表などの時期が一覧できる（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "適時開示から数日遅れてサイトに反映される。" },
@@ -875,6 +1295,30 @@ const C4: IrCategory = {
             src: "/screenshots/sites/itochu-annual-report.jpg",
             caption:
               "伊藤忠商事 統合レポート。最新号のCEO／COOメッセージがPDFの容量表示つきで置かれている。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/ir/finance/latest.html",
+          text: "四半期決算の概要を、PDFだけでなく見出しつきHTML本文（IFRS実績・Core実績）で掲載し、売上収益・利益などの数値をテキストで提供。AI・検索での読み取り可能性を高めている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/chugai-ir-finance.jpg",
+            caption:
+              "中外製薬 最新の決算。決算概要をHTML本文で提供し、数値がテキストで取得できる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "東急不動産ホールディングス",
+          url: "https://www.tokyu-fudosan-hd.co.jp/ir/mgtpolicy/mid-term-plan/",
+          text: "中期経営計画をPDFに閉じず、見出しつきのHTML本文で「策定の背景と目的」から説明。図の画像貼付に頼らず、テキストで読める構成にしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez IRサイトランキング2025 総合7位",
+          image: {
+            src: "/screenshots/sites/tokyu-ir-midterm.jpg",
+            caption:
+              "東急不動産HD 中期経営計画。中計の内容をHTML本文で読める（確認日 2026-07-23）。",
           },
         },
       ],

@@ -60,6 +60,112 @@ const SITES = {
   "tokiomarine-ir": "https://www.tokiomarinehd.com/ir/",
   "sekisuihouse-sustainability": "https://www.sekisuihouse.co.jp/company/sustainable/",
 
+  // ── v0.7：サステナビリティ編の各項目を3〜8例に拡充するための追加撮影 ──
+  // ゴメスESGサイトランキング2025上位企業を中心に、E/S/G各テーマの専用ページを撮る。
+  // 双日（3位）は気候・環境・人権・人的資本・多様性・ガバナンス・外部評価まで
+  // 専用ページが揃うため、事例の偏り解消の軸にする。
+
+  // 双日（ゴメスESG2025 3位）
+  "sojitz-sustainability": "https://www.sojitz.com/jp/sustainability/",
+  "sojitz-materiality": "https://www.sojitz.com/jp/sustainability/materiality/",
+  // 双日のESG BOOK下層は、大きなタイトル帯＋アンカーメニューの下に本文が来る。
+  // 第一画面のままだと上部の余白が大きいので、本文が写る位置まで送ってから撮る。
+  "sojitz-climate": { url: "https://www.sojitz.com/jp/sustainability/esg-climate/", scrollY: 520 },
+  "sojitz-human-rights": {
+    url: "https://www.sojitz.com/jp/sustainability/esg-human_rights/",
+    scrollY: 520,
+  },
+  "sojitz-human-resources": {
+    url: "https://www.sojitz.com/jp/sustainability/esg-human_resources/",
+    scrollY: 520,
+  },
+  "sojitz-diversity": {
+    url: "https://www.sojitz.com/jp/sustainability/esg-diversity/",
+    scrollY: 520,
+  },
+  "sojitz-governance": {
+    url: "https://www.sojitz.com/jp/sustainability/esg-governance/",
+    scrollY: 520,
+  },
+  "sojitz-evaluation": "https://www.sojitz.com/jp/corporate/evaluation/",
+
+  // 三菱瓦斯化学（ゴメスESG2025 4位）
+  "mgc-sustainability": "https://www.mgc.co.jp/sustainability/",
+  "mgc-materiality": "https://www.mgc.co.jp/sustainability/materiality.html",
+  "mgc-tcfd": "https://www.mgc.co.jp/sustainability/environment/tcfd.html",
+  "mgc-governance": "https://www.mgc.co.jp/sustainability/governance/",
+  "mgc-esg-data": "https://www.mgc.co.jp/sustainability/esg-performance-data.html",
+  "mgc-evaluation": "https://www.mgc.co.jp/sustainability/evalutation.html",
+
+  // セブン＆アイ・ホールディングス（ゴメスESG2025 5位）
+  "seveni-sustainability": "https://www.7andi.com/sustainability/",
+  "seveni-theme": "https://www.7andi.com/sustainability/theme/",
+  "seveni-environment": "https://www.7andi.com/sustainability/environment.html",
+  "seveni-human-resources": "https://www.7andi.com/sustainability/human_resources.html",
+  "seveni-awards": "https://www.7andi.com/sustainability/awards.html",
+
+  // 積水化学工業（ゴメスESG2025 19位）
+  "sekisui-chem-sustainability": "https://www.sekisui.co.jp/sustainability_report/",
+  "sekisui-chem-materiality": "https://www.sekisui.co.jp/sustainability_report/sustainability/",
+  "sekisui-chem-eco": "https://www.sekisui.co.jp/sustainability_report/eco/",
+  "sekisui-chem-social": "https://www.sekisui.co.jp/sustainability_report/social/",
+  "sekisui-chem-governance": "https://www.sekisui.co.jp/sustainability_report/governance/",
+
+  // 村田製作所（ゴメスESG2025 6位）
+  "murata-csr": "https://corporate.murata.com/ja-jp/csr",
+  "murata-materiality": "https://corporate.murata.com/ja-jp/csr/materiality/specific",
+  "murata-environment": "https://corporate.murata.com/ja-jp/csr/environment_murata",
+
+  // ── v0.8：ユーザビリティ編の各項目を3〜8例に拡充するための追加撮影 ──
+  // トライベック Webユーザビリティランキング2026＜企業サイト(PC)編＞の上位企業の
+  // コーポレートトップを撮る。1枚のトップが 明快性(1)・ナビ(2)・検索(3)・モバイル(6)・
+  // 問い合わせ(7) の複数項目の良い例になる。業種が偏らないよう上位から幅広く採る。
+  "chugai-home": "https://www.chugai-pharm.co.jp/", // 3位 中外製薬
+  "daido-life-home": "https://www.daido-life.co.jp/", // 4位 大同生命
+  "matsui-home": "https://www.matsui.co.jp/", // 5位 松井証券
+  "shimizu-home": "https://www.shimz.co.jp/", // 6位 清水建設
+  "chuden-home": "https://www.chuden.co.jp/", // 8位 中部電力
+  "nipponsteel-home": "https://www.nipponsteel.com/", // 10位 日本製鉄
+  // 2-4（パンくず・現在地）用に、上位企業の下層ページ（会社情報）を撮る。
+  "shimizu-company": "https://www.shimz.co.jp/company/",
+  "daido-company": "https://www.daido-life.co.jp/company/",
+  "matsui-company": "https://www.matsui.co.jp/company/",
+
+  // 6-1（レスポンシブ・タップターゲット）用に、スマホ幅(390px)でトップを撮る。
+  "jcom-mobile": { url: "https://www.jcom.co.jp/", mobile: true },
+  "daido-mobile": { url: "https://www.daido-life.co.jp/", mobile: true },
+  "shimizu-mobile": { url: "https://www.shimz.co.jp/", mobile: true },
+
+  // ── v0.9：IR編の各項目を3〜8例に拡充するための追加撮影 ──
+  // ゴメスIRサイトランキング2025の上位企業のIR配下ページを撮る。1つのIRサイトが
+  // ナビ(1)・決算(2)・経営情報(3)・積極性(4)の複数項目の良い例になる。業種を分散させる。
+
+  // 双日（ゴメスIR2025 15位）
+  "sojitz-ir": "https://www.sojitz.com/jp/ir/",
+  "sojitz-ir-financial": "https://www.sojitz.com/jp/ir/meetings/financial/",
+  "sojitz-ir-highlights": "https://www.sojitz.com/jp/ir/highlights/",
+  "sojitz-ir-individual": "https://www.sojitz.com/jp/ir/individual/",
+  "sojitz-ir-calendar": "https://www.sojitz.com/jp/ir/meetings/calendar/",
+  "sojitz-ir-annual": "https://www.sojitz.com/jp/ir/reports/annual/",
+
+  // 中外製薬（ゴメスIR2025 5位）
+  "chugai-ir": "https://www.chugai-pharm.co.jp/ir/",
+  "chugai-ir-finance": "https://www.chugai-pharm.co.jp/ir/finance/latest.html",
+  "chugai-ir-individual": "https://www.chugai-pharm.co.jp/ir/individual/",
+  "chugai-ir-return": "https://www.chugai-pharm.co.jp/ir/share/shareholder_return.html",
+  "chugai-ir-calendar": "https://www.chugai-pharm.co.jp/ir/reports_downloads/event/",
+
+  // 東急不動産ホールディングス（ゴメスIR2025 7位）
+  "tokyu-ir": "https://www.tokyu-fudosan-hd.co.jp/ir/",
+  "tokyu-ir-highlights": "https://www.tokyu-fudosan-hd.co.jp/ir/financialinfo/highlights/",
+  "tokyu-ir-individual": "https://www.tokyu-fudosan-hd.co.jp/ir/individual/",
+  "tokyu-ir-return": "https://www.tokyu-fudosan-hd.co.jp/ir/stockandbond/return/",
+  "tokyu-ir-midterm": "https://www.tokyu-fudosan-hd.co.jp/ir/mgtpolicy/mid-term-plan/",
+  "tokyu-ir-calendar": "https://www.tokyu-fudosan-hd.co.jp/ir/library/calendar/",
+  // 1-4（モバイル／レスポンシブ）用に、IRトップをスマホ幅(390px)で撮る。
+  "chugai-ir-mobile": { url: "https://www.chugai-pharm.co.jp/ir/", mobile: true },
+  "tokyu-ir-mobile": { url: "https://www.tokyu-fudosan-hd.co.jp/ir/", mobile: true },
+
   // ── 出典ページ（評価機関・基準）。lib/sources.ts の image から参照する ──
   "src-gomez-ir": "https://www.gomez.co.jp/ranking/ir/",
   "src-gomez-esg": "https://www.gomez.co.jp/ranking/esg/",
@@ -244,6 +350,10 @@ const results = { saved: [], skipped: [], failed: [] };
 for (const [slug, spec] of targets) {
   const url = typeof spec === "string" ? spec : spec.url;
   const scrollY = typeof spec === "string" ? 0 : (spec.scrollY ?? 0);
+  // mobile: true のときは 390×844（スマホ相当）で撮る。6-1（レスポンシブ・タップ）用。
+  const mobile = typeof spec === "string" ? false : (spec.mobile ?? false);
+  const vw = mobile ? 390 : 1366;
+  const vh = mobile ? 844 : 768;
   const out = path.join(OUT_DIR, `${slug}.jpg`);
 
   if (!force) {
@@ -260,6 +370,8 @@ for (const [slug, spec] of targets) {
 
   const page = await context.newPage();
   try {
+    // モバイル指定のときはビューポートをスマホ相当に切り替える。
+    if (mobile) await page.setViewportSize({ width: vw, height: vh });
     await page.goto(url, { waitUntil: "load", timeout: 45000 });
     await page.waitForTimeout(2500);
 
@@ -283,7 +395,7 @@ for (const [slug, spec] of targets) {
       path: out,
       type: "jpeg",
       quality: 78,
-      clip: { x: 0, y: 0, width: 1366, height: 768 },
+      clip: { x: 0, y: 0, width: vw, height: vh },
     });
     results.saved.push(slug);
     console.log(`saved  ${slug}`);

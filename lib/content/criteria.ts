@@ -17,6 +17,8 @@ import type { Category, CategoryId, CriteriaItem } from "./types";
 const CHECKED = "2026-07-15";
 // 事例の偏りを減らすために後から追加した分の確認日。
 const CHECKED2 = "2026-07-18";
+// v0.7：各項目の良い例を3〜8件に拡充した際に確認した分（ゴメスESG2025上位企業を中心に追加）。
+const CHECKED3 = "2026-07-23";
 
 const A: Category = {
   id: "A",
@@ -76,6 +78,42 @@ const A: Category = {
               "リコー サステナビリティのトップ。第一階層のナビに「サステナビリティ」があり、直下にパンくずが出る。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/",
+          text: "グローバルナビの第一階層に「サステナビリティ」を置き、パンくず「ホーム > サステナビリティ」とJP／EN切替・検索を常設。ヒーロー内から統合報告書とESG BOOKにも直接飛べる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-sustainability.jpg",
+            caption:
+              "双日 サステナビリティのトップ。第一階層のナビに独立した入口があり、右下に統合報告書2026・ESG BOOKへの導線が並ぶ。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/",
+          text: "第一階層のグローバルナビに「サステナビリティ」があり、現在地がハイライトされる。パンくずと検索・JP/EN切替も常設されている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-sustainability.jpg",
+            caption:
+              "三菱瓦斯化学 サステナビリティのトップ。ナビの「サステナビリティ」が青く強調され、直下にパンくずが出る。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "グローバルナビの第一階層に「サステナビリティ」を置き、現在地を強調。パンくずと、ページ右上に配下専用のローカルメニューを併設している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティのトップ。ナビの「サステナビリティ」が緑で強調され、右上に配下メニューが開く。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -118,6 +156,41 @@ const A: Category = {
             src: "/screenshots/sites/ajinomoto-materiality.jpg",
             caption:
               "味の素 マテリアリティのページ。特定プロセス・リスクと機会・目標／KPIへのページ内リンクが冒頭に並ぶ。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "「サステナビリティ」を開くと、トップメッセージ・マテリアリティ・環境・社会・人材・ガバナンス・ESGデータ集／対照表・社外からの評価まで、下層の詳細項目を横一列で一覧できる。大分類で止めず、行き先がすべて見える。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティのトップ。E/S/G各テーマとデータ集・外部評価まで、下層項目がナビに全展開されている。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "サステナビリティレポート内のどのページでも、トップメッセージ・環境・社会・ガバナンス・PDFダウンロードのローカルメニューを固定表示し、E/S/Gの切り口で整理している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティレポート。上部にE/S/G軸のローカルメニューとPDFダウンロードが常設される。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/human_resources.html",
+          text: "サステナビリティ配下の下層ページでも、左側にサステナビリティ委員会・推進体制・重点課題・ガバナンスなどの一覧メニューを固定し、深い階層でも全体像を保っている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/seveni-human-resources.jpg",
+            caption:
+              "セブン＆アイ 人的資本の取り組み。下層ページでも左サイドに配下項目の一覧メニューが残る。",
           },
         },
       ],
@@ -164,6 +237,39 @@ const A: Category = {
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
           },
         },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "ヘッダーに「サイト内検索」の入力窓を常設し、English切替も併設。アイコンだけでなく入力欄が見えているぶん、検索できることが伝わりやすい。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。ヘッダー右に「サイト内検索」の入力窓とEnglish切替が常設されている。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/esg-performance-data.html",
+          text: "全階層のヘッダーに検索アイコンを維持し、下層のESGデータページでも同じヘッダーが保たれる。「Scope3」などの具体語での到達手段が常に手元にある。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/mgc-esg-data.jpg",
+            caption:
+              "三菱瓦斯化学 ESGパフォーマンスデータ。下層でもヘッダーの検索アイコンとグローバルナビが維持される。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "ヘッダー右端に検索アイコンを常設し、サステナビリティ配下でも消えない。製品情報・技術記事など他セクションと同じ検索窓を共有している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティのトップ。ヘッダー右に検索アイコンが常設される。",
+          },
+        },
       ],
       badExamples: [
         { text: "トップにはあるが、下層ページのヘッダーで検索窓が消える。" },
@@ -203,6 +309,39 @@ const A: Category = {
             src: "/screenshots/sites/kddi-sustainability.jpg",
             caption:
               "KDDI サステナビリティ。パンくずで現在地を示し、グローバルナビの「サステナビリティ」に下線がついている。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/",
+          text: "パンくず「ホーム / サステナビリティ」で現在地を示すと同時に、グローバルナビの「サステナビリティ」を青く強調し、二重に現在地が分かる。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/mgc-sustainability.jpg",
+            caption:
+              "三菱瓦斯化学 サステナビリティ。パンくずとナビのハイライトの両方で現在地を示す。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/eco/",
+          text: "下層の環境ページで「TOP > 環境」のパンくずを表示し、上位階層に戻れる。ローカルメニュー側でも現在のカテゴリが分かる。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sekisui-chem-eco.jpg",
+            caption:
+              "積水化学 環境ページ。右上に「TOP > 環境」のパンくずが出る。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/materiality/",
+          text: "「ホーム > サステナビリティ > マテリアリティ」と全階層をリンクつきのパンくずで示し、検索や外部リンクから深い階層に着地しても上位へ戻れる。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sojitz-materiality.jpg",
+            caption:
+              "双日 マテリアリティ。3階層のパンくずがそれぞれリンクになっている。",
           },
         },
         {
@@ -270,6 +409,41 @@ const A: Category = {
               "積水ハウス ESG経営。報告書・データ集への3つの入口が並び、その下の更新情報に公開日とファイル容量が出る。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/",
+          text: "サステナビリティのファーストビュー付近に「Sojitz ESG BOOK（PDF：19.7MB／2026年2月26日現在）」と「統合報告書2026（PDF：5.80MB）」を並べ、基準日とファイル容量まで併記。ESG BOOKライブラリへの導線も置く。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-sustainability.jpg",
+            caption:
+              "双日 サステナビリティ。ヒーロー右下にESG BOOKと統合報告書2026が、基準日・容量つきで並ぶ。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "サステナビリティトップに「サステナビリティデータブック 最新版ダウンロード（14.9MB）」「過去のサステナビリティデータブック」「統合報告書」を並べ、最新版・過年度・報告書を1か所から選べる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。右側にデータブック最新版・過年度版・統合報告書への導線が並ぶ。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/eco/",
+          text: "ローカルメニューに「PDFダウンロード」を常設し、環境の各テーマ（気候変動・資源循環・水リスクなど）ごとにPDFの容量表示つきで対応する報告書箇所へ誘導している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sekisui-chem-eco.jpg",
+            caption:
+              "積水化学 環境。テーマ別カードにそれぞれ対応PDF（各18.0MB）への導線が付く。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -305,6 +479,18 @@ const A: Category = {
         "図表・グラフの内容がテキストでも読めるか（画像だけで完結していないか）",
       ],
       goodExamples: [
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "全ページ右下にアクセシビリティ支援ツールのボタンを常設し、文字サイズ・コントラスト・読み上げなどの調整を利用者側で行えるようにしている。方針を掲げるだけでなく、支援機能をサイトに実装している点が観測できる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-awards.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。右下にアクセシビリティ支援ツールの起動ボタン（人型アイコン）が常設される。",
+          },
+        },
         {
           text: "アクセシビリティ方針でWCAG 2.2 レベルAA準拠と対象範囲を明示し、達成状況の試験結果まで公開している。",
         },
@@ -408,6 +594,29 @@ const B: Category = {
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
           },
         },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "サステナビリティレポートのローカルメニュー先頭に「トップメッセージ」を独立させ、トップから直接読める導線（PDF：860KB）を用意。価値創造の全体像図と並べて経営の考えを示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティレポート。ローカルメニュー先頭とヒーロー下に「トップメッセージ」への導線がある。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "サステナビリティのローカルメニュー先頭に「トップメッセージ」を置き、トップページ下部では社長の顔写真つきでメッセージを掲出している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティ。ページ下部に社長の顔写真つきトップメッセージが置かれる。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -443,6 +652,41 @@ const B: Category = {
             src: "/screenshots/sites/ajinomoto-materiality.jpg",
             caption:
               "味の素 マテリアリティのページ。特定プロセス・リスクと機会・目標／KPIへのページ内リンクが冒頭に並ぶ。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "「Innovation for the Earth」を掲げ、事業基盤（LIFE）→社会課題解決→際立ちへと循環する価値創造モデルを図で示し、株主・取引先・従業員・地域社会などのステークホルダーを配置してWeb上で読めるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティ。事業基盤から社会課題解決へ循環する価値創造モデルが図示されている。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/",
+          text: "「双日グループ企業理念」に基づき、事業を通じた『2つの価値（双日が得る価値／社会が得る価値）』の最大化としてサステナビリティを定義し、理念と結びつけて説明している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-sustainability.jpg",
+            caption:
+              "双日 サステナビリティ。企業理念に基づく『2つの価値』の考え方をヒーローで明示している。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "サステナビリティトップに、エレクトロニクス社会の発展と事業プロセス・技術を結ぶ価値創造の円環図を置き、自社の役割を図で示している。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティ。ページ下部に価値創造プロセスの円環図が置かれる。",
           },
         },
       ],
@@ -497,6 +741,54 @@ const B: Category = {
               "ソフトバンク マテリアリティ（重要課題）。トップメッセージからESG関連資料までの導線が一覧で並ぶ。",
           },
         },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/materiality.html",
+          text: "「自社にとっての重要度」と「経済・環境・社会にとっての重要度」の2軸でマテリアリティマップを作成し、SDGsの17目標・169ターゲットと紐づけたうえで、特定プロセスへのアンカーも置いている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-materiality.jpg",
+            caption:
+              "三菱瓦斯化学 最重要課題（マテリアリティ）。2軸での特定とSDGsとの紐づけを明示している。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/materiality/",
+          text: "事業を通じて中長期的に取り組む6つのマテリアリティを『2つの価値』の創造と接続して説明し、特定プロセスの専用ページへ展開している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-materiality.jpg",
+            caption:
+              "双日 マテリアリティ。6つの重要課題を『2つの価値』と結びつけて示す。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr/materiality/specific",
+          text: "2019年度に社会課題と自社の関係性・貢献領域を見直してマテリアリティを特定した経緯を書き、「三か年の中期方針策定にあわせて見直す」と更新頻度まで明示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-materiality.jpg",
+            caption:
+              "村田製作所 マテリアリティの特定。特定の経緯と、中期方針にあわせた見直しの方針を記す。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/theme/",
+          text: "2014年に特定した重点課題を2022年3月に改定（取締役会決議日つき）した経緯と、改定の目的・改定プロセス（STEP構成）を開示し、なぜ見直したかまで辿れる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-theme.jpg",
+            caption:
+              "セブン＆アイ 重点課題（マテリアリティ）。特定・改定の経緯を取締役会決議日つきで示す。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -537,6 +829,30 @@ const B: Category = {
               "味の素 ESG情報インデックス。開示項目が表形式で一覧でき、各テーマの資料に直接飛べる。",
           },
         },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/esg-performance-data.html",
+          text: "ESGパフォーマンスデータを環境／社会／ガバナンスのタブで整理し、温室効果ガス排出量などを2021〜2024年度の連結ベースで経年表として掲載。最新年度だけでなく推移が追える。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-esg-data.jpg",
+            caption:
+              "三菱瓦斯化学 ESGパフォーマンスデータ。Scope1+2などが2021→2024年度の経年表で並ぶ。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-climate/",
+          text: "従来の2030年中間目標に加え、2050年ネットゼロに向けた2035年中間目標を新設（2026年3月改定）するなど、長期目標と複数の中間目標を年限つきで示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-climate.jpg",
+            caption:
+              "双日 気候変動。2050年ネットゼロに向け、2030年・2035年の中間目標を年限つきで設定している。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -573,6 +889,42 @@ const B: Category = {
               "味の素 外部からの評価。SRIインデックスへの組み入れ状況が、基準日つきで並ぶ。",
           },
         },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/awards.html",
+          text: "「社外からの評価・表彰」ページで、S&P GlobalのCSA（DJ BIC）でWorld Indexに3年連続・Asia/Pacific Indexに17年連続選定、CSA通算20回回答（2026年5月現在）、FTSE4Goodなどを、選定年次や連続年数まで添えて開示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-awards.jpg",
+            caption:
+              "セブン＆アイ 社外からの評価・表彰。DJ BIC／CSAの選定状況を連続年数つきで示す。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/evalutation.html",
+          text: "「社会からの評価」でESGインデックスへの組み入れを整理し、FTSE4Good Index Series・FTSE JPX Blossom Japan Index Series など個別のインデックス名と評価機関を挙げて説明している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-evaluation.jpg",
+            caption:
+              "三菱瓦斯化学 社会からの評価。組み入れられたESGインデックスを名称つきで解説している。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "サステナビリティトップの更新情報で、CDP「サプライヤーエンゲージメント・リーダー」への2年連続選定などの外部評価を、日付つきの新着として可視化している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティ。更新情報にCDPの外部評価が日付つきで並ぶ。",
+          },
+        },
       ],
       badExamples: [
         { text: "外部評価・イニシアチブへの言及が一切ない。" },
@@ -607,6 +959,30 @@ const B: Category = {
             src: "/screenshots/sites/itochu-ir.jpg",
             caption:
               "伊藤忠商事 IRトップ。経営方針・決算情報・統合レポートなどの主要導線と株価情報が第一画面に収まっている。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/",
+          text: "グローバルナビ右側に「JP｜EN」の言語切替を常設し、サステナビリティ配下のどのページからでも英語版へ切り替えられる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-sustainability.jpg",
+            caption:
+              "双日 サステナビリティ。ヘッダー右に「JP｜EN」の言語切替が常設される。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "サステナビリティのグローバルナビに「English」を独立して置き、下層ページでも同じ位置から英語版に移動できる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。ナビに「English」への切替が常設される。",
           },
         },
       ],
@@ -664,6 +1040,30 @@ const C: Category = {
               "味の素 環境の取り組みページ。テーマごとの見出しで構成されている。",
           },
         },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/esg-performance-data.html",
+          text: "ESGパフォーマンスデータで「温室効果ガス排出」を項目・単位つきの表にし、Scope1+2（連結）を2021〜2024年度で経年開示。エネルギー起源CO2などを千t-CO2換算で示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-esg-data.jpg",
+            caption:
+              "三菱瓦斯化学 ESGパフォーマンスデータ。温室効果ガス排出をScope1+2の経年表で開示している。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-climate/",
+          text: "自社のGHG排出（Scope1・Scope2）削減に加え、サプライチェーン排出（Scope3）の把握・分析まで方針として明記し、排出の多い領域を事業リスク／機会の両面で捉えている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-climate.jpg",
+            caption:
+              "双日 気候変動。Scope1・2に加えScope3の把握・分析を方針として明記している。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -708,6 +1108,30 @@ const C: Category = {
             src: "/screenshots/sites/ajinomoto-environment.jpg",
             caption:
               "味の素 環境の取り組みページ。テーマごとの見出しで構成されている。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/environment/tcfd.html",
+          text: "「気候変動への対応（TCFD提言に基づく開示）」として独立ページを設け、2019年5月の賛同表明にとどまらず、緩和と適応の両面、Scope別の削減、2050年カーボンニュートラルまでを本文で具体的に開示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-tcfd.jpg",
+            caption:
+              "三菱瓦斯化学 気候変動への対応（TCFD提言に基づく開示）。賛同の一文で終わらず本文で具体化している。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-climate/",
+          text: "気候変動ページを「方針・基本的な考え方／目標／脱炭素への対応／環境データ／TCFDへの賛同」で構成し、脱炭素ロードマップを気候変動対応戦略の基盤として位置づけている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-climate.jpg",
+            caption:
+              "双日 気候変動。方針・目標・脱炭素・環境データ・TCFDへの賛同でページを構成している。",
           },
         },
       ],
@@ -757,6 +1181,30 @@ const C: Category = {
               "コニカミノルタ サステナビリティのトップ。方針・目標と実績・ESGデータへの導線が右側に置かれている。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-climate/",
+          text: "2050年ネットゼロという長期目標に対し、2030年中間目標に加えて2035年中間目標を新設（2026年3月改定）。長期目標だけでなく複数の通過点で進捗を検証できるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-climate.jpg",
+            caption:
+              "双日 気候変動。2050年ネットゼロに向け2030・2035年の中間目標を設定している。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/eco/",
+          text: "環境ページで「気候変動への対応」を独立カードとして立て、環境全般（戦略・ガバナンス・リスク管理・指標・目標）と並べて、目標と実績を体系的に読める構成にしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-eco.jpg",
+            caption:
+              "積水化学 環境。気候変動への対応を、戦略・指標・目標を含む環境全般と並べて示す。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -788,6 +1236,30 @@ const C: Category = {
         "自社の事業特性に照らして重要なテーマが選ばれているか",
       ],
       goodExamples: [
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/eco/",
+          text: "環境ページで気候だけでなく「資源循環の実現に向けた対応」「水リスクの低減」「生物多様性への対応」「化学物質管理」をそれぞれ独立したカードとして並べ、環境＝CO2に偏らない構成にしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-eco.jpg",
+            caption:
+              "積水化学 環境。資源循環・水リスク・生物多様性・化学物質管理を個別テーマとして開示している。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr/environment_murata",
+          text: "環境の取り組みで、関連するSDGs（6：安全な水、7：エネルギー、12：つくる責任つかう責任、13：気候変動）を明示し、環境マネジメント・資源循環まで含めて構成している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-environment.jpg",
+            caption:
+              "村田製作所 環境。関連SDGs（6・7・12・13）を示し、資源循環など気候以外のテーマにも触れる。",
+          },
+        },
         {
           text: "水・廃棄物・生物多様性それぞれに目標を設定し、TNFDのLEAPアプローチに沿った依存と影響の分析に着手していることを開示している。",
         },
@@ -846,6 +1318,30 @@ const D: Category = {
               "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
           },
         },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-human_rights/",
+          text: "人権ページを「方針・基本的な考え方／体制／取り組み／パフォーマンス」で構成し、総合商社としてグループ各社・サプライヤーまで含めたサプライチェーン上の人権リスク低減を掲げる。人権方針は経営会議で承認し、サステナビリティ委員会・経営会議での議論を取締役会に報告するガバナンスも明記している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-human-rights.jpg",
+            caption:
+              "双日 人権。人権方針の制定と、経営会議での承認・取締役会への報告という統治プロセスまで示す。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "価値創造モデルの基盤に「人権尊重」を明示的に置き、事業全体を支える前提として人権を位置づけている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティ。価値創造の循環図の土台に「人権尊重」が置かれている。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -891,6 +1387,42 @@ const D: Category = {
               "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
           },
         },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/social/",
+          text: "社会ページの「人的資本」を、人的資本全般（戦略・ガバナンス・指標／目標）・挑戦する風土の醸成（挑戦行動発現度、エンゲージメント）・適所適材の実現（人材マネジメント、育成、教育研修）・ダイバーシティの実現に分け、育成とエンゲージメントを指標込みで整理している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-social.jpg",
+            caption:
+              "積水化学 社会（人的資本）。育成・エンゲージメント・ダイバーシティをカードで体系化している。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/human_resources.html",
+          text: "「人的資本の取り組み」を専用ページとして立て、人財を成長の源泉と位置づける方針、店舗での実践を通じた人財育成、エンゲージメント向上・DEI推進までを一続きで説明している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-human-resources.jpg",
+            caption:
+              "セブン＆アイ 人的資本の取り組み。人財政策の方針と育成・エンゲージメントを本文で示す。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-human_resources/",
+          text: "人的資本ページの冒頭で「人材を最大の資本と考え、人材の力を高めることこそが価値創造の源泉」と方針を明示し、企業理念・行動指針と結びつけて人材像を示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-human-resources.jpg",
+            caption:
+              "双日 人的資本。人材を最大の資本と位置づける方針を冒頭で明示している。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -925,6 +1457,30 @@ const D: Category = {
         "数値だけでなく、登用・両立を可能にする施策が説明されているか",
       ],
       goodExamples: [
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-diversity/",
+          text: "「女性活躍推進に関するコミットメント」を社長CEOの顔写真つきメッセージとして掲げ、2030年代に全社員およびミドルマネジメントのジェンダーバランスを50/50にする目標を明示している。数値目標を経営トップの言葉と結びつけている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-diversity.jpg",
+            caption:
+              "双日 多様性。社長CEOのコミットメントとして、ジェンダーバランス50/50の目標を示す。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/social/",
+          text: "社会（人的資本）の中に「ダイバーシティの実現」を独立カードとして立て、ダイバーシティ・人員構成・両立支援・健康経営をまとめて扱っている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-social.jpg",
+            caption:
+              "積水化学 社会。「ダイバーシティの実現」に人員構成・両立支援・健康経営を含めて整理している。",
+          },
+        },
         {
           text: "女性管理職比率の目標・実績を経年で示し、男女賃金格差を区分別に開示したうえで、格差の要因分析と是正策まで書いている。",
         },
@@ -968,6 +1524,18 @@ const D: Category = {
               "味の素 社会の取り組みページ。人権・人財・労働安全衛生などの項目がページ内リンクで一覧できる。",
           },
         },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/social/",
+          text: "社会（人的資本）の中で健康経営を扱い、両立支援などと合わせて従業員の健康・働きやすさを人的資本の一部として位置づけている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-social.jpg",
+            caption:
+              "積水化学 社会。健康経営を両立支援などとあわせて人的資本のテーマに含めている。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -998,6 +1566,30 @@ const D: Category = {
         "地域社会への貢献活動が、寄付額だけでなく成果とともに語られているか",
       ],
       goodExamples: [
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "CDP「サプライヤーエンゲージメント・リーダー」への2年連続選定を更新情報で可視化しており、サプライチェーン全体での気候対応の働きかけが第三者に評価されていることが分かる。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティ。CDPサプライヤーエンゲージメント・リーダー選定を新着で示す。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-human_rights/",
+          text: "総合商社として多岐にわたるサプライチェーンに関わる立場から、グループ各社およびサプライヤーと共にサプライチェーン上の環境・社会（人権）リスクを低減することを重要課題に据えている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-human-rights.jpg",
+            caption:
+              "双日 人権。サプライチェーン上のリスク低減をグループ・サプライヤーと共に進める方針を示す。",
+          },
+        },
         {
           text: "CSR調達方針に基づくサプライヤー監査の実施社数・指摘事項・是正完了率を開示し、一次サプライヤーを超えた範囲にも段階的に広げている。",
         },
@@ -1051,6 +1643,42 @@ const E: Category = {
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
           },
         },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/governance/",
+          text: "ガバナンスをカードで整理し、コーポレートガバナンス・役員紹介・社外取締役からのメッセージを並置。体制図の掲載にとどまらず、社外役員の視点まで読める導線を用意している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-governance.jpg",
+            caption:
+              "三菱瓦斯化学 ガバナンス。役員紹介・社外取締役からのメッセージなどがカードで並ぶ。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/governance/",
+          text: "ガバナンスページで、コーポレートガバナンス・リスクマネジメント・法務／倫理・情報管理などをカードで一覧化し、統治の構成要素を俯瞰できるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-governance.jpg",
+            caption:
+              "積水化学 ガバナンス。コーポレートガバナンス・リスク・法務など8つのテーマをカードで示す。",
+          },
+        },
+        {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-governance/",
+          text: "コーポレート・ガバナンスの基本方針として、株主をはじめとするステークホルダーへの経営責任・説明責任、健全性・透明性・効率性の高い経営体制の確立を明示し、体制／取締役会／監査／報酬まで章立てしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合3位",
+          image: {
+            src: "/screenshots/sites/sojitz-governance.jpg",
+            caption:
+              "双日 コーポレート・ガバナンス。基本方針と、体制・取締役会・監査・報酬などの章構成を示す。",
+          },
+        },
       ],
       badExamples: [
         { text: "組織体制図のみで、スキルマトリックスがない。" },
@@ -1082,6 +1710,30 @@ const E: Category = {
         "サイバーセキュリティポリシーを掲載しているか",
       ],
       goodExamples: [
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/governance/",
+          text: "ガバナンスのカードにコンプライアンス・内部統制システムに関する基本的な考え方及びその整備状況・内部統制報告書を並べ、コンプライアンスと内部統制を独立テーマとして開示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-governance.jpg",
+            caption:
+              "三菱瓦斯化学 ガバナンス。コンプライアンス・内部統制システム・内部統制報告書がカードで並ぶ。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/governance/",
+          text: "ガバナンスページで「リスクマネジメント」を独立カードとして立て、コンプライアンス（法務・倫理）と並べて統治の一部として扱っている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-governance.jpg",
+            caption:
+              "積水化学 ガバナンス。リスクマネジメントと法務・倫理を独立テーマとして示す。",
+          },
+        },
         {
           text: "リスクマネジメント体制図に加え、重要リスクを一覧化して各リスクの影響度・対応部門・対応策まで示し、内部通報の件数も開示している。",
         },
@@ -1117,6 +1769,30 @@ const E: Category = {
         "ポリシーが日本語だけでなく英語でも読めるか",
       ],
       goodExamples: [
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/governance/",
+          text: "ガバナンスのカードに「情報セキュリティ基本方針」「政策保有株式の保有方針」を独立して並べ、個別ポリシーへ直接たどれるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-governance.jpg",
+            caption:
+              "三菱瓦斯化学 ガバナンス。情報セキュリティ基本方針・政策保有株式の保有方針が個別カードで並ぶ。",
+          },
+        },
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/governance/",
+          text: "ガバナンスページで法務・倫理、情報管理、知的財産マネジメントなどをカードに分け、個別テーマのポリシー・整備状況へ入りやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-governance.jpg",
+            caption:
+              "積水化学 ガバナンス。法務・倫理、情報管理、知的財産などを個別テーマとして整理している。",
+          },
+        },
         {
           text: "税務・情報セキュリティ・反腐敗・政治献金など主要ポリシーを一覧ページにまとめ、それぞれ改定日と適用範囲（グループ会社を含むか）を明示している。",
         },
@@ -1210,6 +1886,30 @@ const F: Category = {
               "日本ペイントホールディングス IRトップ。IRイベントの予定と株価情報が第一画面に並ぶ。",
           },
         },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "グローバルナビの第一階層に「ストーリー」を独立して置き、「小さな部品で、世界を支える」といった自社固有の切り口で事業と社会とのつながりを語るコンテンツを用意している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティ。ナビ先頭に「ストーリー」を置き、自社らしい切り口で発信している。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "「セブンマイルで寄付ができる」といった生活者目線の独自プログラムをヒーローで見せ、GREEN CHALLENGE 2050の動画とあわせて、方針の羅列でなく自社ならではの取り組みで伝えている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。生活者向けプログラムと動画で自社らしく取り組みを伝える。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -1238,6 +1938,42 @@ const F: Category = {
         "グラフの数値がテキストや表でも取得できるか（CSV/Excelの提供を含む）",
       ],
       goodExamples: [
+        {
+          company: "積水化学工業",
+          url: "https://www.sekisui.co.jp/sustainability_report/",
+          text: "「Innovation for the Earth」の価値創造モデルを、事業基盤・社会課題解決・ステークホルダーを配した循環図として視覚化し、長い説明文に頼らず全体像を直感的に掴めるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合19位",
+          image: {
+            src: "/screenshots/sites/sekisui-chem-sustainability.jpg",
+            caption:
+              "積水化学 サステナビリティ。価値創造モデルを循環図のインフォグラフィックで示す。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/esg-performance-data.html",
+          text: "ESGパフォーマンスデータを、指標・単位・年度をそろえた経年表として整理し、Web上でそのまま推移を追える形で提供している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合4位",
+          image: {
+            src: "/screenshots/sites/mgc-esg-data.jpg",
+            caption:
+              "三菱瓦斯化学 ESGパフォーマンスデータ。指標を年度でそろえた経年表として提供している。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "サステナビリティトップに価値創造プロセスの円環図を置き、事業活動と社会への貢献の関係を図で示している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティ。価値創造プロセスを円環図で視覚化している。",
+          },
+        },
         {
           text: "主要指標を経年グラフで示しつつ、同じ数値をESGデータブック（Excel）でも提供し、読む人と分析する人の双方に対応している。",
         },
@@ -1277,6 +2013,30 @@ const F: Category = {
             src: "/screenshots/sites/itochu-investor.jpg",
             caption:
               "伊藤忠商事 個人投資家向けページ。決算資料・統合レポート・経営計画・企業紹介映像が図版つきで並ぶ。",
+          },
+        },
+        {
+          company: "セブン＆アイ・ホールディングス",
+          url: "https://www.7andi.com/sustainability/",
+          text: "サステナビリティトップから、動画ライブラリー・データブック・統合報告書といった読み手の目的別の入口を分けて用意し、アクセシビリティ支援ツールで多様な利用者にも配慮している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合5位",
+          image: {
+            src: "/screenshots/sites/seveni-sustainability.jpg",
+            caption:
+              "セブン＆アイ サステナビリティ。動画・データブック・報告書と、目的別の入口を分けている。",
+          },
+        },
+        {
+          company: "村田製作所",
+          url: "https://corporate.murata.com/ja-jp/csr",
+          text: "サステナビリティのグローバルナビに株主・投資家情報・採用情報・お問い合わせを並置し、IR・採用・調達など隣接領域へのクロス導線と問い合わせ窓口を同じ並びで提供している。",
+          checkedOn: CHECKED3,
+          note: "Gomez ESGサイトランキング2025 総合6位",
+          image: {
+            src: "/screenshots/sites/murata-csr.jpg",
+            caption:
+              "村田製作所 サステナビリティ。株主・投資家情報／採用／お問い合わせへのクロス導線がナビに並ぶ。",
           },
         },
       ],

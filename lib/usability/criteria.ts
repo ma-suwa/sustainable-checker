@@ -15,6 +15,9 @@ import type { UxCategory, UxCategoryId, UxCriteriaItem } from "./types";
 const CHECKED = "2026-07-15";
 // 事例の偏りを減らすために後から追加した分の確認日。
 const CHECKED2 = "2026-07-18";
+// v0.8：各項目の良い例を拡充した際に確認した分
+//（トライベック Webユーザビリティランキング2026 上位企業のコーポレートトップを追加）。
+const CHECKED3 = "2026-07-23";
 
 const C1: UxCategory = {
   id: "1",
@@ -103,6 +106,54 @@ const C1: UxCategory = {
               "大日本印刷 トップのファーストビュー。コピーの上にグローバルナビが置かれ、主要な読み手の入口が第一階層に見えている。",
           },
         },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/",
+          text: "ヘッダー最上部に「患者さん・一般の皆さま」「医療関係者の皆さま」という読み手別の入口を分けて置き、グローバルナビ（中外製薬について／イノベーション／サステナビリティ／ストーリー／IR情報／ニュースルーム／採用情報）と役割を分担させている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 3位",
+          image: {
+            src: "/screenshots/sites/chugai-home.jpg",
+            caption:
+              "中外製薬 トップ。最上部に「患者さん・一般／医療関係者」の読み手別導線、その下にグローバルナビが並ぶ。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "「ご契約者の方へ」「保険加入をお考えの方へ」「代理店・税理士の方へ」と、利用者の立場別に入口を分けたうえで、企業情報・採用などのナビを並べている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-life-home.jpg",
+            caption:
+              "大同生命 トップ。ナビ先頭を「ご契約者／加入検討／代理店・税理士」の立場別導線にしている。",
+          },
+        },
+        {
+          company: "中部電力",
+          url: "https://www.chuden.co.jp/",
+          text: "ファーストビュー右側に「停電情報」「でんき予報」という利用者が今すぐ使いたい実用導線を目立たせ、最上部では送配電・電気ガス契約のグループ会社サイトへの入口も分けている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 8位",
+          image: {
+            src: "/screenshots/sites/chuden-home.jpg",
+            caption:
+              "中部電力 トップ。右側に「停電情報」「でんき予報」の実用導線、最上部にグループ会社別の入口が並ぶ。",
+          },
+        },
+        {
+          company: "松井証券",
+          url: "https://www.matsui.co.jp/",
+          text: "ナビ先頭に「はじめての方へ」を置いて初心者の入口を明確にし、その下に商品一覧・日本株・米国株・投資信託・NISA・iDeCoといった目的別のクイックリンクを一列で並べている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 5位",
+          image: {
+            src: "/screenshots/sites/matsui-home.jpg",
+            caption:
+              "松井証券 トップ。「はじめての方へ」と、商品別のクイックリンクで目的別に導線を整理している。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -153,6 +204,30 @@ const C1: UxCategory = {
               "大日本印刷 トップのファーストビュー。コピーの上にグローバルナビが置かれ、主要な読み手の入口が第一階層に見えている。",
           },
         },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "ファーストビュー下部に「重要なお知らせ」帯を固定し、確認時点で当日〜数日内（2026年7月13日「災害救助法適用地域の特別お取扱い」）のお知らせを日付つきで掲出している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-life-home.jpg",
+            caption:
+              "大同生命 トップ。最下部の「重要なお知らせ」に日付つきの最新情報が並ぶ。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "トップ下部の新着情報を「新着情報／ニュースリリース／IRニュース／サステナビリティニュース」のタブで種別分けし、読み手が関心の高い更新だけを追えるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 トップ。新着情報を種別タブで分け、更新を追いやすくしている。",
+          },
+        },
       ],
       badExamples: [
         { text: "最新情報が1年以上前で、サイトが放置されている印象を与える。" },
@@ -200,6 +275,54 @@ const C2: UxCategory = {
               "J:COM のグローバルナビは6項目。左からアイコン付きで並び、項目数が短期記憶の範囲に収まっている（確認日 2026-07-15）。",
           },
         },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "グローバルナビが「企業情報／株主・投資家情報／サステナビリティ／施工実績／技術・ソリューション／採用情報」の6項目に整理され、5〜7の定石に収まっている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 のグローバルナビは6項目。主要な読み手の入口が過不足なく並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中部電力",
+          url: "https://www.chuden.co.jp/",
+          text: "持株会社サイトのグローバルナビを「エネルギー・原子力／CSR・サステナビリティ／新成長分野・技術研究開発／キッズ・展示館／企業情報／IR・投資家向け情報」の6項目に整理している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 8位",
+          image: {
+            src: "/screenshots/sites/chuden-home.jpg",
+            caption:
+              "中部電力 のグローバルナビは6項目。持株会社サイトの主要導線が横一列に並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/",
+          text: "グローバルナビを「中外製薬について／イノベーション／サステナビリティ／ストーリー／IR情報／ニュースルーム／採用情報」の7項目に収め、全ページ共通の固定位置で維持している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 3位",
+          image: {
+            src: "/screenshots/sites/chugai-home.jpg",
+            caption:
+              "中外製薬 のグローバルナビは7項目。ロゴ直下の固定位置に並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "日本製鉄",
+          url: "https://www.nipponsteel.com/",
+          text: "グローバルナビを「企業／製品／技術開発／カーボンニュートラル／サステナビリティ／株主・投資家（IR）／採用」の7項目にまとめ、短く読み取れる語で並べている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 10位",
+          image: {
+            src: "/screenshots/sites/nipponsteel-home.jpg",
+            caption:
+              "日本製鉄 のグローバルナビは7項目。短い語で横一列に並ぶ（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         { text: "グローバルナビが10項目以上あり、選択に迷う。" },
@@ -235,6 +358,42 @@ const C2: UxCategory = {
             src: "/screenshots/sites/dnp-home.jpg",
             caption:
               "大日本印刷 のグローバルナビ。「会社案内」「事業紹介」「投資家情報」「採用」など、クリック前に行き先が分かる言葉でラベル付けされている（確認日 2026-07-15）。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "「企業情報」「株主・投資家情報」「施工実績」「技術・ソリューション」「採用情報」と、業種（建設）を知らなくても行き先が推測できる言葉で統一している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 のグローバルナビ。「施工実績」など事業内容が伝わる素直なラベルで並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "日本製鉄",
+          url: "https://www.nipponsteel.com/",
+          text: "「企業」「製品」「技術開発」「株主・投資家（IR）」「採用」と、抽象的な自社造語を避け、利用者の言葉でラベル付けしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 10位",
+          image: {
+            src: "/screenshots/sites/nipponsteel-home.jpg",
+            caption:
+              "日本製鉄 のグローバルナビ。「企業」「製品」「技術開発」など短く明快なラベル（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/",
+          text: "「中外製薬について」「IR情報」「ニュースルーム」「採用情報」と、社内組織名でなく読み手の言葉でラベルを付けている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 3位",
+          image: {
+            src: "/screenshots/sites/chugai-home.jpg",
+            caption:
+              "中外製薬 のグローバルナビ。行き先が推測できる素直なラベルで統一されている（確認日 2026-07-23）。",
           },
         },
       ],
@@ -297,6 +456,42 @@ const C2: UxCategory = {
       ],
       goodExamples: [
         {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/company/",
+          text: "下層の企業情報ページで「ホーム > 企業情報」のパンくずを表示し、同時にグローバルナビの「企業情報」を強調して、二重に現在地を示している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-company.jpg",
+            caption:
+              "清水建設 企業情報。パンくず「ホーム > 企業情報」とナビのハイライトで現在地が分かる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/company/",
+          text: "企業情報ページの上部にホームアイコンつきのパンくず「ホーム > 企業情報」を置き、各階層をリンクにしている。加えて「このページを音声で聞く」導線も備える。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-company.jpg",
+            caption:
+              "大同生命 企業情報。ホームアイコンつきのパンくずと、ナビの「企業情報」ハイライトが出る（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "松井証券",
+          url: "https://www.matsui.co.jp/company/",
+          text: "会社案内・IR情報のセクションで「松井証券ホーム > 会社案内・IR情報」のパンくずを表示し、上位階層へ戻れるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 5位",
+          image: {
+            src: "/screenshots/sites/matsui-company.jpg",
+            caption:
+              "松井証券 会社案内・IR情報。パンくずで現在地を示し、松井証券ホームへ戻れる（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "「ホーム > 事業紹介 > ◯◯事業 > 製品一覧」のように全階層がリンクになっており、検索から着地しても上位階層へ戻れる。",
         },
       ],
@@ -358,6 +553,42 @@ const C3: UxCategory = {
             src: "/screenshots/sites/dnp-home.jpg",
             caption:
               "大日本印刷 のヘッダー右側に「サイト内検索」と明示された検索導線がある（商品検索と紛れない）。（確認日 2026-07-15）",
+          },
+        },
+        {
+          company: "松井証券",
+          url: "https://www.matsui.co.jp/",
+          text: "ヘッダー右上に「サイト内検索」の入力窓を置き、その隣に「銘柄検索」を別に用意。サイト内検索と商品（銘柄）検索を明確に分け、混同を防いでいる。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 5位",
+          image: {
+            src: "/screenshots/sites/matsui-home.jpg",
+            caption:
+              "松井証券 のヘッダー。「サイト内検索」と「銘柄検索」が別々に置かれ、役割が区別されている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "ヘッダーに「サイト内検索」と明示した入力窓を常設し、虫眼鏡アイコンだけに頼らず、何を検索する窓かが分かるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-life-home.jpg",
+            caption:
+              "大同生命 のヘッダーに「サイト内検索」と明示した入力窓がある（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "ヘッダー右側に虫眼鏡アイコンつきで「サイト内検索」を配置し、問い合わせ・FAQと並べて発見しやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 のヘッダーに虫眼鏡つきの「サイト内検索」がある（確認日 2026-07-23）。",
           },
         },
       ],
@@ -480,6 +711,28 @@ const C4: UxCategory = {
           },
         },
         {
+          company: "双日",
+          url: "https://www.sojitz.com/jp/sustainability/esg-human_rights/",
+          text: "「1. 方針・基本的な考え方」「1-1. 人権方針」のように番号つきの見出しで階層を明示し、各見出しの直下を短い段落に分けている。見出しだけ拾えば「方針→体制→取り組み→パフォーマンス」の流れが掴める。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/sojitz-human-rights.jpg",
+            caption:
+              "双日 人権。番号つきの見出しと簡潔な段落で、拾い読みでも構成が分かる（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "三菱瓦斯化学",
+          url: "https://www.mgc.co.jp/sustainability/environment/tcfd.html",
+          text: "「気候変動への対応（TCFD提言に基づく開示）」と内容を表す見出しを置き、1文を短く区切った段落で説明。「Scope1/2」「Scope3」など専門用語には注記番号を添えている。",
+          checkedOn: CHECKED3,
+          image: {
+            src: "/screenshots/sites/mgc-tcfd.jpg",
+            caption:
+              "三菱瓦斯化学 気候変動への対応。内容を表す見出しと簡潔な段落で構成されている（確認日 2026-07-23）。",
+          },
+        },
+        {
           text: "見出しだけを拾い読みしてもページの要点が分かる構成で、専門用語には初出時に注釈を添えている。",
         },
       ],
@@ -516,6 +769,42 @@ const C4: UxCategory = {
             src: "/screenshots/sites/jcom-home.jpg",
             caption:
               "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
+        },
+        {
+          company: "松井証券",
+          url: "https://www.matsui.co.jp/",
+          text: "ヘッダーに「よくあるご質問」を常設し、さらに「AIチャットに質問」の窓口を用意して、問い合わせ前の自己解決を促している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 5位",
+          image: {
+            src: "/screenshots/sites/matsui-home.jpg",
+            caption:
+              "松井証券 トップ。「よくあるご質問」と「AIチャットに質問」で自己解決を後押ししている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "ヘッダーの目立つ位置に「よくあるご質問・お問い合わせ」をまとめて置き、疑問の解決と問い合わせを同じ入口から辿れるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-life-home.jpg",
+            caption:
+              "大同生命 トップ。「よくあるご質問・お問い合わせ」がヘッダーの目立つ位置にある（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "ヘッダーに「FAQ」を独立して置き、問い合わせ・お知らせと並べて、よくある疑問への自己解決導線を分かりやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 トップ。ヘッダーに「FAQ」が独立して置かれている（確認日 2026-07-23）。",
           },
         },
       ],
@@ -556,6 +845,30 @@ const C5: UxCategory = {
         "図表の内容がテキストでも取得できるか",
       ],
       goodExamples: [
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "ヘッダーに「文字サイズ 中／大」の切り替えを常設し、ブラウザ操作に不慣れな利用者でも本文の文字を大きくできるようにしている。テキスト拡大への配慮がサイト上の機能として実装されている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-life-home.jpg",
+            caption:
+              "大同生命 のヘッダーに「文字サイズ 中／大」の切り替えがある（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/company/",
+          text: "下層ページに「このページを音声で聞く」導線を用意し、本文を音声でも取得できるようにしている。視覚以外の手段での情報取得に配慮している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位",
+          image: {
+            src: "/screenshots/sites/daido-company.jpg",
+            caption:
+              "大同生命 企業情報。「このページを音声で聞く」導線がヘッダー下に用意されている（確認日 2026-07-23）。",
+          },
+        },
         {
           text: "図版に内容を説明するaltを付け、グラフの数値はHTMLの表としても提供している。ブラウザで200%拡大しても横スクロールが発生しない。",
         },
@@ -669,13 +982,37 @@ const C6: UxCategory = {
         {
           company: "J:COM",
           url: "https://www.jcom.co.jp/",
-          text: "サービス・料金・サポートの各導線をモバイルでも押しやすい単位で配置している。",
-          checkedOn: CHECKED,
-          note: "Webユーザビリティランキング2026 1位",
+          text: "スマートフォン幅（390px）で横スクロールが発生せず、「はじめての方へ／ご利用中の方／オンラインショップ」をアイコン付きの大きなタップ対象で並べ、チャット導線も指で押しやすい位置に置いている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 1位（スマホ幅390pxで確認）",
           image: {
-            src: "/screenshots/sites/jcom-home.jpg",
+            src: "/screenshots/sites/jcom-mobile.jpg",
             caption:
-              "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+              "J:COM トップのスマホ表示（390px）。アイコン付きの大きなタップ導線と、下部の「新規ご加入／ご利用中」の大型ボタン（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "スマホ幅ではグローバルナビをハンバーガーメニューに集約し、新着情報を横スクロールなしで縦一列に。各ニュースを全幅のタップ行（右端にシェブロン）として押しやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位（スマホ幅390pxで確認）",
+          image: {
+            src: "/screenshots/sites/shimizu-mobile.jpg",
+            caption:
+              "清水建設 トップのスマホ表示（390px）。右上にハンバーガーメニュー、ニュースが全幅のタップ行で縦に並ぶ（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "大同生命",
+          url: "https://www.daido-life.co.jp/",
+          text: "スマホ幅でハンバーガーメニュー＋検索アイコンをヘッダーに集約し、「重要なお知らせ／お知らせ／ニュースリリース」を崩れずに縦積み。各PDFに「読み上げる」ボタンも添えている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 4位（スマホ幅390pxで確認）",
+          image: {
+            src: "/screenshots/sites/daido-mobile.jpg",
+            caption:
+              "大同生命 トップのスマホ表示（390px）。ハンバーガー＋検索をヘッダーに集約し、お知らせが縦積みで並ぶ（確認日 2026-07-23）。",
           },
         },
       ],
@@ -761,6 +1098,42 @@ const C7: UxCategory = {
               "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
           },
         },
+        {
+          company: "松井証券",
+          url: "https://www.matsui.co.jp/",
+          text: "ヘッダーに「お問い合わせ」を常設したうえで、AIチャット窓口と、手続き別の専用ダイヤル（例：パスキー設定専用ダイヤル）まで案内し、目的に応じた問い合わせ先へ迷わず到達できるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 5位",
+          image: {
+            src: "/screenshots/sites/matsui-home.jpg",
+            caption:
+              "松井証券 トップ。お問い合わせ・AIチャット・手続き別の専用ダイヤルへ導線を分けている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中外製薬",
+          url: "https://www.chugai-pharm.co.jp/",
+          text: "ヘッダー右側に「FAQ・お問合せ」をまとめて常設し、全ページから問い合わせと自己解決の入口に到達できるようにしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 3位",
+          image: {
+            src: "/screenshots/sites/chugai-home.jpg",
+            caption:
+              "中外製薬 トップ。ヘッダーに「FAQ・お問合せ」が常設されている（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "ヘッダーに「お問い合わせ」を独立して置き、FAQ・お知らせと並べて、困ったときの入口を全ページから見つけやすくしている。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 トップ。ヘッダーに「お問い合わせ」が独立して置かれている（確認日 2026-07-23）。",
+          },
+        },
       ],
       badExamples: [
         {
@@ -798,6 +1171,30 @@ const C7: UxCategory = {
             src: "/screenshots/sites/jcom-home.jpg",
             caption:
               "J:COM トップのファーストビュー。ブランドコピーの下に「新規ご加入の方／ご利用中の方」の目的別導線が並ぶ。",
+          },
+        },
+        {
+          company: "清水建設",
+          url: "https://www.shimz.co.jp/",
+          text: "ファーストビュー上部に「弊社を装った不審な訪問や電話にご注意ください」の注意喚起帯を常設し、利用者を詐称行為から守る情報を目立たせている。JP／EN の言語切替も併設している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 6位",
+          image: {
+            src: "/screenshots/sites/shimizu-home.jpg",
+            caption:
+              "清水建設 トップ。上部の黄色帯で「弊社を装った不審な訪問・電話」への注意を促す（確認日 2026-07-23）。",
+          },
+        },
+        {
+          company: "中部電力",
+          url: "https://www.chuden.co.jp/",
+          text: "重要なお知らせとして「自動音声案内を使用した不審電話にご注意ください」を掲出し、English 切替も用意して安全性と多言語配慮の両面に対応している。",
+          checkedOn: CHECKED3,
+          note: "Webユーザビリティランキング2026 8位",
+          image: {
+            src: "/screenshots/sites/chuden-home.jpg",
+            caption:
+              "中部電力 トップ。不審電話への注意喚起と English 切替がある（確認日 2026-07-23）。",
           },
         },
       ],
